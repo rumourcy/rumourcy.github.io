@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="基本概念  基音(fundamental tone)：发音体整体振动产生的音泛音(harmonics/overtones)：物体局部振动产生的音  误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的 局部振动 一根弦分四部分振动 弦的每部分振动都会产生局部振动，局部振动的频率是基频的2、3等整数倍；例如基音A的频率是440Hz，它">
+<meta name="keywords" content="MIR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Harmonics">
+<meta property="og:url" content="http://yoursite.com/2018/01/12/Harmonics/index.html">
+<meta property="og:site_name" content="trierbo&#39;s blog">
+<meta property="og:description" content="基本概念  基音(fundamental tone)：发音体整体振动产生的音泛音(harmonics/overtones)：物体局部振动产生的音  误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的 局部振动 一根弦分四部分振动 弦的每部分振动都会产生局部振动，局部振动的频率是基频的2、3等整数倍；例如基音A的频率是440Hz，它">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/Standing_wave.gif">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/Standing_waves_on_a_string.gif">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/fundamental.gif">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/1stovertone.gif">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/2ndovertone.gif">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/3rdovertone.gif">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/synthesis.jpg">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/vibration.png">
+<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/Moodswingerscale.svg">
+<meta property="og:updated_time" content="2018-11-27T15:05:36.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Harmonics">
+<meta name="twitter:description" content="基本概念  基音(fundamental tone)：发音体整体振动产生的音泛音(harmonics/overtones)：物体局部振动产生的音  误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的 局部振动 一根弦分四部分振动 弦的每部分振动都会产生局部振动，局部振动的频率是基频的2、3等整数倍；例如基音A的频率是440Hz，它">
+<meta name="twitter:image" content="http://p2fe5tghw.bkt.clouddn.com/harmonic/Standing_wave.gif">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/12/Harmonics/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Harmonics | trierbo's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">trierbo's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/12/Harmonics/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="trierbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="trierbo's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Harmonics
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-01-12 11:07:27" itemprop="dateCreated datePublished" datetime="2018-01-12T11:07:27+08:00">2018-01-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-27 23:05:36" itemprop="dateModified" datetime="2018-11-27T23:05:36+08:00">2018-11-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><hr>
+<blockquote>
+<p>基音(fundamental tone)：发音体整体振动产生的音<br>泛音(harmonics/overtones)：物体局部振动产生的音</p>
+</blockquote>
+<p><strong>误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的</strong></p>
+<h3 id="局部振动"><a href="#局部振动" class="headerlink" title="局部振动"></a>局部振动</h3><hr>
+<p><em>一根弦分四部分振动</em><br><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/Standing_wave.gif" alt="局部振动"></p>
+<p>弦的每部分振动都会产生局部振动，局部振动的频率是基频的2、3等整数倍；<br>例如基音A的频率是440Hz，它的泛音列就包含了880、1320、1760、2200Hz等一系列频率。</p>
+<p><em>局部振动产生泛音</em><br><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/Standing_waves_on_a_string.gif" alt="泛音"></p>
+<p>按照先从左至右，再从上至下，分别表示的是基音、第一泛音、第二泛音等</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Frequency</th>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Wave Representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 * f = 440Hz</td>
+<td style="text-align:center">fundamental tone</td>
+<td style="text-align:center"><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/fundamental.gif" alt=""></td>
+</tr>
+<tr>
+<td style="text-align:center">2 * f = 880Hz</td>
+<td style="text-align:center">1st overtone</td>
+<td style="text-align:center"><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/1stovertone.gif" alt=""></td>
+</tr>
+<tr>
+<td style="text-align:center">3 * f = 1320Hz</td>
+<td style="text-align:center">2nd overtone</td>
+<td style="text-align:center"><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/2ndovertone.gif" alt=""></td>
+</tr>
+<tr>
+<td style="text-align:center">3 * f = 1760Hz</td>
+<td style="text-align:center">3rd overtone</td>
+<td style="text-align:center"><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/3rdovertone.gif" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="基音-泛音"><a href="#基音-泛音" class="headerlink" title="基音/泛音"></a>基音/泛音</h3><hr>
+<p><em>音的合成</em><br><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/synthesis.jpg" alt="synthesis"></p>
+<blockquote>
+<p>假定这就是单位时间的波形图，第一张图的频率是2，第二张图的频率是4<br>由于波形重复两次，则第三张图的频率，所以频率是2<br>合成音的频率是基音和泛音频率的最大公约数<br>泛音乐器发出的音是由基音和泛音的合成</p>
+</blockquote>
+<p><em>泛音形成的原理：驻波</em><br>同频波经过反射形成了叠加，从而形成驻波；所以，能形成驻波，必须是物体长度是1/2波长的整数倍；这样才能形成叠加。</p>
+<p><strong>基音决定音高，泛音决定音色</strong></p>
+<blockquote>
+<p>物体振动总是有固定频率和固定音色的原因：只有一些频率的波才能在物体中形成驻波，从而持续下去；其他频率的波很快就会消散掉。</p>
+</blockquote>
+<h3 id="吉他泛音"><a href="#吉他泛音" class="headerlink" title="吉他泛音"></a>吉他泛音</h3><hr>
+<p><em>弦振动公式</em></p>
+<blockquote>
+<p>若弦的张力是$T$(单位为$N$)，单位长度的质量为$u(kg)$，<br>而$W_{T}$是弦的波速，则弦线的几个基本频率$v_{n}$为:<br><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/vibration.png" alt="vibration"></p>
+</blockquote>
+<blockquote>
+<ul>
+<li>弦振动时会产生多个频率的音，当n=1的时候产生的音叫基音，当n=2,3,4…产生的音叫泛音，分别叫做第一泛音，第二泛音等</li>
+<li>频率和弦长、弦的张力，单位长度的质量有关，而且频率和弦长是成反比的。</li>
+</ul>
+</blockquote>
+<p>所以拨弦之后，弦会分别做如下图的运动：<br><img src="http://p2fe5tghw.bkt.clouddn.com/harmonic/Moodswingerscale.svg" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MIR/" rel="tag"># MIR</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/01/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/15/Complex-Number/" rel="prev" title="Complex Number">
+                Complex Number <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg" alt="trierbo">
+            
+              <p class="site-author-name" itemprop="name">trierbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/trierbo" title="GitHub &rarr; https://github.com/trierbo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:baochuanyan@gmail.com" title="E-Mail &rarr; mailto:baochuanyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部振动"><span class="nav-number">2.</span> <span class="nav-text">局部振动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基音-泛音"><span class="nav-number">3.</span> <span class="nav-text">基音/泛音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#吉他泛音"><span class="nav-number">4.</span> <span class="nav-text">吉他泛音</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">trierbo</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
