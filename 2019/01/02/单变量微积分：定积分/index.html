@@ -108,23 +108,23 @@
 
 
 
-  <meta name="description" content="定积分(Definite Integral) $Find\ the\ area\ under\ a\ curve(cumulative\ sum)$  $$area = \int_{a}^{b} f(x) dx$$">
+  <meta name="description" content="定积分(Definite Integral) Find the area under a curve(cumulative sum)  $$area = \int_{a}^{b} f(x) dx$$">
 <meta name="keywords" content="Math,Calculus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单变量微积分：定积分">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/单变量微积分：定积分/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="定积分(Definite Integral) $Find\ the\ area\ under\ a\ curve(cumulative\ sum)$  $$area = \int_{a}^{b} f(x) dx$$">
+<meta property="og:description" content="定积分(Definite Integral) Find the area under a curve(cumulative sum)  $$area = \int_{a}^{b} f(x) dx$$">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/area.png">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/divide.png">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/topview.png">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/sideview.png">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/pieces.png">
-<meta property="og:updated_time" content="2019-01-02T14:11:22.397Z">
+<meta property="og:updated_time" content="2019-01-02T14:22:32.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单变量微积分：定积分">
-<meta name="twitter:description" content="定积分(Definite Integral) $Find\ the\ area\ under\ a\ curve(cumulative\ sum)$  $$area = \int_{a}^{b} f(x) dx$$">
+<meta name="twitter:description" content="定积分(Definite Integral) Find the area under a curve(cumulative sum)  $$area = \int_{a}^{b} f(x) dx$$">
 <meta name="twitter:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/area.png">
 
 
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="Created: 2019-01-02 18:56:32 / Modified: 22:11:22" itemprop="dateCreated datePublished" datetime="2019-01-02T18:56:32+08:00">2019-01-02</time>
+              <time title="Created: 2019-01-02 18:56:32 / Modified: 22:22:32" itemprop="dateCreated datePublished" datetime="2019-01-02T18:56:32+08:00">2019-01-02</time>
             
 
             
@@ -405,14 +405,14 @@
 
       
         <h3 id="定积分-Definite-Integral"><a href="#定积分-Definite-Integral" class="headerlink" title="定积分(Definite Integral)"></a>定积分(Definite Integral)</h3><blockquote>
-<p>$Find\ the\ area\ under\ a\ curve(cumulative\ sum)$</p>
+<p>Find the area under a curve(cumulative sum)</p>
 </blockquote>
 <p><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/area.png" alt="area"><br>$$area = \int_{a}^{b} f(x) dx$$</p>
 <a id="more"></a>
 <h4 id="Compute-the-area"><a href="#Compute-the-area" class="headerlink" title="Compute the area"></a>Compute the area</h4><ul>
-<li>$divide\ into\ “rectangles”$</li>
-<li>$add\ up\ areas$</li>
-<li>$take\ the\ limit\ as\ rectangles\ get\ thin$<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/divide.png" alt="divide"></li>
+<li>divide into “rectangles”</li>
+<li>add up areas</li>
+<li>take the limit as rectangles get thin<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/divide.png" alt="divide"></li>
 </ul>
 <p>Example $f(x) = x^{2} \quad a = 0 \quad b\ arbitrary$</p>
 <blockquote>
@@ -441,9 +441,9 @@
 </tbody>
 </table>
 <p>$sum\ of\ area\ of\ “rectangles”$<br>$\frac{b}{n}(\frac{b}{n})^{2} + \frac{b}{n}(\frac{2b}{n})^{2} + … + \frac{b}{n}(\frac{nb}{n})^{2} = (\frac{b}{n})^{3}(1+2^{2}+3^{2}+…+n^{2})$</p>
-<p>构建金字塔<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/topview.png" alt="topview"><br><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/sideview.png" alt="sideview"><br>$vol\ inside:\ \frac{base * ht}{3} = \frac{n^{3}}{3}$<br>$$\frac{n^{3}}{3} \lt 1^{2} + 2^{2} + 3^{2} + … + n^{2} \lt \frac{(n+1)^{3}}{3}$$<br>$divided\ by\ n^{3}$<br>$$\frac{1}{3} \lt \frac{1^{2} + 2^{2} + … + n^{2}}{n^{3}} \lt \frac{(n+1)^{3}}{n^{3}} = \frac{1}{3}(1+\frac{1}{n})^{3}$$<br>$tolal\ area\ under\ x^{2}$<br>$$\int_{a}^{b} x^{2} dx = \frac{1}{3} b^{2}$$</p>
-<h4 id="General-procedure-for-definite-integral"><a href="#General-procedure-for-definite-integral" class="headerlink" title="General procedure for definite integral"></a>General procedure for definite integral</h4><p>$n\ pieces \quad \Delta x = \frac{b-a}{n}$<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/pieces.png" alt="pieces"></p>
-<p>$pick\ any\ height\ of\ f\ in\ each\ interval\$</p>
+<p>构建金字塔<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/topview.png" alt="topview"><br><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/sideview.png" alt="sideview"><br>$vol\ inside:\ \frac{base * ht}{3} = \frac{n^{3}}{3}$<br>$$\frac{n^{3}}{3} \lt 1^{2} + 2^{2} + 3^{2} + … + n^{2} \lt \frac{(n+1)^{3}}{3}$$<br>divided by $n^{3}$<br>$$\frac{1}{3} \lt \frac{1^{2} + 2^{2} + … + n^{2}}{n^{3}} \lt \frac{(n+1)^{3}}{n^{3}} = \frac{1}{3}(1+\frac{1}{n})^{3}$$<br>tolal area under $x^{2}$<br>$$\int_{a}^{b} x^{2} dx = \frac{1}{3} b^{2}$$</p>
+<h4 id="General-procedure-for-definite-integral"><a href="#General-procedure-for-definite-integral" class="headerlink" title="General procedure for definite integral"></a>General procedure for definite integral</h4><p>$n\ pieces \quad \Delta x = \frac{b-a}{n}$<br>pick any height of $f$ in each interval</p>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/integral/pieces.png" alt="pieces"></p>
 <p>$\sum_{i=1}^{n} f(c_{i}) \Delta x\ (Riemann\ Sum) \to \int_{a}^{b} f(x) dx$</p>
 <h3 id="Fundamental-Theorem-of-Calculus-FTC"><a href="#Fundamental-Theorem-of-Calculus-FTC" class="headerlink" title="Fundamental Theorem of Calculus(FTC)"></a>Fundamental Theorem of Calculus(FTC)</h3><h4 id="FTC1"><a href="#FTC1" class="headerlink" title="FTC1"></a>FTC1</h4><h4 id="FTC2"><a href="#FTC2" class="headerlink" title="FTC2"></a>FTC2</h4>
       
