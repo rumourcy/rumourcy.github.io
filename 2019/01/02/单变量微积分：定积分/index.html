@@ -123,7 +123,7 @@
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/pieces.png">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/sinx.png">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/integral/FTC2.png">
-<meta property="og:updated_time" content="2019-01-14T13:22:12.456Z">
+<meta property="og:updated_time" content="2019-01-30T09:17:33.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单变量微积分：定积分">
 <meta name="twitter:description" content="定积分(Definite Integral) Find the area under a curve(cumulative sum)  $$area = \int_{a}^{b} f(x) dx$$">
@@ -385,7 +385,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-14 21:22:12" itemprop="dateModified" datetime="2019-01-14T21:22:12+08:00">2019-01-14</time>
+                <time title="Modified: 2019-01-30 17:17:33" itemprop="dateModified" datetime="2019-01-30T17:17:33+08:00">2019-01-30</time>
               
             
           </span>
@@ -484,12 +484,12 @@
 </blockquote>
 </li>
 </ul>
-<h4 id="Substitution"><a href="#Substitution" class="headerlink" title="Substitution"></a>Substitution</h4><p>假设函数$f(x)$在区间$[a,b]$上连续，函数$x=\varphi(t)$满足条件：</p>
+<h4 id="Substitution"><a href="#Substitution" class="headerlink" title="Substitution"></a>Substitution</h4><p>假设函数$f(x)$在区间$[a,b]$上连续, 函数$x=\varphi(t)$满足条件：</p>
 <ul>
 <li>$\varphi (a) = \alpha \quad \varphi (\beta) = b$</li>
 <li><p>$\varphi(t)$在$[\alpha, \beta]$(或$[\beta, \alpha]$)上具有连续导数<br>$$\int_{a}^{b} f(x) dx = \int_{\alpha}^{\beta} f[\varphi (t)] \varphi’(t) dt$$</p>
 </li>
-<li><p>Example1 $\int_{0}^{a} \sqrt{a^{2} - x^{2}} dx \quad a \gt 0$<br>$x = a \sin t \to dx = a \cos t dt$<br>当$x = 0$时，$t=0$；当$x=a$时，$t=\frac{\pi}{2}$<br>$\int_{0}^{a} \sqrt{a^{2} - x^{2}} dx = a^{2} \int_{0}^{\frac{\pi}{2}} \cos^{2} t dt = \frac{a^{2}}{2} \int_{0}^{\frac{\pi}{2}} (1 + \cos 2t) dt = \frac{a^{2}}{2} [t + \frac{1}{2} \sin 2t]_{0}^{\frac{\pi}{2}} = \frac{\pi a^{2}}{4}$</p>
+<li><p>Example1 $\int_{0}^{a} \sqrt{a^{2} - x^{2}} dx \quad a \gt 0$<br>$x = a \sin t \to dx = a \cos t dt$<br>当$x = 0$时, $t=0$；当$x=a$时, $t=\frac{\pi}{2}$<br>$\int_{0}^{a} \sqrt{a^{2} - x^{2}} dx = a^{2} \int_{0}^{\frac{\pi}{2}} \cos^{2} t dt = \frac{a^{2}}{2} \int_{0}^{\frac{\pi}{2}} (1 + \cos 2t) dt = \frac{a^{2}}{2} [t + \frac{1}{2} \sin 2t]_{0}^{\frac{\pi}{2}} = \frac{\pi a^{2}}{4}$</p>
 </li>
 </ul>
 <p>$$\int_{a}^{b} f[\varphi(x)] \varphi’(x) dx = \int_{\alpha}^{\beta} f(t) dt$$</p>

@@ -117,7 +117,7 @@
 <meta property="og:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/probability/arrangement.png">
-<meta property="og:updated_time" content="2019-01-05T13:24:12.190Z">
+<meta property="og:updated_time" content="2019-01-30T09:21:15.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论：基本概念">
 <meta name="twitter:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
@@ -379,7 +379,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-05 21:24:12" itemprop="dateModified" datetime="2019-01-05T21:24:12+08:00">2019-01-05</time>
+                <time title="Modified: 2019-01-30 17:21:15" itemprop="dateModified" datetime="2019-01-30T17:21:15+08:00">2019-01-30</time>
               
             
           </span>
@@ -427,8 +427,8 @@
 <h3 id="概率论公理"><a href="#概率论公理" class="headerlink" title="概率论公理"></a>概率论公理</h3><ul>
 <li>$ 0 \leq P(E) \leq 1 $</li>
 <li>$ P(S) = 1 $</li>
-<li>对任一列互不相容的事件$E_1$，$E_2$，…(即如果$i \neq j$，则$E_iE_j = \phi$)，有<br>$$P(\bigcup_{i=1}^{\infty} E_i)=\sum^n P(E_i)$$<blockquote>
-<p>对于有限个互不相容事件的序列$E_1$，$E_2$，…，$E_n$，有<br>$$P(\bigcup_{i=1}^n E_i)=\sum_{i=1}^n P(E_i)$$</p>
+<li>对任一列互不相容的事件$E_1$, $E_2$, …(即如果$i \neq j$, 则$E_iE_j = \phi$), 有<br>$$P(\bigcup_{i=1}^{\infty} E_i)=\sum^n P(E_i)$$<blockquote>
+<p>对于有限个互不相容事件的序列$E_1$, $E_2$, …, $E_n$, 有<br>$$P(\bigcup_{i=1}^n E_i)=\sum_{i=1}^n P(E_i)$$</p>
 </blockquote>
 </li>
 </ul>
@@ -473,13 +473,13 @@
 <li>二项式定理<br>$$(x+y)^n=\sum_{k=0}^n\binom{n}{k}x^ky^{n-k}$$</li>
 </ul>
 <h4 id="多项式系数"><a href="#多项式系数" class="headerlink" title="多项式系数"></a>多项式系数</h4><blockquote>
-<p>若$n_1+n_2+…+n_r=n$，则<br>$$\binom{n}{n_1,n_2,…,n_r}=\frac{n!}{n_1!n_2!…n_r!}$$</p>
+<p>若$n_1+n_2+…+n_r=n$, 则<br>$$\binom{n}{n_1,n_2,…,n_r}=\frac{n!}{n_1!n_2!…n_r!}$$</p>
 </blockquote>
 <ul>
 <li>多项式定理<br>$$(x_{1} + x_{2} + … + x_{r})^{n} = \sum_{n_1+n_2+…+n_r=n}  \binom{n}{n_1,n_2,…,n_r} x_{1}^{n_{1}} x_{2}^{n_{2}} … x_{r}^{n_{r}}$$</li>
 </ul>
 <h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><blockquote>
-<p>假定$F$发生的情况下$E$发生的条件概率，记为$P(E|F)$<br>定义：如果$P(F)&gt;0$，那么$P(E|F)=P(EF)/P(F)$</p>
+<p>假定$F$发生的情况下$E$发生的条件概率, 记为$P(E|F)$<br>定义：如果$P(F)&gt;0$, 那么$P(E|F)=P(EF)/P(F)$</p>
 </blockquote>
 <p>$$P(EF) = P(F)P(E|F)$$</p>
 <h4 id="乘法规则"><a href="#乘法规则" class="headerlink" title="乘法规则"></a>乘法规则</h4><p>$$P(E_1E_2E_3…E_n) = P(E_1)P(E_2|E_1)P(E_3|E_1E_2)…P(E_n|E_1…E_{n-1})$$</p>
@@ -492,14 +492,14 @@
 <p>证:<br>$P(E|F) = P(EF)/P(F) \geq 0$<br>$EF \subset F \to P(EF) \leq P(F)$<br>$P(S|F) = \frac{P(SF)}{P(F)} = \frac{P(F)}{P(F)} = 1$<br>$P(\cup_{i=1}^{\infty} E_{i} | F) = \frac{P((\cup_{i=1}^{\infty} E_{i})F)}{P(F)}=\frac{P(\cup_{i=1}^{\infty} E_{i} F)}{P(F)} = \frac{\sum_{i=1}^{\infty} P(E_{i} F)}{P(F)} = \sum_{i=1}^{\infty} P(E_{i} | F)$</p>
 </blockquote>
 <h3 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h3><h4 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h4><blockquote>
-<p>假定$F_1$，$F_2$，…，$F_n$是互不相容的事件，且<br>$$\bigcup_{i=1}^{n} F_i = S$$<br>则$E=\cup {EF_i}$，且$EF_i(i=1,…,n)$是互不相容的，有<br>$$ P(E)=\sum_{i=1}^{n}P(EF_i)=\sum_{i=1}^{n}P(E|F_i)P(F_i) $$</p>
+<p>假定$F_1$, $F_2$, …, $F_n$是互不相容的事件, 且<br>$$\bigcup_{i=1}^{n} F_i = S$$<br>则$E=\cup {EF_i}$, 且$EF_i(i=1,…,n)$是互不相容的, 有<br>$$ P(E)=\sum_{i=1}^{n}P(EF_i)=\sum_{i=1}^{n}P(E|F_i)P(F_i) $$</p>
 </blockquote>
 <h4 id="贝叶斯公式-1"><a href="#贝叶斯公式-1" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h4><blockquote>
-<p>假定$F_1$，$F_2$，…，$F_n$是互不相容的事件，且<br>$$\bigcup_{i=1}^{n} F_i = S$$<br>则<br>$$ P(F_j|E) = \frac{P(EF_j)}{P(E)} = \frac{P(E|F_j)P(F_j)}{\sum_{i=1}^{n}P(E|F_i)P(F_i)} $$<br>表示试验之前对这些假设条件所作的判断[$P(F_j)$]，根据试验结果$E$来修正</p>
+<p>假定$F_1$, $F_2$, …, $F_n$是互不相容的事件, 且<br>$$\bigcup_{i=1}^{n} F_i = S$$<br>则<br>$$ P(F_j|E) = \frac{P(EF_j)}{P(E)} = \frac{P(E|F_j)P(F_j)}{\sum_{i=1}^{n}P(E|F_i)P(F_i)} $$<br>表示试验之前对这些假设条件所作的判断[$P(F_j)$], 根据试验结果$E$来修正</p>
 </blockquote>
 <h3 id="独立事件"><a href="#独立事件" class="headerlink" title="独立事件"></a>独立事件</h3><p>因为$P(E|F) = P(EF) / P(F)$, 所以如果<br>$$P(EF) = P(E)P(F)$$<br>那么$E$和$F$独立</p>
 <blockquote>
-<p>事件$E_1$，…，$E_n$称为独立的，如果对任何子集$E_{i_1}$，…，$E_{i_r}$，有<br>$$P(E_{i_1}…E_{i_r})=P(E_{i_1})…P(E_{i_r})$$</p>
+<p>事件$E_1$, …, $E_n$称为独立的, 如果对任何子集$E_{i_1}$, …, $E_{i_r}$, 有<br>$$P(E_{i_1}…E_{i_r})=P(E_{i_1})…P(E_{i_r})$$</p>
 </blockquote>
 
       
