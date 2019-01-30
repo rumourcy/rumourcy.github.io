@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
-<meta name="keywords" content="Math">
+  <meta name="description" content="Integration by Parts(分部积分) $(uv)’  =  u’v + uv’$ $uv’ = (uv)’ - u’v$ $\int uv’ dx = uv - \int u’v dx$ $\int_{a}^{b} uv’ dx = uv \mid_{a}^{b} - \int_{a}^{b} u’v dx$">
+<meta name="keywords" content="Math,Calculus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率论：离散随机变量">
-<meta property="og:url" content="http://yoursite.com/2018/04/17/概率论：离散随机变量/index.html">
+<meta property="og:title" content="单变量微积分：分部积分">
+<meta property="og:url" content="http://yoursite.com/2019/01/30/单变量微积分：分部积分/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
+<meta property="og:description" content="Integration by Parts(分部积分) $(uv)’  =  u’v + uv’$ $uv’ = (uv)’ - u’v$ $\int uv’ dx = uv - \int u’v dx$ $\int_{a}^{b} uv’ dx = uv \mid_{a}^{b} - \int_{a}^{b} u’v dx$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T14:10:34.929Z">
+<meta property="og:updated_time" content="2019-01-30T09:13:24.767Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="概率论：离散随机变量">
-<meta name="twitter:description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
+<meta name="twitter:title" content="单变量微积分：分部积分">
+<meta name="twitter:description" content="Integration by Parts(分部积分) $(uv)’  =  u’v + uv’$ $uv’ = (uv)’ - u’v$ $\int uv’ dx = uv - \int u’v dx$ $\int_{a}^{b} uv’ dx = uv \mid_{a}^{b} - \int_{a}^{b} u’v dx$">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/17/概率论：离散随机变量/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/30/单变量微积分：分部积分/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>概率论：离散随机变量 | trierbo's blog</title>
+  <title>单变量微积分：分部积分 | trierbo's blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/概率论：离散随机变量/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/单变量微积分：分部积分/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">概率论：离散随机变量
+          <h1 class="post-title" itemprop="name headline">单变量微积分：分部积分
               
             
           </h1>
@@ -360,24 +360,12 @@
                 
               
 
-              <time title="Created: 2018-04-17 21:39:08" itemprop="dateCreated datePublished" datetime="2018-04-17T21:39:08+08:00">2018-04-17</time>
+              <time title="Created: 2019-01-30 16:45:48 / Modified: 17:13:24" itemprop="dateCreated datePublished" datetime="2019-01-30T16:45:48+08:00">2019-01-30</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-29 22:10:34" itemprop="dateModified" datetime="2018-11-29T22:10:34+08:00">2018-11-29</time>
               
             
           </span>
@@ -410,65 +398,29 @@
       
 
       
-        <h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><ul>
-<li>随机变量期望<br>$$ E[X] = \sum_{x:p(x)&gt;0}xp(x) $$</li>
-<li>随机变量函数期望<br>$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$<br>$$ E[aX+b] = aE[X] + b $$</li>
-<li>n阶矩<br>$$ E[X^n] = \sum_{x:p(x)&gt;0}x^np(x) $$</li>
+        <h3 id="Integration-by-Parts-分部积分"><a href="#Integration-by-Parts-分部积分" class="headerlink" title="Integration by Parts(分部积分)"></a>Integration by Parts(分部积分)</h3><ul>
+<li>$(uv)’  =  u’v + uv’$</li>
+<li>$uv’ = (uv)’ - u’v$</li>
+<li>$\int uv’ dx = uv - \int u’v dx$</li>
+<li>$\int_{a}^{b} uv’ dx = uv \mid_{a}^{b} - \int_{a}^{b} u’v dx$</li>
 </ul>
 <a id="more"></a>
-<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>$$ Var(X) = E[(X-\mu)^2]$$<br>$$ Var(X) = E[X^2] - E^2[x] $$</p>
-<h3 id="离散随机变量分布"><a href="#离散随机变量分布" class="headerlink" title="离散随机变量分布"></a>离散随机变量分布</h3><h4 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h4><p>$$ X =<br>\begin{equation}<br>\begin{cases}<br>1, 试验成功\<br>0, 试验失败<br>\end{cases}<br>\end{equation} $$</p>
-<ul>
-<li>分布列<br>$$ p(0) = P{X=0} = 1 -p $$<br>$$ p(1) = P{X=1} = p $$</li>
-</ul>
-<h4 id="二项随机变量"><a href="#二项随机变量" class="headerlink" title="二项随机变量"></a>二项随机变量</h4><blockquote>
-<p>参数为(n, p)的二项随机变量</p>
-</blockquote>
-<ul>
-<li>分布列<br>$$ p(i) = \binom{n}{i}p^i(1-p)^{n-i} i=0,1,…,n $$<br>$$ \sum_{i=0}^{\infty}p(i) = \sum_{i=0}^{n}\binom{n}{i}p^i(1-p)^{n-i} = [p+(1-p)]^n = 1 $$</li>
-<li>期望<br>$$ E[X] = np $$</li>
-<li>方差<br>$$ Var(X) = np(1-p) $$</li>
-</ul>
-<h4 id="泊松随机变量"><a href="#泊松随机变量" class="headerlink" title="泊松随机变量"></a>泊松随机变量</h4><ul>
-<li>分布列<br>$$ p(i) = P{X = i} = e^{-\lambda}\frac{\lambda^i}{i!} i=0,1,2,… $$</li>
-<li>期望<br>$$ E[X] = \lambda $$</li>
-<li>方差<br>$$ Var(X) = \lambda $$</li>
-</ul>
 <blockquote>
-<p>独立重复进行n次试验，每次成功的概率为p，当n充分大，而p足够小，使得np保持适当的话，那么成功次数近似地服从参数为$\lambda=np$的泊松分布</p>
+<p>Example 1 $\int \ln x dx$</p>
 </blockquote>
-<hr>
+<p>$u = \ln x \quad u’ = \frac{1}{x} \quad v = x \quad v’ = 1$<br>$\int \ln x dx = x \ln x - \int \frac{1}{x} x dx = x \ln x - x + c$</p>
 <blockquote>
-<ul>
-<li>在任意长度为h的时间区间内，恰好发生一个事件的概率彼此相同，都等于$\lambda h+o(h)$</li>
-<li>在任意长度为h的时间区间内发生2个或者更多事件的概率非常小，等于$o(h)$</li>
-<li>对于任意确定的自然数n与非负整数$j_1, j_2, …, j_n$, 以及任意$n$个互不相交的时间区间，若以$E_i$表示”在第$i$个时间区内事件正好发生$j_i$次“，则$E_1, E_2, …, E_n$相互独立<br>则在任何固定长度为t的时间区间内，事件发生的次数是以$\lambda t$为参数的泊松随机变量，称事件是按强度为$\lambda$的泊松过程发生的，常数$\lambda$可解释为单位时间内时间发生的强度</li>
-</ul>
+<p>Example 2 $\int (\ln x)^{2} dx$</p>
 </blockquote>
-<h4 id="几何随机变量"><a href="#几何随机变量" class="headerlink" title="几何随机变量"></a>几何随机变量</h4><blockquote>
-<p>独立重复试验直到成功为止</p>
-</blockquote>
-<ul>
-<li>分布列<br>$$ P{X=n} = (1-p)^{n-1}p $$</li>
-<li>期望<br>$$ E[X] = \frac{1}{p} $$</li>
-<li>方差<br>$$ Var(X) = \frac{1-p}{p^2} $$</li>
-</ul>
-<h4 id="负二项随机变量"><a href="#负二项随机变量" class="headerlink" title="负二项随机变量"></a>负二项随机变量</h4><blockquote>
-<p>独立重复试验知道成功$r$次为止</p>
-</blockquote>
-<ul>
-<li>分布列<br>$$ P{X=n}=\binom{n-1}{r-1}p^r(1-p)^{n-r} $$</li>
-<li>期望<br>$$ E[X] = \frac{r}{p} $$</li>
-<li>方差<br>$$ Var(X) = \frac{r(1-p)}{p^2} $$<h4 id="超几何随机变量"><a href="#超几何随机变量" class="headerlink" title="超几何随机变量"></a>超几何随机变量</h4></li>
-</ul>
+<p>$\int (\ln x)^{2} dx = x(\ln x)^{2} - \int 2 \ln x \frac{1}{x} x dx = x(\ln x)^{2} - 2(x \ln x - x) + c$</p>
 <blockquote>
-<p>设坛子里面共有$N$个球，其中$m$个白球，$N-m$个黑球，从中随机地（无放回）取出$n$个球，令$X$表示取出来的白球数</p>
+<p>Example 3 Reduction Formule(换算公式)</p>
 </blockquote>
-<ul>
-<li>分布列<br>$$ P{X=i} = \frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}} $$</li>
-<li>期望<br>$$ E[X] = \frac{nm}{N} $$</li>
-<li>方差<br>$$ Var(X) = np(1-p)(1-\frac{n-1}{N-1}) $$</li>
-</ul>
+<p>$\int (\ln x)^{n} dx = x(\ln x)^{n} - n \int (\ln x)^{n-1} \frac{1}{x} x dx$<br>$F_{n}(x) = \int (\ln x)^{n} dx$<br>$F_{n}(x) = x (\ln x)^{n} - nF_{n-1}(x)$</p>
+<blockquote>
+<p>Example 4 $G_{n}(x) = \int x^{n} e^{x} dx$</p>
+</blockquote>
+<p>$u = x^{n} \quad u’ = nx^{n-1} \quad v’ = e^{x} \quad v =e^{x}$<br>$\int x^{n} e^{x} dx = x^{n}e^{x} - \int nx^{n-1} e^{x} dx$<br>$G_{n}(x) = x^{n}e^{x} - nG_{n-1}(x)$</p>
 
       
     </div>
@@ -494,6 +446,8 @@
           
             <a href="/tags/Math/" rel="tag"># Math</a>
           
+            <a href="/tags/Calculus/" rel="tag"># Calculus</a>
+          
         </div>
       
 
@@ -505,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/01/概率论：基本概念/" rel="next" title="概率论：基本概念">
-                <i class="fa fa-chevron-left"></i> 概率论：基本概念
+              <a href="/2019/01/28/单变量微积分：有理函数积分/" rel="next" title="单变量微积分：有理函数积分">
+                <i class="fa fa-chevron-left"></i> 单变量微积分：有理函数积分
               </a>
             
           </div>
@@ -514,10 +468,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/22/Emacs基本快捷键/" rel="prev" title="Emacs基本快捷键">
-                Emacs基本快捷键 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -677,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#期望"><span class="nav-number">1.</span> <span class="nav-text">期望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方差"><span class="nav-number">2.</span> <span class="nav-text">方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离散随机变量分布"><span class="nav-number">3.</span> <span class="nav-text">离散随机变量分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伯努利随机变量"><span class="nav-number">3.1.</span> <span class="nav-text">伯努利随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二项随机变量"><span class="nav-number">3.2.</span> <span class="nav-text">二项随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泊松随机变量"><span class="nav-number">3.3.</span> <span class="nav-text">泊松随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几何随机变量"><span class="nav-number">3.4.</span> <span class="nav-text">几何随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负二项随机变量"><span class="nav-number">3.5.</span> <span class="nav-text">负二项随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超几何随机变量"><span class="nav-number">3.6.</span> <span class="nav-text">超几何随机变量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Integration-by-Parts-分部积分"><span class="nav-number">1.</span> <span class="nav-text">Integration by Parts(分部积分)</span></a></li></ol></div>
             
 
           </div>
