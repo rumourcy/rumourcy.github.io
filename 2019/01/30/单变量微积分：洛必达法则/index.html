@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
-<meta name="keywords" content="Math">
+  <meta name="description" content="L’Hospital’s Ruleconvenient way to calculate limits including new ones:  $x \ln x \quad x \to 0^{+}$ $xe^{-x} \quad x \to \infty$ $\frac{\ln x}{x} \quad x \to \infty$">
+<meta name="keywords" content="Math,Calculus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率论：离散随机变量">
-<meta property="og:url" content="http://yoursite.com/2018/04/17/概率论：离散随机变量/index.html">
+<meta property="og:title" content="单变量微积分：洛必达法则">
+<meta property="og:url" content="http://yoursite.com/2019/01/30/单变量微积分：洛必达法则/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
+<meta property="og:description" content="L’Hospital’s Ruleconvenient way to calculate limits including new ones:  $x \ln x \quad x \to 0^{+}$ $xe^{-x} \quad x \to \infty$ $\frac{\ln x}{x} \quad x \to \infty$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T14:10:34.929Z">
+<meta property="og:updated_time" content="2019-01-31T06:18:15.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="概率论：离散随机变量">
-<meta name="twitter:description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
+<meta name="twitter:title" content="单变量微积分：洛必达法则">
+<meta name="twitter:description" content="L’Hospital’s Ruleconvenient way to calculate limits including new ones:  $x \ln x \quad x \to 0^{+}$ $xe^{-x} \quad x \to \infty$ $\frac{\ln x}{x} \quad x \to \infty$">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/17/概率论：离散随机变量/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/30/单变量微积分：洛必达法则/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>概率论：离散随机变量 | trierbo's blog</title>
+  <title>单变量微积分：洛必达法则 | trierbo's blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/概率论：离散随机变量/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/单变量微积分：洛必达法则/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">概率论：离散随机变量
+          <h1 class="post-title" itemprop="name headline">单变量微积分：洛必达法则
               
             
           </h1>
@@ -360,7 +360,7 @@
                 
               
 
-              <time title="Created: 2018-04-17 21:39:08" itemprop="dateCreated datePublished" datetime="2018-04-17T21:39:08+08:00">2018-04-17</time>
+              <time title="Created: 2019-01-30 20:17:48" itemprop="dateCreated datePublished" datetime="2019-01-30T20:17:48+08:00">2019-01-30</time>
             
 
             
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-29 22:10:34" itemprop="dateModified" datetime="2018-11-29T22:10:34+08:00">2018-11-29</time>
+                <time title="Modified: 2019-01-31 14:18:15" itemprop="dateModified" datetime="2019-01-31T14:18:15+08:00">2019-01-31</time>
               
             
           </span>
@@ -410,65 +410,57 @@
       
 
       
-        <h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><ul>
-<li>随机变量期望<br>$$ E[X] = \sum_{x:p(x)&gt;0}xp(x) $$</li>
-<li>随机变量函数期望<br>$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$<br>$$ E[aX+b] = aE[X] + b $$</li>
-<li>n阶矩<br>$$ E[X^n] = \sum_{x:p(x)&gt;0}x^np(x) $$</li>
+        <h3 id="L’Hospital’s-Rule"><a href="#L’Hospital’s-Rule" class="headerlink" title="L’Hospital’s Rule"></a>L’Hospital’s Rule</h3><p>convenient way to calculate limits including new ones:</p>
+<ul>
+<li>$x \ln x \quad x \to 0^{+}$</li>
+<li>$xe^{-x} \quad x \to \infty$</li>
+<li>$\frac{\ln x}{x} \quad x \to \infty$</li>
 </ul>
 <a id="more"></a>
-<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>$$ Var(X) = E[(X-\mu)^2]$$<br>$$ Var(X) = E[X^2] - E^2[x] $$</p>
-<h3 id="离散随机变量分布"><a href="#离散随机变量分布" class="headerlink" title="离散随机变量分布"></a>离散随机变量分布</h3><h4 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h4><p>$$ X =<br>\begin{equation}<br>\begin{cases}<br>1, 试验成功\<br>0, 试验失败<br>\end{cases}<br>\end{equation} $$</p>
-<ul>
-<li>分布列<br>$$ p(0) = P{X=0} = 1 -p $$<br>$$ p(1) = P{X=1} = p $$</li>
-</ul>
-<h4 id="二项随机变量"><a href="#二项随机变量" class="headerlink" title="二项随机变量"></a>二项随机变量</h4><blockquote>
-<p>参数为(n, p)的二项随机变量</p>
-</blockquote>
-<ul>
-<li>分布列<br>$$ p(i) = \binom{n}{i}p^i(1-p)^{n-i} i=0,1,…,n $$<br>$$ \sum_{i=0}^{\infty}p(i) = \sum_{i=0}^{n}\binom{n}{i}p^i(1-p)^{n-i} = [p+(1-p)]^n = 1 $$</li>
-<li>期望<br>$$ E[X] = np $$</li>
-<li>方差<br>$$ Var(X) = np(1-p) $$</li>
-</ul>
-<h4 id="泊松随机变量"><a href="#泊松随机变量" class="headerlink" title="泊松随机变量"></a>泊松随机变量</h4><ul>
-<li>分布列<br>$$ p(i) = P{X = i} = e^{-\lambda}\frac{\lambda^i}{i!} i=0,1,2,… $$</li>
-<li>期望<br>$$ E[X] = \lambda $$</li>
-<li>方差<br>$$ Var(X) = \lambda $$</li>
-</ul>
 <blockquote>
-<p>独立重复进行n次试验，每次成功的概率为p，当n充分大，而p足够小，使得np保持适当的话，那么成功次数近似地服从参数为$\lambda=np$的泊松分布</p>
+<p>Example1 $\lim_{x \to 1} \frac{x^{10} - 1}{x^{2} - 1}$</p>
 </blockquote>
-<hr>
+<p>$\lim_{x \to 1} \frac{x^{10} - 1}{x^{2} - 1} = \lim_{x \to 1} \frac{(x^{10} - 1)/(x - 1)}{(x^{2} - 1)/(x - 1)} = \frac{10x^{9}}{2x} \mid_{x = 1} = \frac{10}{2} = 5$</p>
+<p>$$lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f(x) / (x - a)}{g(x) / (x - a)} = \frac{\lim_{x \to a} \frac{f(x) - f(a)}{x - a}}{\lim_{x \to a} \frac{g(x) - g(a)}{x - a}} = \frac{f’(a)}{g’(a)} (g’(a) \neq 0 \quad f(a) = g(a) = 0)$$</p>
+<h4 id="L’Hosptial’s-Rule-version-1"><a href="#L’Hosptial’s-Rule-version-1" class="headerlink" title="L’Hosptial’s Rule(version 1)"></a>L’Hosptial’s Rule(version 1)</h4><p>$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f’(x)}{g’(x)} (f(a) = g(a) = 0\ and\ the\ right-hand\ limit\ exists)$$</p>
 <blockquote>
-<ul>
-<li>在任意长度为h的时间区间内，恰好发生一个事件的概率彼此相同，都等于$\lambda h+o(h)$</li>
-<li>在任意长度为h的时间区间内发生2个或者更多事件的概率非常小，等于$o(h)$</li>
-<li>对于任意确定的自然数n与非负整数$j_1, j_2, …, j_n$, 以及任意$n$个互不相交的时间区间，若以$E_i$表示”在第$i$个时间区内事件正好发生$j_i$次“，则$E_1, E_2, …, E_n$相互独立<br>则在任何固定长度为t的时间区间内，事件发生的次数是以$\lambda t$为参数的泊松随机变量，称事件是按强度为$\lambda$的泊松过程发生的，常数$\lambda$可解释为单位时间内时间发生的强度</li>
-</ul>
+<p>Example2 $\lim_{x \to 0} \frac{\sin 5x}{\sin 2x}$</p>
 </blockquote>
-<h4 id="几何随机变量"><a href="#几何随机变量" class="headerlink" title="几何随机变量"></a>几何随机变量</h4><blockquote>
-<p>独立重复试验直到成功为止</p>
-</blockquote>
-<ul>
-<li>分布列<br>$$ P{X=n} = (1-p)^{n-1}p $$</li>
-<li>期望<br>$$ E[X] = \frac{1}{p} $$</li>
-<li>方差<br>$$ Var(X) = \frac{1-p}{p^2} $$</li>
-</ul>
-<h4 id="负二项随机变量"><a href="#负二项随机变量" class="headerlink" title="负二项随机变量"></a>负二项随机变量</h4><blockquote>
-<p>独立重复试验知道成功$r$次为止</p>
-</blockquote>
-<ul>
-<li>分布列<br>$$ P{X=n}=\binom{n-1}{r-1}p^r(1-p)^{n-r} $$</li>
-<li>期望<br>$$ E[X] = \frac{r}{p} $$</li>
-<li>方差<br>$$ Var(X) = \frac{r(1-p)}{p^2} $$<h4 id="超几何随机变量"><a href="#超几何随机变量" class="headerlink" title="超几何随机变量"></a>超几何随机变量</h4></li>
-</ul>
+<p>$\lim_{x \to 0} \frac{\sin 5x}{\sin 2x} = \lim_{x \to 0} \frac{5 \cos 5x}{2 \cos 2x} = \frac{5}{2}$</p>
 <blockquote>
-<p>设坛子里面共有$N$个球，其中$m$个白球，$N-m$个黑球，从中随机地（无放回）取出$n$个球，令$X$表示取出来的白球数</p>
+<p>Example3</p>
 </blockquote>
+<p>$\frac{\cos x - 1}{x^{2}} \approx \frac{- \sin x}{2x} \quad x \to 0$<br>$\frac{- \sin x}{2x} \approx \frac{- \cos x}{2} \quad x \to 0$<br>$\frac{- \cos x}{2} \approx \frac{- \cos 0}{2} = -\frac{1}{2} \quad x \to 0$</p>
+<h4 id="L’Hosptial’s-Rule"><a href="#L’Hosptial’s-Rule" class="headerlink" title="L’Hosptial’s Rule"></a>L’Hosptial’s Rule</h4><p>$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f’(x)}{g’(x)}$$</p>
+<blockquote>
+<p>provided $f(a) = g(a) = 0 and the right-hand limit exists$<br>other cases allowed</p>
+<ol>
+<li>$a = \pm \infty$</li>
+<li>$f(a) = \pm \infty \quad g(a) = \pm \infty$</li>
+<li>the right-hand limit exists or $\pm \infty$</li>
+</ol>
+</blockquote>
+<p>Rule applies $\frac{0}{0}$ or $\frac{\infty}{\infty}$(a can be anything include $\pm \infty$)<br>the right-hand limit exists or $\pm \infty$</p>
 <ul>
-<li>分布列<br>$$ P{X=i} = \frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}} $$</li>
-<li>期望<br>$$ E[X] = \frac{nm}{N} $$</li>
-<li>方差<br>$$ Var(X) = np(1-p)(1-\frac{n-1}{N-1}) $$</li>
+<li><p>Example1 $\lim_{x \to 0^{+}} x \ln x$<br>$\lim_{x \to 0^{+}} x \ln x = \lim_{x \to 0^{+}} \frac{\ln x}{\frac{1}{x}} = \lim_{x \to 0^{+}} \frac{1/x}{-1/x^{2}} = \lim_{x \to 0^{+}}(-x) = 0$</p>
+</li>
+<li><p>Example2 $\lim_{x \to infty} xe^{-px} (p \gt 0)$<br>$\lim_{x \to \infty} x e^{-px} = \lim_{x \to \infty} \frac{x}{e^{px}} = \lim_{x \to \infty} \frac{1}{pe^{px}} = \frac{1}{\infty}  = 0$</p>
+<blockquote>
+<p>$x$ grows more slowly than $e^{px}$ as $x \to \infty$</p>
+</blockquote>
+</li>
+<li><p>Example3 $\lim_{x \to \infty} \frac{e^{px}}{x^{100}} (p \gt 0)$<br>$\lim_{x \to \infty} \frac{e^{px}}{x^{100}} = (lim_{x \to \infty} \frac{e^{px / 100}}{x})^{100} = (\frac{\infty}{1})^{100} = \infty$</p>
+<blockquote>
+<p>$e^{px}$ grows faster than any power of $x$</p>
+</blockquote>
+</li>
+<li><p>Example4<br>$\frac{\ln x}{x^{1/3}} \approx \frac{1/x}{\frac{1}{3} x^{-\frac{2}{3}}} = 3x^{\frac{2}{3} - 1} = 3x^{-\frac{1}{3}} \to 0 (x \to \infty)$</p>
+<blockquote>
+<p>$\ln x$ grows more slowly as $x \to \infty$ than $x^{\frac{1}{3}}$ or any power of $x$</p>
+</blockquote>
+</li>
 </ul>
+<h4 id="Another-indetermination-form-0-0"><a href="#Another-indetermination-form-0-0" class="headerlink" title="Another indetermination form: $0^{0}$"></a>Another indetermination form: $0^{0}$</h4><p>$$\lim_{x \to 0^{+}} x^{x} = 1$$<br>use base $e$<br>$x^{x} = e^{x \ln x} \to e^{0}$</p>
 
       
     </div>
@@ -494,6 +486,8 @@
           
             <a href="/tags/Math/" rel="tag"># Math</a>
           
+            <a href="/tags/Calculus/" rel="tag"># Calculus</a>
+          
         </div>
       
 
@@ -505,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/01/概率论：基本概念/" rel="next" title="概率论：基本概念">
-                <i class="fa fa-chevron-left"></i> 概率论：基本概念
+              <a href="/2019/01/30/单变量微积分：参数曲线与极坐标/" rel="next" title="单变量微积分：参数曲线与极坐标">
+                <i class="fa fa-chevron-left"></i> 单变量微积分：参数曲线与极坐标
               </a>
             
           </div>
@@ -514,10 +508,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/22/Emacs基本快捷键/" rel="prev" title="Emacs基本快捷键">
-                Emacs基本快捷键 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -677,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#期望"><span class="nav-number">1.</span> <span class="nav-text">期望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方差"><span class="nav-number">2.</span> <span class="nav-text">方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离散随机变量分布"><span class="nav-number">3.</span> <span class="nav-text">离散随机变量分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伯努利随机变量"><span class="nav-number">3.1.</span> <span class="nav-text">伯努利随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二项随机变量"><span class="nav-number">3.2.</span> <span class="nav-text">二项随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泊松随机变量"><span class="nav-number">3.3.</span> <span class="nav-text">泊松随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几何随机变量"><span class="nav-number">3.4.</span> <span class="nav-text">几何随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负二项随机变量"><span class="nav-number">3.5.</span> <span class="nav-text">负二项随机变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超几何随机变量"><span class="nav-number">3.6.</span> <span class="nav-text">超几何随机变量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#L’Hospital’s-Rule"><span class="nav-number">1.</span> <span class="nav-text">L’Hospital’s Rule</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#L’Hosptial’s-Rule-version-1"><span class="nav-number">1.1.</span> <span class="nav-text">L’Hosptial’s Rule(version 1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#L’Hosptial’s-Rule"><span class="nav-number">1.2.</span> <span class="nav-text">L’Hosptial’s Rule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Another-indetermination-form-0-0"><span class="nav-number">1.3.</span> <span class="nav-text">Another indetermination form: $0^{0}$</span></a></li></ol></li></ol></div>
             
 
           </div>
