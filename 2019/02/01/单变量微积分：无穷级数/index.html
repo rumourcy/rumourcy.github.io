@@ -108,35 +108,25 @@
 
 
 
-  <meta name="description" content="基本概念  基音(fundamental tone)：发音体整体振动产生的音泛音(harmonics/overtones)：物体局部振动产生的音  误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的">
-<meta name="keywords" content="MIR">
+  <meta name="description" content="Geometric Series(几何级数) 等比数列$a_{1}, a_{1}r, a_{1}r^{2},…$$S_{n} = a_{1}\frac{r^{n} - 1}{r - 1}$  $1 + a + a^{2} + a^{3} + … = \frac{1}{1 - a} \quad |a| \lt 1, -1 \lt a \lt 1$ 等比级数 常数项级数diverge  $a = 1">
+<meta name="keywords" content="Math,Calculus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Harmonics">
-<meta property="og:url" content="http://yoursite.com/2018/01/12/Harmonics/index.html">
+<meta property="og:title" content="单变量微积分：无穷级数">
+<meta property="og:url" content="http://yoursite.com/2019/02/01/单变量微积分：无穷级数/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="基本概念  基音(fundamental tone)：发音体整体振动产生的音泛音(harmonics/overtones)：物体局部振动产生的音  误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的">
+<meta property="og:description" content="Geometric Series(几何级数) 等比数列$a_{1}, a_{1}r, a_{1}r^{2},…$$S_{n} = a_{1}\frac{r^{n} - 1}{r - 1}$  $1 + a + a^{2} + a^{3} + … = \frac{1}{1 - a} \quad |a| \lt 1, -1 \lt a \lt 1$ 等比级数 常数项级数diverge  $a = 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/Standing_wave.gif">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/Standing_waves_on_a_string.gif">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/fundamental.gif">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/1stovertone.gif">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/2ndovertone.gif">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/3rdovertone.gif">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/synthesis.jpg">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/vibration.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/Moodswingerscale.png">
-<meta property="og:updated_time" content="2019-01-05T13:23:23.795Z">
+<meta property="og:updated_time" content="2019-02-01T12:32:44.092Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Harmonics">
-<meta name="twitter:description" content="基本概念  基音(fundamental tone)：发音体整体振动产生的音泛音(harmonics/overtones)：物体局部振动产生的音  误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的">
-<meta name="twitter:image" content="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/Standing_wave.gif">
+<meta name="twitter:title" content="单变量微积分：无穷级数">
+<meta name="twitter:description" content="Geometric Series(几何级数) 等比数列$a_{1}, a_{1}r, a_{1}r^{2},…$$S_{n} = a_{1}\frac{r^{n} - 1}{r - 1}$  $1 + a + a^{2} + a^{3} + … = \frac{1}{1 - a} \quad |a| \lt 1, -1 \lt a \lt 1$ 等比级数 常数项级数diverge  $a = 1">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/12/Harmonics/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/01/单变量微积分：无穷级数/">
 
 
 
@@ -146,7 +136,7 @@
   };
 </script>
 
-  <title>Harmonics | trierbo's blog</title>
+  <title>单变量微积分：无穷级数 | trierbo's blog</title>
   
 
 
@@ -328,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/12/Harmonics/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/单变量微积分：无穷级数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -345,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Harmonics
+          <h1 class="post-title" itemprop="name headline">单变量微积分：无穷级数
               
             
           </h1>
@@ -370,24 +360,12 @@
                 
               
 
-              <time title="Created: 2018-01-12 11:07:27" itemprop="dateCreated datePublished" datetime="2018-01-12T11:07:27+08:00">2018-01-12</time>
+              <time title="Created: 2019-02-01 15:23:43 / Modified: 20:32:44" itemprop="dateCreated datePublished" datetime="2019-02-01T15:23:43+08:00">2019-02-01</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-01-05 21:23:23" itemprop="dateModified" datetime="2019-01-05T21:23:23+08:00">2019-01-05</time>
               
             
           </span>
@@ -420,70 +398,64 @@
       
 
       
-        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><hr>
-<blockquote>
-<p>基音(fundamental tone)：发音体整体振动产生的音<br>泛音(harmonics/overtones)：物体局部振动产生的音</p>
+        <h3 id="Geometric-Series-几何级数"><a href="#Geometric-Series-几何级数" class="headerlink" title="Geometric Series(几何级数)"></a>Geometric Series(几何级数)</h3><blockquote>
+<p>等比数列$a_{1}, a_{1}r, a_{1}r^{2},…$<br>$S_{n} = a_{1}\frac{r^{n} - 1}{r - 1}$</p>
 </blockquote>
-<p><strong>误区:泛音乐器的音不是音高确定之后就存在某一固定的频率范围，而是分布在一个广大的频率区间内，其实是有若干频率的音合成的</strong></p>
-<a id="more"></a>
-<h3 id="局部振动"><a href="#局部振动" class="headerlink" title="局部振动"></a>局部振动</h3><hr>
-<p><em>一根弦分四部分振动</em><br><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/Standing_wave.gif" alt="局部振动"></p>
-<p>弦的每部分振动都会产生局部振动，局部振动的频率是基频的2、3等整数倍；<br>例如基音A的频率是440Hz，它的泛音列就包含了880、1320、1760、2200Hz等一系列频率。</p>
-<p><em>局部振动产生泛音</em><br><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/Standing_waves_on_a_string.gif" alt="泛音"></p>
-<p>按照先从左至右，再从上至下，分别表示的是基音、第一泛音、第二泛音等</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Frequency</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">Wave Representation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1 * f = 440Hz</td>
-<td style="text-align:center">fundamental tone</td>
-<td style="text-align:center"><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/fundamental.gif" alt=""></td>
-</tr>
-<tr>
-<td style="text-align:center">2 * f = 880Hz</td>
-<td style="text-align:center">1st overtone</td>
-<td style="text-align:center"><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/1stovertone.gif" alt=""></td>
-</tr>
-<tr>
-<td style="text-align:center">3 * f = 1320Hz</td>
-<td style="text-align:center">2nd overtone</td>
-<td style="text-align:center"><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/2ndovertone.gif" alt=""></td>
-</tr>
-<tr>
-<td style="text-align:center">3 * f = 1760Hz</td>
-<td style="text-align:center">3rd overtone</td>
-<td style="text-align:center"><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/3rdovertone.gif" alt=""></td>
-</tr>
-</tbody>
-</table>
-<h3 id="基音-泛音"><a href="#基音-泛音" class="headerlink" title="基音/泛音"></a>基音/泛音</h3><hr>
-<p><em>音的合成</em><br><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/synthesis.jpg" alt="synthesis"></p>
-<blockquote>
-<p>假定这就是单位时间的波形图，第一张图的频率是2，第二张图的频率是4<br>由于波形重复两次，则第三张图的频率，所以频率是2<br>合成音的频率是基音和泛音频率的最大公约数<br>泛音乐器发出的音是由基音和泛音的合成</p>
-</blockquote>
-<p><em>泛音形成的原理：驻波</em><br>同频波经过反射形成了叠加，从而形成驻波；所以，能形成驻波，必须是物体长度是1/2波长的整数倍；这样才能形成叠加。</p>
-<p><strong>基音决定音高，泛音决定音色</strong></p>
-<blockquote>
-<p>物体振动总是有固定频率和固定音色的原因：只有一些频率的波才能在物体中形成驻波，从而持续下去；其他频率的波很快就会消散掉。</p>
-</blockquote>
-<h3 id="吉他泛音"><a href="#吉他泛音" class="headerlink" title="吉他泛音"></a>吉他泛音</h3><hr>
-<p><em>弦振动公式</em></p>
-<blockquote>
-<p>若弦的张力是$T$(单位为$N$)，单位长度的质量为$u(kg)$，<br>而$W_{T}$是弦的波速，则弦线的几个基本频率$v_{n}$为:<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/vibration.png" alt="vibration"></p>
-</blockquote>
-<blockquote>
+<p>$1 + a + a^{2} + a^{3} + … = \frac{1}{1 - a} \quad |a| \lt 1, -1 \lt a \lt 1$ <code>等比级数</code> <code>常数项级数</code><br><code>diverge</code></p>
 <ul>
-<li>弦振动时会产生多个频率的音，当n=1的时候产生的音叫基音，当n=2,3,4…产生的音叫泛音，分别叫做第一泛音，第二泛音等</li>
-<li>频率和弦长、弦的张力，单位长度的质量有关，而且频率和弦长是成反比的。</li>
+<li>$a = 1 \quad 1 + 1 + 1 + … = \frac{1}{1-1} = \frac{1}{0}$</li>
+<li>$a = -1 \quad 1 - 1 + 1 - 1 + … = \frac{1}{1-(-1)} = \frac{1}{2}$</li>
+<li>$a = 2 \quad 1 + 2 + 2^{2} + 2^{3} + … = \frac{1}{1-2} = -1$</li>
+</ul>
+<h3 id="Infinite-Series-无穷级数"><a href="#Infinite-Series-无穷级数" class="headerlink" title="Infinite Series(无穷级数)"></a>Infinite Series(无穷级数)</h3><p>$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + … = 2$</p>
+<blockquote>
+<p>Notation<br>$S_{N} = \sum_{n = 0}^{N} a_{n}$ <code>partial sum</code><br>$S = \sum_{n = 0}^{\infty} a_{n} = \lim_{N \to \infty} S_{N}$</p>
+<ul>
+<li>limit exists (the series converges)</li>
+<li>limit doesn’t exist (the series diverges)</li>
 </ul>
 </blockquote>
-<p>所以拨弦之后，弦会分别做如下图的运动：<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/harmonic/Moodswingerscale.png" alt="Moodswingerscale"></p>
+<ul>
+<li><p>Example1 $\sum_{n = 1}^{\infty} \frac{1}{n^{2}} \sim \int_{1}^{\infty} \frac{dx}{x^{2}}$ <code>converge</code></p>
+<blockquote>
+<p>$\sim$表示相似, 说明具有相同的收敛性</p>
+</blockquote>
+</li>
+<li><p>Example2 $\sum_{n=1}^{\infty} \frac{1}{n^{3}} \sim \int_{1}^{\infty} \frac{dx}{x^{3}}$ <code>converge</code></p>
+</li>
+<li><p>Example3 $\sum_{n=1}^{\infty} \frac{1}{n} \sim \int_{1}^{\infty} \frac{dx}{x}$ <code>diverge</code></p>
+<blockquote>
+<p>$S_{N} = 1 + \frac{1}{2} + … + \frac{1}{N}$<br>Upper Riemann Sum ($\Delta x = 1$)<br>$\int_{1}^{N} \frac{dx}{x} \lt 1 + \frac{1}{2} + … +\frac{1}{N-1} \lt S_{N} \to \ln N \lt S_{N}$<br>Lower Riemann Sum ($\Delta x = 1$)<br>$\int_{1}^{N} \gt \frac{1}{2} + \frac{1}{3} + … + \frac{1}{N} = S_{N} - 1$<br>$\ln N \lt S_{N} \lt \ln N + 1$</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Integral-Comparsion"><a href="#Integral-Comparsion" class="headerlink" title="Integral Comparsion"></a>Integral Comparsion</h4><p>If $f(x)$ is decreasing, $f(x) \gt 0$<br>then $\mid \sum_{n=1}^{\infty} f(n) - \int_{1}^{\infty} f(x) dx \mid \lt f(1)$<br>and $\sum_{n = 1}^{\infty} f(n)$ and $\int_{1}^{\infty} f(x) dx$ converge or diverge together</p>
+<h4 id="Limit-Comparsion"><a href="#Limit-Comparsion" class="headerlink" title="Limit Comparsion"></a>Limit Comparsion</h4><p>If $f(n) \sim g(n)$ ($\lim \frac{f(n)}{g(n)} = 1$ as $n \to \infty$)<br>and $f(n) \gt 0\ g(n) \gt 0$ all $n$(in a positive case)<br>then $\sum f(n)$ and $\sum g(n)$ either both converge or both diverge</p>
+<ul>
+<li>Example1 $\sum \frac{1}{\sqrt{n^{2} + 1}} \sim \sum \frac{1}{\sqrt{n^{2}}} = \sum \frac{1}{n}$ <code>diverge</code></li>
+<li>Example2 $\sum_{n=2}^{\infty} \frac{1}{\sqrt{n^{5} - n^{2}}} \sim \sum \frac{1}{\sqrt{n^{5}}} = \sum \frac{1}{n^{5/2}}$ <code>converge</code></li>
+</ul>
+<h3 id="Power-Series-幂级数"><a href="#Power-Series-幂级数" class="headerlink" title="Power Series(幂级数)"></a>Power Series(幂级数)</h3><p>$1 + x + x^{2} + x^{3} + … = \frac{1}{1 - x} \quad |x| \lt 1$ <code>函数项级数</code></p>
+<blockquote>
+<p>$1 + x + x^{2} + … = S$<br>$(1 + x + x^{2} + … = S)x$<br>$- (x + x^{2} + x^{3} + … = Sx)$<br>$1 = S - Sx = S(1-x)$<br>$x = \frac{1}{1-x}$</p>
+</blockquote>
+<h4 id="General-Power-Series"><a href="#General-Power-Series" class="headerlink" title="General Power Series"></a>General Power Series</h4><p>$$a_{0} + a_{1} x + a_{2} x^{2} + a_{3} x^{3} + … = \sum_{n = 0}^{\infty} a_{n} x^{n}$$</p>
+<ul>
+<li>$|x| \lt R$ where series converges<code>radius of convergence</code></li>
+<li>$|x| \gt R$ <code>diverge</code></li>
+<li>$|x| = R$ <code>delicate</code></li>
+<li>$|a_{n} x^{n}| \to 0$ for $|x| \lt R$</li>
+<li>$|a_{n} x^{n}| \to 0$ for $|x| \gt R$</li>
+</ul>
+<p>Rules for convergent power series are just like polynomials</p>
+<ul>
+<li>$f(x) + g(x)$</li>
+<li>$f(x) \cdot g(x)$</li>
+<li>$f(g(x))$</li>
+<li>$\frac{f(x)}{g(x)}$</li>
+<li>$\frac{d f(x)}{dx}$<br>$\frac{d(a_{0} + a_{1} x + a_{2} x^{2} + …)}{dx} = a_{1} + 2a_{2}x + …$</li>
+<li>$\int f(x) dx$<br>$\int (a_{0} + a_{1} x + a_{2} x^{2}+ …) dx = c + a_{0} x + a_{1} \frac{x^{2}}{2} + a_{2} \frac{x^{3}}{3} + …$</li>
+</ul>
 
       
     </div>
@@ -507,7 +479,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MIR/" rel="tag"># MIR</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
+          
+            <a href="/tags/Calculus/" rel="tag"># Calculus</a>
           
         </div>
       
@@ -520,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/01/31/单变量微积分：反常积分/" rel="next" title="单变量微积分：反常积分">
+                <i class="fa fa-chevron-left"></i> 单变量微积分：反常积分
               </a>
             
           </div>
@@ -529,10 +503,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/15/Complex-Number/" rel="prev" title="Complex Number">
-                Complex Number <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -692,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部振动"><span class="nav-number">2.</span> <span class="nav-text">局部振动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基音-泛音"><span class="nav-number">3.</span> <span class="nav-text">基音/泛音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#吉他泛音"><span class="nav-number">4.</span> <span class="nav-text">吉他泛音</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Geometric-Series-几何级数"><span class="nav-number">1.</span> <span class="nav-text">Geometric Series(几何级数)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Infinite-Series-无穷级数"><span class="nav-number">2.</span> <span class="nav-text">Infinite Series(无穷级数)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Integral-Comparsion"><span class="nav-number">2.1.</span> <span class="nav-text">Integral Comparsion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Limit-Comparsion"><span class="nav-number">2.2.</span> <span class="nav-text">Limit Comparsion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power-Series-幂级数"><span class="nav-number">3.</span> <span class="nav-text">Power Series(幂级数)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#General-Power-Series"><span class="nav-number">3.1.</span> <span class="nav-text">General Power Series</span></a></li></ol></li></ol></div>
             
 
           </div>

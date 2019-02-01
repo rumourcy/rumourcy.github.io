@@ -317,6 +317,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/单变量微积分：无穷级数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="trierbo">
+      <meta itemprop="description" content="Be evil!">
+      <meta itemprop="image" content="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="trierbo's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/01/单变量微积分：无穷级数/" class="post-title-link" itemprop="http://yoursite.com/index.html">单变量微积分：无穷级数</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-01 15:23:43 / Modified: 20:32:44" itemprop="dateCreated datePublished" datetime="2019-02-01T15:23:43+08:00">2019-02-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Geometric-Series-几何级数"><a href="#Geometric-Series-几何级数" class="headerlink" title="Geometric Series(几何级数)"></a>Geometric Series(几何级数)</h3><blockquote>
+<p>等比数列$a_{1}, a_{1}r, a_{1}r^{2},…$<br>$S_{n} = a_{1}\frac{r^{n} - 1}{r - 1}$</p>
+</blockquote>
+<p>$1 + a + a^{2} + a^{3} + … = \frac{1}{1 - a} \quad |a| \lt 1, -1 \lt a \lt 1$ <code>等比级数</code> <code>常数项级数</code><br><code>diverge</code></p>
+<ul>
+<li>$a = 1 \quad 1 + 1 + 1 + … = \frac{1}{1-1} = \frac{1}{0}$</li>
+<li>$a = -1 \quad 1 - 1 + 1 - 1 + … = \frac{1}{1-(-1)} = \frac{1}{2}$</li>
+<li>$a = 2 \quad 1 + 2 + 2^{2} + 2^{3} + … = \frac{1}{1-2} = -1$</li>
+</ul>
+<h3 id="Infinite-Series-无穷级数"><a href="#Infinite-Series-无穷级数" class="headerlink" title="Infinite Series(无穷级数)"></a>Infinite Series(无穷级数)</h3><p>$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + … = 2$</p>
+<blockquote>
+<p>Notation<br>$S_{N} = \sum_{n = 0}^{N} a_{n}$ <code>partial sum</code><br>$S = \sum_{n = 0}^{\infty} a_{n} = \lim_{N \to \infty} S_{N}$</p>
+<ul>
+<li>limit exists (the series converges)</li>
+<li>limit doesn’t exist (the series diverges)</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>Example1 $\sum_{n = 1}^{\infty} \frac{1}{n^{2}} \sim \int_{1}^{\infty} \frac{dx}{x^{2}}$ <code>converge</code></p>
+<blockquote>
+<p>$\sim$表示相似, 说明具有相同的收敛性</p>
+</blockquote>
+</li>
+<li><p>Example2 $\sum_{n=1}^{\infty} \frac{1}{n^{3}} \sim \int_{1}^{\infty} \frac{dx}{x^{3}}$ <code>converge</code></p>
+</li>
+<li><p>Example3 $\sum_{n=1}^{\infty} \frac{1}{n} \sim \int_{1}^{\infty} \frac{dx}{x}$ <code>diverge</code></p>
+<blockquote>
+<p>$S_{N} = 1 + \frac{1}{2} + … + \frac{1}{N}$<br>Upper Riemann Sum ($\Delta x = 1$)<br>$\int_{1}^{N} \frac{dx}{x} \lt 1 + \frac{1}{2} + … +\frac{1}{N-1} \lt S_{N} \to \ln N \lt S_{N}$<br>Lower Riemann Sum ($\Delta x = 1$)<br>$\int_{1}^{N} \gt \frac{1}{2} + \frac{1}{3} + … + \frac{1}{N} = S_{N} - 1$<br>$\ln N \lt S_{N} \lt \ln N + 1$</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Integral-Comparsion"><a href="#Integral-Comparsion" class="headerlink" title="Integral Comparsion"></a>Integral Comparsion</h4><p>If $f(x)$ is decreasing, $f(x) \gt 0$<br>then $\mid \sum_{n=1}^{\infty} f(n) - \int_{1}^{\infty} f(x) dx \mid \lt f(1)$<br>and $\sum_{n = 1}^{\infty} f(n)$ and $\int_{1}^{\infty} f(x) dx$ converge or diverge together</p>
+<h4 id="Limit-Comparsion"><a href="#Limit-Comparsion" class="headerlink" title="Limit Comparsion"></a>Limit Comparsion</h4><p>If $f(n) \sim g(n)$ ($\lim \frac{f(n)}{g(n)} = 1$ as $n \to \infty$)<br>and $f(n) \gt 0\ g(n) \gt 0$ all $n$(in a positive case)<br>then $\sum f(n)$ and $\sum g(n)$ either both converge or both diverge</p>
+<ul>
+<li>Example1 $\sum \frac{1}{\sqrt{n^{2} + 1}} \sim \sum \frac{1}{\sqrt{n^{2}}} = \sum \frac{1}{n}$ <code>diverge</code></li>
+<li>Example2 $\sum_{n=2}^{\infty} \frac{1}{\sqrt{n^{5} - n^{2}}} \sim \sum \frac{1}{\sqrt{n^{5}}} = \sum \frac{1}{n^{5/2}}$ <code>converge</code></li>
+</ul>
+<h3 id="Power-Series-幂级数"><a href="#Power-Series-幂级数" class="headerlink" title="Power Series(幂级数)"></a>Power Series(幂级数)</h3><p>$1 + x + x^{2} + x^{3} + … = \frac{1}{1 - x} \quad |x| \lt 1$ <code>函数项级数</code></p>
+<blockquote>
+<p>$1 + x + x^{2} + … = S$<br>$(1 + x + x^{2} + … = S)x$<br>$- (x + x^{2} + x^{3} + … = Sx)$<br>$1 = S - Sx = S(1-x)$<br>$x = \frac{1}{1-x}$</p>
+</blockquote>
+<h4 id="General-Power-Series"><a href="#General-Power-Series" class="headerlink" title="General Power Series"></a>General Power Series</h4><p>$$a_{0} + a_{1} x + a_{2} x^{2} + a_{3} x^{3} + … = \sum_{n = 0}^{\infty} a_{n} x^{n}$$</p>
+<ul>
+<li>$|x| \lt R$ where series converges<code>radius of convergence</code></li>
+<li>$|x| \gt R$ <code>diverge</code></li>
+<li>$|x| = R$ <code>delicate</code></li>
+<li>$|a_{n} x^{n}| \to 0$ for $|x| \lt R$</li>
+<li>$|a_{n} x^{n}| \to 0$ for $|x| \gt R$</li>
+</ul>
+<p>Rules for convergent power series are just like polynomials</p>
+<ul>
+<li>$f(x) + g(x)$</li>
+<li>$f(x) \cdot g(x)$</li>
+<li>$f(g(x))$</li>
+<li>$\frac{f(x)}{g(x)}$</li>
+<li>$\frac{d f(x)}{dx}$<br>$\frac{d(a_{0} + a_{1} x + a_{2} x^{2} + …)}{dx} = a_{1} + 2a_{2}x + …$</li>
+<li>$\int f(x) dx$<br>$\int (a_{0} + a_{1} x + a_{2} x^{2}+ …) dx = c + a_{0} x + a_{1} \frac{x^{2}}{2} + a_{2} \frac{x^{3}}{3} + …$</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/单变量微积分：反常积分/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -379,7 +578,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-01 15:19:37" itemprop="dateModified" datetime="2019-02-01T15:19:37+08:00">2019-02-01</time>
+                <time title="Modified: 2019-02-01 15:57:40" itemprop="dateModified" datetime="2019-02-01T15:57:40+08:00">2019-02-01</time>
               
             
           </span>
@@ -1733,166 +1932,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/单变量微积分：微分中值定理/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="trierbo">
-      <meta itemprop="description" content="Be evil!">
-      <meta itemprop="image" content="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="trierbo's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/28/单变量微积分：微分中值定理/" class="post-title-link" itemprop="http://yoursite.com/index.html">单变量微积分：微分中值定理</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-12-28 18:40:15" itemprop="dateCreated datePublished" datetime="2018-12-28T18:40:15+08:00">2018-12-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-29 21:50:08" itemprop="dateModified" datetime="2018-12-29T21:50:08+08:00">2018-12-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="中值定理-Mean-Value-Theorem-MVT"><a href="#中值定理-Mean-Value-Theorem-MVT" class="headerlink" title="中值定理(Mean Value Theorem, MVT)"></a>中值定理(Mean Value Theorem, MVT)</h3><p>$$\frac{f(b)-f(a)}{b-a} = f’(c)$$<br>for some $c$, $a \lt c \lt b$<br>if $f$ is differentiable in $a \lt x \lt b$ and continuous in $a \leq x \leq b$</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/28/单变量微积分：微分中值定理/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1942,7 +1981,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
