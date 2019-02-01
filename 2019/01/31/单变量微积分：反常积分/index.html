@@ -108,27 +108,25 @@
 
 
 
-  <meta name="description" content="连续若函数在$x_0$处有定义且满足下式：$${\lim_{x \to x_0}}f(x) = f(x_0)$$则函数$f(x)$在$x_0$处连续。">
-<meta name="keywords" content="Calculus">
+  <meta name="description" content="Improper Integral(反常积分) Define  $$\int_{a}^{\infty} f(x) dx = \lim_{N \to \infty} \int_{a}^{N} f(x) dx$$  The integral converges if limit exists $\to$ total area is finiteThe integral diverges if limi">
+<meta name="keywords" content="Math,Calculus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单变量微积分：导数基本概念">
-<meta property="og:url" content="http://yoursite.com/2018/10/05/单变量微积分：导数基本概念/index.html">
+<meta property="og:title" content="单变量微积分：反常积分">
+<meta property="og:url" content="http://yoursite.com/2019/01/31/单变量微积分：反常积分/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="连续若函数在$x_0$处有定义且满足下式：$${\lim_{x \to x_0}}f(x) = f(x_0)$$则函数$f(x)$在$x_0$处连续。">
+<meta property="og:description" content="Improper Integral(反常积分) Define  $$\int_{a}^{\infty} f(x) dx = \lim_{N \to \infty} \int_{a}^{N} f(x) dx$$  The integral converges if limit exists $\to$ total area is finiteThe integral diverges if limi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p2fe5tghw.bkt.clouddn.com/singlevariablecalculussin%281divx%29.svg">
-<meta property="og:updated_time" content="2019-01-30T09:18:54.848Z">
+<meta property="og:updated_time" content="2019-02-01T07:19:37.471Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单变量微积分：导数基本概念">
-<meta name="twitter:description" content="连续若函数在$x_0$处有定义且满足下式：$${\lim_{x \to x_0}}f(x) = f(x_0)$$则函数$f(x)$在$x_0$处连续。">
-<meta name="twitter:image" content="http://p2fe5tghw.bkt.clouddn.com/singlevariablecalculussin%281divx%29.svg">
+<meta name="twitter:title" content="单变量微积分：反常积分">
+<meta name="twitter:description" content="Improper Integral(反常积分) Define  $$\int_{a}^{\infty} f(x) dx = \lim_{N \to \infty} \int_{a}^{N} f(x) dx$$  The integral converges if limit exists $\to$ total area is finiteThe integral diverges if limi">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/05/单变量微积分：导数基本概念/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/31/单变量微积分：反常积分/">
 
 
 
@@ -138,7 +136,7 @@
   };
 </script>
 
-  <title>单变量微积分：导数基本概念 | trierbo's blog</title>
+  <title>单变量微积分：反常积分 | trierbo's blog</title>
   
 
 
@@ -320,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/05/单变量微积分：导数基本概念/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/单变量微积分：反常积分/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -337,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">单变量微积分：导数基本概念
+          <h1 class="post-title" itemprop="name headline">单变量微积分：反常积分
               
             
           </h1>
@@ -362,7 +360,7 @@
                 
               
 
-              <time title="Created: 2018-10-05 20:32:51" itemprop="dateCreated datePublished" datetime="2018-10-05T20:32:51+08:00">2018-10-05</time>
+              <time title="Created: 2019-01-31 14:20:14" itemprop="dateCreated datePublished" datetime="2019-01-31T14:20:14+08:00">2019-01-31</time>
             
 
             
@@ -379,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-30 17:18:54" itemprop="dateModified" datetime="2019-01-30T17:18:54+08:00">2019-01-30</time>
+                <time title="Modified: 2019-02-01 15:19:37" itemprop="dateModified" datetime="2019-02-01T15:19:37+08:00">2019-02-01</time>
               
             
           </span>
@@ -412,36 +410,57 @@
       
 
       
-        <h3 id="连续"><a href="#连续" class="headerlink" title="连续"></a>连续</h3><p>若函数在$x_0$处有定义且满足下式：<br>$${\lim_{x \to x_0}}f(x) = f(x_0)$$<br>则函数$f(x)$在$x_0$处连续。</p>
-<a id="more"></a>
-<h3 id="极限存在"><a href="#极限存在" class="headerlink" title="极限存在"></a>极限存在</h3><p>极限存在条件为左右极限存在其相等, 极限为$\infty$时极限不存在, 即：<br>$$\lim_{x \to x_0^-}f(x) = \lim_{x \to x_0^+}f(x) \neq \infty$$</p>
-<h3 id="间断"><a href="#间断" class="headerlink" title="间断"></a>间断</h3><ul>
-<li>跳跃间断<blockquote>
-<p>左右极限存在但不相等</p>
+        <h3 id="Improper-Integral-反常积分"><a href="#Improper-Integral-反常积分" class="headerlink" title="Improper Integral(反常积分)"></a>Improper Integral(反常积分)</h3><blockquote>
+<p>Define</p>
 </blockquote>
-</li>
-<li>可去间断<blockquote>
-<p>极限存在, 但函数在该点未定义或函数值与极限不相等</p>
-</blockquote>
-</li>
-<li>无穷间断<blockquote>
-<p>e.g $f(x) = \frac{1}{x}$,  当$x=0$时</p>
-</blockquote>
-</li>
-<li>另类间断<blockquote>
-<p>e.g $f(x) = \sin{\frac{1}{x}}$, 当$x \to 0$时无限震荡<br><img src="http://p2fe5tghw.bkt.clouddn.com/singlevariablecalculussin%281divx%29.svg" alt="sin(1/x)"></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="导数定义"><a href="#导数定义" class="headerlink" title="导数定义"></a>导数定义</h3><p>$$f’(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$</p>
-<h3 id="可导与连续之间的关系"><a href="#可导与连续之间的关系" class="headerlink" title="可导与连续之间的关系"></a>可导与连续之间的关系</h3><p>$f(x)$在$x_0$处可导, 则$f(x)$在$x_0$处必连续</p>
+<p>$$\int_{a}^{\infty} f(x) dx = \lim_{N \to \infty} \int_{a}^{N} f(x) dx$$</p>
 <blockquote>
-<p>证：在$x_0$处连续 $\Longleftrightarrow$ $\lim_{x \to x_0}f(x) - f(x_0) = 0$<br>$$\lim_{x \to x_0} f(x) - f(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} (x - x_0) = f’(x_0)*0 = 0$$</p>
+<p>The integral converges if limit exists $\to$ total area is finite<br>The integral diverges if limit dosen’t exist $\to$ total area is infinite</p>
 </blockquote>
-<h3 id="常见极限公式"><a href="#常见极限公式" class="headerlink" title="常见极限公式"></a>常见极限公式</h3><ul>
-<li>$$\lim_{x \to 0} \frac{\cos x - 1}{x} = 0$$</li>
-<li>$$\lim_{x \to 0} \frac{\sin x}{x} = 1$$</li>
+<a id="more"></a>
+<ul>
+<li><p>Example1 $\int_{0}^{\infty} e^{-kx} dx = \frac{1}{k}(k \gt 0)$<br>$\int_{0}^{N} e^{-kx} dx = -\frac{1}{k} e^{-kx} \mid_{0}^{N} = -\frac{1}{N} e^{-kN} - (-\frac{1}{k})$<br>as $N \to \infty$<br>$= \frac{1}{k}$<br>shorthand<br>$\int_{0}^{\infty} e^{-kx} dx = -\frac{1}{k} e^{-kx} \mid_{0}^{\infty} = -\frac{1}{k} e^{-\infty} - (-\frac{1}{k}) = \frac{1}{k}$</p>
+</li>
+<li><p>Example2 $\int_{-\infty}^{\infty} e^{-x^{2}} dx = \sqrt{\pi}$</p>
+</li>
+<li><p>Example3 $\int_{1}^{\infty} \frac{dx}{x}$ <code>diverge</code><br>$p = 1$ 临界情况<br>$\int_{1}^{N} \frac{dx}{x} = \ln x \mid_{1}^{N} = \ln N - \ln 1 = \ln N \to \infty \quad (N \to \infty)$<br>$p \neq 1$<br>$\int_{1}^{\infty} \frac{dx}{x^{p}} = \frac{x^{-p+1}}{-p+1} \mid_{1}^{\infty} = \frac{\infty^{-p+1}}{-p+1} - \frac{1}{-p+1}$<br>$p \lt 1 \to \infty$<br>$p \gt 1 \to 0 + \frac{1}{p-1}$</p>
+<blockquote>
+<p>CONCLUSION<br>$\int_{1}^{\infty} \frac{dx}{x^{p}}$ diverges if $p \leq 1$<br>$\int_{1}^{\infty} \frac{dx}{x^{p}}$ converges if $p \gt 1$($= \frac{1}{p-1}$)</p>
+</blockquote>
+</li>
 </ul>
+<h3 id="Limit-Comparsion-极限比较"><a href="#Limit-Comparsion-极限比较" class="headerlink" title="Limit Comparsion(极限比较)"></a>Limit Comparsion(极限比较)</h3><blockquote>
+<p>If $f(x) \sim g(x)$ as $x \to \infty$ $\Longrightarrow$ $f \sim g$ as $x \to \infty$ means $\frac{f(x)}{g(x)} \to 1$<br>then $\int_a^{\infty} dx$ and $\int_{a}^{\infty} g(x) dx$(large  $a$)<br>either both converge or both diverge</p>
+</blockquote>
+<ul>
+<li>Example1 $\int_{0}^{\infty} \frac{dx}{\sqrt{x^{2} + 10}}$ <code>diverge</code><br>$\sqrt{x^{2} + 10} \sim \sqrt{x^{2}} = x$<br>$\int_{1}^{\infty} \frac{dx}{x}$ <code>diverge</code><br>ignore the part $\int_{0}^{1} \frac{dx}{\sqrt{x^{2} + 10}}$ <code>finite</code></li>
+</ul>
+<blockquote>
+<p>$(a, \infty)$应该是尾巴部分<br>若对任何$\int_{b}^{c} f(x) dx$和$\int_{b}^{c} g(x) dx$有限, 且$(b, c) \subset (a, \infty)$<br>$\int_{a}^{\infty} f(x) dx$和$\int_{b}^{\infty} f(x) dx$收敛性相同    </p>
+</blockquote>
+<ul>
+<li><p>Example2 $\int_{10}^{\infty} \frac{dx}{\sqrt{x^{3} + 3}}$ <code>converge</code><br>$\frac{1}{\sqrt{x^{3} + 3}} \sim \frac{1}{\sqrt{x^{3}}} = \frac{1}{x^{3/2}}$<br>$\int_{10}^{\infty} \frac{dx}{x^{3/2}}$ <code>converge</code></p>
+</li>
+<li><p>Example3 $\int_{-\infty}^{\infty} e^{-x^{2}} dx = 2 \int_{0}^{\infty} e^{-x^{2}} dx$ <code>converge not evaluation</code><br>comparsion $e^{-x^{2}} \leq e^{-x} \quad x \geq 1$<br>$\int_{1}^{\infty} e^{-x^{2}} dx \leq \int_{1}^{\infty} e^{-x} dx$ <code>converge</code><br>$\int_{-\infty}^{\infty} e^{-x^{2}} dx \leq 2 \int_{0}^{1} e^{-x^{2}} dx + 2 \int_{1}^{\infty} e^{-x} dx$</p>
+</li>
+</ul>
+<h3 id="Improper-Integral-of-2nd-Type"><a href="#Improper-Integral-of-2nd-Type" class="headerlink" title="Improper Integral of 2nd Type"></a>Improper Integral of 2nd Type</h3><p>$\int_{0}^{1} \frac{dx}{\sqrt{x}}$, $\int_{0}^{1} \frac{dx}{x}$, $\int_{0}^{1} \frac{dx}{x^{2}}$</p>
+<blockquote>
+<p>$\int_{-1}^{1} \frac{dx}{x^{2}} = -x^{-1} \mid_{-1}^{1} = -(1)^{-1} - (-(-1)^{-1}) = -2$ <code>wrong</code> <code>diverge</code></p>
+</blockquote>
+<p>Define $\int_{0}^{1} f(x) dx = \lim_{a \to 0^{+}} \int_{a}^{1} f(x) dx$<br>converges if the limit exists<br>diverges if the limit doesn’t exist</p>
+<ul>
+<li>Example1 $\int_{0}^{1} \frac{dx}{\sqrt{x}}  = \int_{0}^{1} x^{-\frac{1}{2}} dx = 2x^{1/2} \mid_{0}^{1} = 2 - 0 = 2$</li>
+<li>Example2 $\int_{0}^{1} \frac{dx}{x} = \ln x \mid_{0}^{1} = \ln 1 - \ln 0^{+} = 0 - (- \infty) = + \infty$</li>
+<li>In general $\int_{0}^{1} \frac{dx}{x^{p}}$<ul>
+<li>$\int_{0}^{1} \frac{dx}{x^{p}} = \frac{1}{1 - p} \quad p \lt 1$</li>
+<li><code>diverges</code> $p \geq 1$</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Contrast<br>$\frac{1}{x^{1/2}} \ll \frac{1}{x} \ll \frac{1}{x^{2}}$ as $x \to 0^{+}$<br>$\frac{1}{x^{1/2}} \gg \frac{1}{x} \gg \frac{1}{x^{2}}$ as $x \to \infty$<br>$\int_{0}^{\infty} \frac{dx}{(x-3)^{2}} = \int_{0}^{5} \frac{dx}{(x-3)^{2}}$ <code>diverge</code> $+ \int_{5}^{\infty} \frac{dx}{(x-3)^{2}}$ <code>converge</code></p>
+</blockquote>
 
       
     </div>
@@ -465,6 +484,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Math/" rel="tag"># Math</a>
+          
             <a href="/tags/Calculus/" rel="tag"># Calculus</a>
           
         </div>
@@ -478,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/22/Emacs基本快捷键/" rel="next" title="Emacs基本快捷键">
-                <i class="fa fa-chevron-left"></i> Emacs基本快捷键
+              <a href="/2019/01/30/单变量微积分：洛必达法则/" rel="next" title="单变量微积分：洛必达法则">
+                <i class="fa fa-chevron-left"></i> 单变量微积分：洛必达法则
               </a>
             
           </div>
@@ -487,10 +508,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/08/单变量微积分：导数公式及求导法则/" rel="prev" title="单变量微积分：导数公式及求导法则">
-                单变量微积分：导数公式及求导法则 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -650,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#连续"><span class="nav-number">1.</span> <span class="nav-text">连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极限存在"><span class="nav-number">2.</span> <span class="nav-text">极限存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#间断"><span class="nav-number">3.</span> <span class="nav-text">间断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导数定义"><span class="nav-number">4.</span> <span class="nav-text">导数定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可导与连续之间的关系"><span class="nav-number">5.</span> <span class="nav-text">可导与连续之间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见极限公式"><span class="nav-number">6.</span> <span class="nav-text">常见极限公式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Improper-Integral-反常积分"><span class="nav-number">1.</span> <span class="nav-text">Improper Integral(反常积分)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Limit-Comparsion-极限比较"><span class="nav-number">2.</span> <span class="nav-text">Limit Comparsion(极限比较)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Improper-Integral-of-2nd-Type"><span class="nav-number">3.</span> <span class="nav-text">Improper Integral of 2nd Type</span></a></li></ol></div>
             
 
           </div>
