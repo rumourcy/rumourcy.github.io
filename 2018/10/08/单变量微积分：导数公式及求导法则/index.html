@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="三角函数导数 $(\sin x)’ = \cos x$ $(\cos x)’ = -\sin x$  证：  两角和公式：$$\sin (a+b) = \sin a \cos b + \cos a \sin b$$ $$\cos (a+b) = \cos a \cos b - \sin a \sin b$$  $$\frac{d \sin x}{dx} = \lim_{\Delta{x} \to">
-<meta name="keywords" content="Math,Calculus">
+  <meta name="description" content="三角函数导数 $(\sin x)’ = \cos x$ $(\cos x)’ = -\sin x$  证：  两角和公式： \sin (a+b) = \sin a \cos b + \cos a \sin b\cos (a+b) = \cos a \cos b - \sin a \sin b \frac{d \sin x}{dx} = \lim_{\Delta{x} \to 0} \frac{\s">
+<meta name="keywords" content="Calculus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单变量微积分：导数公式及求导法则">
 <meta property="og:url" content="http://yoursite.com/2018/10/08/单变量微积分：导数公式及求导法则/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="三角函数导数 $(\sin x)’ = \cos x$ $(\cos x)’ = -\sin x$  证：  两角和公式：$$\sin (a+b) = \sin a \cos b + \cos a \sin b$$ $$\cos (a+b) = \cos a \cos b - \sin a \sin b$$  $$\frac{d \sin x}{dx} = \lim_{\Delta{x} \to">
+<meta property="og:description" content="三角函数导数 $(\sin x)’ = \cos x$ $(\cos x)’ = -\sin x$  证：  两角和公式： \sin (a+b) = \sin a \cos b + \cos a \sin b\cos (a+b) = \cos a \cos b - \sin a \sin b \frac{d \sin x}{dx} = \lim_{\Delta{x} \to 0} \frac{\s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-30T09:18:21.052Z">
+<meta property="og:updated_time" content="2019-02-03T08:49:52.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单变量微积分：导数公式及求导法则">
-<meta name="twitter:description" content="三角函数导数 $(\sin x)’ = \cos x$ $(\cos x)’ = -\sin x$  证：  两角和公式：$$\sin (a+b) = \sin a \cos b + \cos a \sin b$$ $$\cos (a+b) = \cos a \cos b - \sin a \sin b$$  $$\frac{d \sin x}{dx} = \lim_{\Delta{x} \to">
+<meta name="twitter:description" content="三角函数导数 $(\sin x)’ = \cos x$ $(\cos x)’ = -\sin x$  证：  两角和公式： \sin (a+b) = \sin a \cos b + \cos a \sin b\cos (a+b) = \cos a \cos b - \sin a \sin b \frac{d \sin x}{dx} = \lim_{\Delta{x} \to 0} \frac{\s">
 
 
 
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-30 17:18:21" itemprop="dateModified" datetime="2019-01-30T17:18:21+08:00">2019-01-30</time>
+                <time title="Modified: 2019-02-03 16:49:52" itemprop="dateModified" datetime="2019-02-03T16:49:52+08:00">2019-02-03</time>
               
             
           </span>
@@ -416,10 +416,9 @@
 </ul>
 <p><strong>证：</strong></p>
 <blockquote>
-<p>两角和公式：<br>$$\sin (a+b) = \sin a \cos b + \cos a \sin b$$ $$\cos (a+b) = \cos a \cos b - \sin a \sin b$$</p>
-</blockquote>
-<p>$$\frac{d \sin x}{dx} = \lim_{\Delta{x} \to 0} \frac{\sin (x + \Delta{x}) - \sin x} {\Delta{x}}$$ $$= \lim_{\Delta{x} \to 0} \frac{\sin x \cos \Delta{x} + \cos x \sin \Delta{x} - \sin x}{\Delta{x}}$$ $$= \lim_{\Delta{x} \to 0} \sin x \frac{\cos \Delta{x} - 1}{\Delta{x}} + \lim_{\Delta{x} \to 0} \cos x \frac{\sin \Delta{x}}{\Delta{x}} = \cos x$$</p>
-<a id="more"></a>
+<p>两角和公式：</p>
+<script type="math/tex; mode=display">\sin (a+b) = \sin a \cos b + \cos a \sin b</script><script type="math/tex; mode=display">\cos (a+b) = \cos a \cos b - \sin a \sin b</script></blockquote>
+<script type="math/tex; mode=display">\frac{d \sin x}{dx} = \lim_{\Delta{x} \to 0} \frac{\sin (x + \Delta{x}) - \sin x} {\Delta{x}}</script><script type="math/tex; mode=display">= \lim_{\Delta{x} \to 0} \frac{\sin x \cos \Delta{x} + \cos x \sin \Delta{x} - \sin x}{\Delta{x}}</script><script type="math/tex; mode=display">= \lim_{\Delta{x} \to 0} \sin x \frac{\cos \Delta{x} - 1}{\Delta{x}} + \lim_{\Delta{x} \to 0} \cos x \frac{\sin \Delta{x}}{\Delta{x}} = \cos x</script><a id="more"></a>
 <h3 id="求导法则"><a href="#求导法则" class="headerlink" title="求导法则"></a>求导法则</h3><ul>
 <li>$(u+v)’ = u’ + v’$</li>
 <li>$(Cu)’ = Cu’$</li>
@@ -428,22 +427,26 @@
 <li>链式法则：$\frac{dy}{dx} = \frac{dy}{dt}\frac{dt}{dx}$</li>
 </ul>
 <blockquote>
-<p>若$y = \tan x $, 则其导数为：$y’ = \sec^{2}  x$<br>利用求导法则可得：<br>$$ y = \tan x = \frac{\sin x}{\cos x} \<br>y’ = \frac{cos^{2} x + sin^{2} x}{cos^{2} x} = \frac{1}{cos^{2} x} = \sec^{2} x$$</p>
-</blockquote>
-<h3 id="高阶导数"><a href="#高阶导数" class="headerlink" title="高阶导数"></a>高阶导数</h3><p>$$u’, u’’, u’’’, u^{(4)}\cdots \<br>\frac{du}{dx} = \frac{d}{dx}u = Du \<br>u’’ = \frac{d}{dx} \frac{du}{dx} = \frac{d}{dx} \frac{d}{dx} u = (\frac{d}{dx})^2u = \frac{d^2}{(dx)^2}u = \frac{d^2u}{dx^2} = D^2u$$</p>
-<h3 id="隐函数微分法"><a href="#隐函数微分法" class="headerlink" title="隐函数微分法"></a>隐函数微分法</h3><h4 id="反函数"><a href="#反函数" class="headerlink" title="反函数"></a>反函数</h4><p>若$f(x)$与$g(x)$关于$y=x$对称, 则$f(x)$与$g(x)$互为反函数。$f(x)$与$g(x)$满足：<br>$$g(f(x)) = x$$<br>记为$g=f^{-1}$</p>
+<p>若$y = \tan x $, 则其导数为：$y’ = \sec^{2}  x$<br>利用求导法则可得：</p>
+<script type="math/tex; mode=display">y = \tan x = \frac{\sin x}{\cos x} \\
+y' = \frac{cos^{2} x + sin^{2} x}{cos^{2} x} = \frac{1}{cos^{2} x} = \sec^{2} x</script></blockquote>
+<h3 id="高阶导数"><a href="#高阶导数" class="headerlink" title="高阶导数"></a>高阶导数</h3><script type="math/tex; mode=display">u', u'', u''', u^{(4)}\cdots \\
+\frac{du}{dx} = \frac{d}{dx}u = Du \\
+u'' = \frac{d}{dx} \frac{du}{dx} = \frac{d}{dx} \frac{d}{dx} u = (\frac{d}{dx})^2u = \frac{d^2}{(dx)^2}u = \frac{d^2u}{dx^2} = D^2u</script><h3 id="隐函数微分法"><a href="#隐函数微分法" class="headerlink" title="隐函数微分法"></a>隐函数微分法</h3><h4 id="反函数"><a href="#反函数" class="headerlink" title="反函数"></a>反函数</h4><p>若$f(x)$与$g(x)$关于$y=x$对称, 则$f(x)$与$g(x)$互为反函数。$f(x)$与$g(x)$满足：</p>
+<script type="math/tex; mode=display">g(f(x)) = x</script><p>记为$g=f^{-1}$</p>
 <h4 id="利用原函数导数求反函数导数"><a href="#利用原函数导数求反函数导数" class="headerlink" title="利用原函数导数求反函数导数"></a>利用原函数导数求反函数导数</h4><p>若$y =\ tan^{-1} x$, 则$y’ = \frac{1}{1+x^{2}}$</p>
 <blockquote>
-<p>$$y = \tan^{-1} x$$<br>其反函数为$\tan y = x$<br>$$y’ \sec^{2} y = 1 $$ $$y’ = \cos^{2} y = cos^{2}(\tan^{-1} x) = \frac{1}{1+x^{2}}$$<br>$\cos y$利用图像可得</p>
+<script type="math/tex; mode=display">y = \tan^{-1} x</script><p>其反函数为$\tan y = x$</p>
+<script type="math/tex; mode=display">y' \sec^{2} y = 1</script><script type="math/tex; mode=display">y' = \cos^{2} y = cos^{2}(\tan^{-1} x) = \frac{1}{1+x^{2}}</script><p>$\cos y$利用图像可得</p>
 </blockquote>
 <p>若$y = \sin^{-1} x$, 则$y’ = \frac{1}{\sqrt{1-x^{2}}}$</p>
 <h3 id="对数微分法"><a href="#对数微分法" class="headerlink" title="对数微分法"></a>对数微分法</h3><p>若$y = a^{x}$, 则其导数为$y’ = a^{x} \ln{a}$（$a &gt; 0$）</p>
 <blockquote>
-<p>指数函数基本性质：<br>$$a^{x_{1} + x_{2}} = a^{x_{1}} a^{x_{2}}$$ $$(a^{x_{1}})^{x_{2}} = a^{x_{1} x_{2}}$$</p>
-</blockquote>
+<p>指数函数基本性质：</p>
+<script type="math/tex; mode=display">a^{x_{1} + x_{2}} = a^{x_{1}} a^{x_{2}}</script><script type="math/tex; mode=display">(a^{x_{1}})^{x_{2}} = a^{x_{1} x_{2}}</script></blockquote>
 <hr>
 <blockquote>
-<p>$$\lim_{\Delta{x} \to 0} \frac{a^{x+\Delta{x}}-a^{x}}{\Delta{x}} = \lim_{\Delta{x} \to 0} a^{x} \frac{a^{\Delta{x}}-1}{\Delta{x}} = a^{x} \lim_{\Delta{x} \to 0} \frac{a^{\Delta{x}-1}}{\Delta{x}}$$<br>令$M(a) = \lim_{\Delta{x} \to 0} \frac{a^{\Delta{x}-1}}{\Delta{x}}$<br>则$\frac{d a^{x}}{d x} = M(a) a^{x}$<br>$\frac{d a^{x}}{d x}|_{x=0} = M(a) a^0 = M(a)$, 则M(a)为$y=a^x$在$x=0$处的斜率</p>
+<script type="math/tex; mode=display">\lim_{\Delta{x} \to 0} \frac{a^{x+\Delta{x}}-a^{x}}{\Delta{x}} = \lim_{\Delta{x} \to 0} a^{x} \frac{a^{\Delta{x}}-1}{\Delta{x}} = a^{x} \lim_{\Delta{x} \to 0} \frac{a^{\Delta{x}-1}}{\Delta{x}}</script><p>令$M(a) = \lim_{\Delta{x} \to 0} \frac{a^{\Delta{x}-1}}{\Delta{x}}$<br>则$\frac{d a^{x}}{d x} = M(a) a^{x}$<br>$\frac{d a^{x}}{d x}|_{x=0} = M(a) a^0 = M(a)$, 则M(a)为$y=a^x$在$x=0$处的斜率</p>
 </blockquote>
 <hr>
 <blockquote>
@@ -456,16 +459,14 @@
 </blockquote>
 <hr>
 <blockquote>
-<p>（1）将底转化为$e$<br>$$a^x = (e^{\ln a})^{x} = e^{x \ln a} $$ $$\frac{d a^x}{d x} = \frac{d e^{x \ln a}}{d x} = e^{x \ln a} \ln a = a^{x} \ln a$$<br>（2）对数微分法<br>$$\frac{d \ln u}{d x} = \frac{1}{u} \frac{d u}{d x}$$<br>令$u=a^x$, 则$\ln u = x \ln a \to (\ln u)’ = \ln a$<br>$\frac{1}{u} = \ln a \to u’ = u \ln a$<br>则$(a^x)’ = a^x \ln a$</p>
+<p>（1）将底转化为$e$</p>
+<script type="math/tex; mode=display">a^x = (e^{\ln a})^{x} = e^{x \ln a}</script><script type="math/tex; mode=display">\frac{d a^x}{d x} = \frac{d e^{x \ln a}}{d x} = e^{x \ln a} \ln a = a^{x} \ln a</script><p>（2）对数微分法</p>
+<script type="math/tex; mode=display">\frac{d \ln u}{d x} = \frac{1}{u} \frac{d u}{d x}</script><p>令$u=a^x$, 则$\ln u = x \ln a \to (\ln u)’ = \ln a$<br>$\frac{1}{u} = \ln a \to u’ = u \ln a$<br>则$(a^x)’ = a^x \ln a$</p>
 </blockquote>
 <h4 id="对数微分法例子"><a href="#对数微分法例子" class="headerlink" title="对数微分法例子"></a>对数微分法例子</h4><blockquote>
 <p>若$v = x^x$,则$\ln v = x \ln x$<br>$(\ln v)’ = \ln x + 1 = \frac{1}{v} v’ \to v’ = x^x \ln x + x^x$</p>
-</blockquote>
-<blockquote>
 <p>$\lim_{n \to \infty}(1+\frac{1}{n}) = e$<br><strong>证：</strong><br>$\ln(1+\frac{1}{n})^{n} = n\ln(1+\frac{1}{n})$<br>$=\frac{\ln(1+\frac{1}{n}) - \ln1}{\frac{1}{n}} \to \frac{1}{x}|_{x=1} = 1$</p>
 <p>$\lim_{n \to \infty} (1+\frac{1}{n})^{n} = e^{\lim_{n \to \infty} \ln[(1+\frac{1}{n})^n]}$<br>则$\lim_{n \to \infty}(1+\frac{1}{n})^{n} = e$</p>
-</blockquote>
-<blockquote>
 <p>求$(x^{r})’$, $r$取任意实数<br>$u = x^{r}$ all $r$<br>对数微分法<br>$\ln u = r\ln x$<br>$\frac{u’}{u} = (\ln u)’ = \frac{r}{x}$<br>则$u’ = \frac{r}{x}u = rx^{r-1}$<br>以$e$为底<br>$x^{r} = (e^{\ln x})^{r} = e^{r \ln x}$<br>$\frac{dx^{r}}{dx} = (e^{r \ln x})’ = e^{r \ln x}(r \ln x)’ = rx^{r-1}$</p>
 </blockquote>
 
@@ -490,8 +491,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Math/" rel="tag"># Math</a>
           
             <a href="/tags/Calculus/" rel="tag"># Calculus</a>
           
@@ -590,7 +589,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -604,6 +603,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
                     
                       
                     

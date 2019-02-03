@@ -109,14 +109,14 @@
 
 
   <meta name="description" content="微分(Differential)$y = f(x)$$Differential\ of\ y\ (f):\ dy = f’(x)dx$  Leibniz’s interpretation of derivative as a ratio of infinitesimal(无穷小量)$dy = f’(x)dx \Leftrightarrow \frac{dy}{dx} = f’(x)$">
-<meta name="keywords" content="Math,Calculus">
+<meta name="keywords" content="Calculus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单变量微积分：微分与不定积分">
 <meta property="og:url" content="http://yoursite.com/2018/12/29/单变量微积分：微分与不定积分/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
 <meta property="og:description" content="微分(Differential)$y = f(x)$$Differential\ of\ y\ (f):\ dy = f’(x)dx$  Leibniz’s interpretation of derivative as a ratio of infinitesimal(无穷小量)$dy = f’(x)dx \Leftrightarrow \frac{dy}{dx} = f’(x)$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T15:06:22.519Z">
+<meta property="og:updated_time" content="2019-02-03T08:45:37.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单变量微积分：微分与不定积分">
 <meta name="twitter:description" content="微分(Differential)$y = f(x)$$Differential\ of\ y\ (f):\ dy = f’(x)dx$  Leibniz’s interpretation of derivative as a ratio of infinitesimal(无穷小量)$dy = f’(x)dx \Leftrightarrow \frac{dy}{dx} = f’(x)$">
@@ -360,12 +360,24 @@
                 
               
 
-              <time title="Created: 2018-12-29 18:37:28 / Modified: 23:06:22" itemprop="dateCreated datePublished" datetime="2018-12-29T18:37:28+08:00">2018-12-29</time>
+              <time title="Created: 2018-12-29 18:37:28" itemprop="dateCreated datePublished" datetime="2018-12-29T18:37:28+08:00">2018-12-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-03 16:45:37" itemprop="dateModified" datetime="2019-02-03T16:45:37+08:00">2019-02-03</time>
               
             
           </span>
@@ -416,8 +428,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="不定积分-Indefinite-Integral"><a href="#不定积分-Indefinite-Integral" class="headerlink" title="不定积分(Indefinite Integral)"></a>不定积分(Indefinite Integral)</h3><h4 id="Antiderivative"><a href="#Antiderivative" class="headerlink" title="Antiderivative"></a>Antiderivative</h4><p>$$G(x) = \int g(x) dx$$</p>
-<blockquote>
+<h3 id="不定积分-Indefinite-Integral"><a href="#不定积分-Indefinite-Integral" class="headerlink" title="不定积分(Indefinite Integral)"></a>不定积分(Indefinite Integral)</h3><h4 id="Antiderivative"><a href="#Antiderivative" class="headerlink" title="Antiderivative"></a>Antiderivative</h4><script type="math/tex; mode=display">G(x) = \int g(x) dx</script><blockquote>
 <p>$G(x)\ antiderivative\ of\ g = indefinite\ integral\ of\ g$<br>$\int\ is\ integral\ sign$</p>
 </blockquote>
 <h4 id="常用公式"><a href="#常用公式" class="headerlink" title="常用公式"></a>常用公式</h4><ul>
@@ -431,15 +442,13 @@
 <blockquote>
 <p>$If\ F’ = G’,\ then\ F(x) = G(x) + c$<br>PROOF<br>$If\ F’ = G’,\ then\ (F-G)’ = F’-G’=0,\ hence\ F(x)-G(x)=c$</p>
 </blockquote>
-<h4 id="换元法-Method-of-Subsititution"><a href="#换元法-Method-of-Subsititution" class="headerlink" title="换元法(Method of Subsititution)"></a>换元法(Method of Subsititution)</h4><h5 id="第一类换元"><a href="#第一类换元" class="headerlink" title="第一类换元"></a>第一类换元</h5><p>$$\int f[\varphi (x)] \varphi’(x) dx = [\int f(u) du]_{u=\varphi (x)}$$</p>
-<ul>
+<h4 id="换元法-Method-of-Subsititution"><a href="#换元法-Method-of-Subsititution" class="headerlink" title="换元法(Method of Subsititution)"></a>换元法(Method of Subsititution)</h4><h5 id="第一类换元"><a href="#第一类换元" class="headerlink" title="第一类换元"></a>第一类换元</h5><script type="math/tex; mode=display">\int f[\varphi (x)] \varphi'(x) dx = [\int f(u) du]_{u=\varphi (x)}</script><ul>
 <li>Example 1 $\int x^{3}(x^{4}+2)^{5} dx$<br>$u = x^{4} + 2 \quad du = 4x^{3} dx$<br>$\int x^{3}(x^{4}+2)^{5} dx = \int u^{5} \frac{1}{4} du = \frac{1}{24}u^{6}+c = \frac{1}{24} (x^{4}+2)^{6} + c$</li>
 <li>Example 2 $\int \frac{x}{\sqrt{1+x^{2}}} dx = \sqrt{1+x^{2}} + c$<br>$u = 1 + x^{2} \quad du = 2x dx$<br>$\int u^{-\frac{1}{2}} du$</li>
 <li>Example3 $\int \sin x \cos x dx = \frac{1}{2} sin^{2}x + c$</li>
 <li>Example4 $\int \frac{dx}{x \ln x} = \int \frac{1}{\ln x} d \ln x = \ln\left|\ln x \right| + c$</li>
 </ul>
-<h5 id="第二类换元"><a href="#第二类换元" class="headerlink" title="第二类换元"></a>第二类换元</h5><p>$$\int f(x) dx = [\int f[\psi (t)] \psi’(t) dt]_{t=\psi’(x)}$$</p>
-<blockquote>
+<h5 id="第二类换元"><a href="#第二类换元" class="headerlink" title="第二类换元"></a>第二类换元</h5><script type="math/tex; mode=display">\int f(x) dx = [\int f[\psi (t)] \psi'(t) dt]_{t=\psi'(x)}</script><blockquote>
 <p>$x = \psi(t) 单调可导$</p>
 </blockquote>
 <h3 id="微分方程-Differential-Equation"><a href="#微分方程-Differential-Equation" class="headerlink" title="微分方程(Differential Equation)"></a>微分方程(Differential Equation)</h3><h4 id="分离变量法"><a href="#分离变量法" class="headerlink" title="分离变量法"></a>分离变量法</h4><blockquote>
@@ -473,8 +482,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Math/" rel="tag"># Math</a>
           
             <a href="/tags/Calculus/" rel="tag"># Calculus</a>
           
@@ -573,7 +580,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -587,6 +594,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
                     
                       
                     

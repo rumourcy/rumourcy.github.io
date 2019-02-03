@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="三角函数公式 $\sin^{2} \theta + \cos^{2} \theta = 1$ $\cos 2 \theta = \cos^{2} \theta - \sin^{2} \theta = 2 \cos^{2} \theta - 1 = 1 - 2 \sin^{2} \theta$ $\sin 2 \theta = 2 \sin \theta \cos \theta$ Half Angl">
-<meta name="keywords" content="Math,Calculus">
+<meta name="keywords" content="Calculus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单变量微积分：三角积分">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/单变量微积分：三角积分/index.html">
@@ -117,7 +117,7 @@
 <meta property="og:description" content="三角函数公式 $\sin^{2} \theta + \cos^{2} \theta = 1$ $\cos 2 \theta = \cos^{2} \theta - \sin^{2} \theta = 2 \cos^{2} \theta - 1 = 1 - 2 \sin^{2} \theta$ $\sin 2 \theta = 2 \sin \theta \cos \theta$ Half Angl">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/trig/area.png">
-<meta property="og:updated_time" content="2019-01-27T04:45:20.625Z">
+<meta property="og:updated_time" content="2019-02-03T08:52:22.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单变量微积分：三角积分">
 <meta name="twitter:description" content="三角函数公式 $\sin^{2} \theta + \cos^{2} \theta = 1$ $\cos 2 \theta = \cos^{2} \theta - \sin^{2} \theta = 2 \cos^{2} \theta - 1 = 1 - 2 \sin^{2} \theta$ $\sin 2 \theta = 2 \sin \theta \cos \theta$ Half Angl">
@@ -379,7 +379,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-27 12:45:20" itemprop="dateModified" datetime="2019-01-27T12:45:20+08:00">2019-01-27</time>
+                <time title="Modified: 2019-02-03 16:52:22" itemprop="dateModified" datetime="2019-02-03T16:52:22+08:00">2019-02-03</time>
               
             
           </span>
@@ -423,8 +423,7 @@
 </li>
 </ul>
 <a id="more"></a>
-<h3 id="Trigonometric-Integral（三角积分）"><a href="#Trigonometric-Integral（三角积分）" class="headerlink" title="Trigonometric Integral（三角积分）"></a>Trigonometric Integral（三角积分）</h3><h4 id="Known-Case"><a href="#Known-Case" class="headerlink" title="Known Case"></a>Known Case</h4><p>$$d \sin x = (\cos x) d x \to \int \cos x d x = \sin x + c$$ $$d \cos x = (-\sin x) d x \to \int \sin x d x = -\cos x + c$$ $$\int \sin^{n} x \cos^{m} x d x \quad m,n = 0,1,2,…$$</p>
-<h4 id="Easy-Case-At-least-one-exponent-odd"><a href="#Easy-Case-At-least-one-exponent-odd" class="headerlink" title="Easy Case: At least one exponent odd"></a>Easy Case: At least one exponent odd</h4><ul>
+<h3 id="Trigonometric-Integral（三角积分）"><a href="#Trigonometric-Integral（三角积分）" class="headerlink" title="Trigonometric Integral（三角积分）"></a>Trigonometric Integral（三角积分）</h3><h4 id="Known-Case"><a href="#Known-Case" class="headerlink" title="Known Case"></a>Known Case</h4><script type="math/tex; mode=display">d \sin x = (\cos x) d x \to \int \cos x d x = \sin x + c</script><script type="math/tex; mode=display">d \cos x = (-\sin x) d x \to \int \sin x d x = -\cos x + c</script><script type="math/tex; mode=display">\int \sin^{n} x \cos^{m} x d x \quad m,n = 0,1,2,...</script><h4 id="Easy-Case-At-least-one-exponent-odd"><a href="#Easy-Case-At-least-one-exponent-odd" class="headerlink" title="Easy Case: At least one exponent odd"></a>Easy Case: At least one exponent odd</h4><ul>
 <li><p>$m = 1$<br>$\int \sin^{n} x \cos x d x$<br>subsitution $u = \sin x \quad d u = \cos x d x$<br>$= \int u^{n} d u = \frac{u^{n+1}}{n+1} + c = \frac{\sin^{n+1} x}{n+1} + c$</p>
 </li>
 <li><p>$\int \sin^{3} x \cos^{2} x dx$<br>use $\sin^{2} x = 1 - \cos^{2} x$<br>$= \int(1 - \cos^{2} x) \sin x \cos^{2} x dx$<br>$= \int(\cos^{2} x - \cos^{4} x) \sin x dx$<br>subsitution $u = \cos x \quad du = -\sin x dx$<br>$= -\int(u^{2} - u^{4}) du$<br>$= -(\frac{u^{3}}{3} - \frac{u^{5}}{5}) + c$<br>$= \frac{\cos^{5} x}{5} - \frac{\cos^{3} x}{3} + c$</p>
@@ -451,8 +450,9 @@
 </blockquote>
 </li>
 </ul>
-<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/trig/area.png" alt="area"><br>$$Area = \int_{0}^{b} x dy = \int_{0}^{b} \sqrt{a^{2} -y^{2}} dy$$<br>$y = a \sin \theta \to x = a \cos \theta \quad dy = a \cos \theta d \theta \quad \theta = \arcsin {\frac{y}{a}}$<br>$\int \sqrt{a^{2} - y^{2}} dy = \int a \cos \theta (a \cos \theta) d \theta = a^{2} \int \cos^{2} \theta d \theta = a^{2} (\frac{\theta}{2} + \frac{\sin 2\theta}{4} + c) = a^{2} (\frac{\theta}{2} + \frac{\sin \theta \cos \theta}{2} + c)$<br>$= a^{2} \frac{\arcsin {\frac{y}{a}}}{2} + \frac{a \sin \theta a \cos \theta}{2} + c = \frac{a^{2} \arcsin {\frac{y}{a}}}{2} + \frac{y \sqrt{a^{2} - y^{2}}}{2} + c$<br>$$Area = \int_{0}^{b} \sqrt{a^{2} - y^{2}} dy = \frac{a^{2} \arcsin{\frac{b}{a}}}{2} + \frac{b \sqrt{a^{2} - b^{2}}}{2} = \frac{a^{2} \theta_{0}}{2} + \frac{b \sqrt{a^{2} - b^{2}}}{2}$$</p>
-<h3 id="More-Trigonometric-Integral"><a href="#More-Trigonometric-Integral" class="headerlink" title="More Trigonometric Integral"></a>More Trigonometric Integral</h3><ul>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/trig/area.png" alt="area"></p>
+<script type="math/tex; mode=display">Area = \int_{0}^{b} x dy = \int_{0}^{b} \sqrt{a^{2} -y^{2}} dy</script><p>$y = a \sin \theta \to x = a \cos \theta \quad dy = a \cos \theta d \theta \quad \theta = \arcsin {\frac{y}{a}}$<br>$\int \sqrt{a^{2} - y^{2}} dy = \int a \cos \theta (a \cos \theta) d \theta = a^{2} \int \cos^{2} \theta d \theta = a^{2} (\frac{\theta}{2} + \frac{\sin 2\theta}{4} + c) = a^{2} (\frac{\theta}{2} + \frac{\sin \theta \cos \theta}{2} + c)$<br>$= a^{2} \frac{\arcsin {\frac{y}{a}}}{2} + \frac{a \sin \theta a \cos \theta}{2} + c = \frac{a^{2} \arcsin {\frac{y}{a}}}{2} + \frac{y \sqrt{a^{2} - y^{2}}}{2} + c$</p>
+<script type="math/tex; mode=display">Area = \int_{0}^{b} \sqrt{a^{2} - y^{2}} dy = \frac{a^{2} \arcsin{\frac{b}{a}}}{2} + \frac{b \sqrt{a^{2} - b^{2}}}{2} = \frac{a^{2} \theta_{0}}{2} + \frac{b \sqrt{a^{2} - b^{2}}}{2}</script><h3 id="More-Trigonometric-Integral"><a href="#More-Trigonometric-Integral" class="headerlink" title="More Trigonometric Integral"></a>More Trigonometric Integral</h3><ul>
 <li>$\sec x = \frac{1}{\cos x}$</li>
 <li>$\csc x = \frac{1}{\sin x}$</li>
 <li>$\tan x = \frac{\sin x}{\cos x}$</li>
@@ -467,7 +467,8 @@
 <h3 id="More-Trigonometric-Subsitution"><a href="#More-Trigonometric-Subsitution" class="headerlink" title="More Trigonometric Subsitution"></a>More Trigonometric Subsitution</h3><ul>
 <li>$\int \frac{dx}{x^{2} \sqrt{1 + x^{2}}}$<br>use $x = \tan \theta\ (\frac{-\pi}{2} \lt \theta \lt \frac{\pi}{2}) \quad \sqrt{1 + x^{2}} = \sec \theta$<br>$= \int \frac{\sec^{2} \theta d \theta}{\tan^{2} \theta \sec \theta} = \int \frac{\cos^{2} \theta d \theta}{\cos \theta \sin^{2} \theta} = \int \frac{\cos \theta}{\sin^{2} \theta} d \theta$<br>use $u = sin \theta \quad du = \cos \theta d \theta$<br>$= \int \frac{du}{u^{2}} = -\frac{1}{u} + c$<br>$= \csc \theta + c = -\csc \arctan x + c$<br>$= -\frac{\sqrt{1 + x^{2}}}{x} + c$</li>
 </ul>
-<h3 id="Summary-of-Trigonometric-Subsitution"><a href="#Summary-of-Trigonometric-Subsitution" class="headerlink" title="Summary of Trigonometric Subsitution"></a>Summary of Trigonometric Subsitution</h3><table>
+<h3 id="Summary-of-Trigonometric-Subsitution"><a href="#Summary-of-Trigonometric-Subsitution" class="headerlink" title="Summary of Trigonometric Subsitution"></a>Summary of Trigonometric Subsitution</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>If integral contains</th>
@@ -493,6 +494,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="Completing-the-Square-配方"><a href="#Completing-the-Square-配方" class="headerlink" title="Completing the Square(配方)"></a>Completing the Square(配方)</h3><ul>
 <li>$\int \frac{dx}{\sqrt{x^{2} + 4x}}$<br>direct sub $u = x + 2 \quad du = dx$<br>$= \int \frac{du}{\sqrt{u^{2} - 4}}$<br>trig sub $u = 2 \sec \theta \quad du = 2 \sec \theta \tan \theta d \theta$<br>$= \int \frac{2 \sec \theta \tan \theta d \theta}{2 \tan \theta} = \int \sec \theta d \theta = \ln (\sec \theta + \tan \theta) + c$<br>$= \ln (\frac{u}{2} + \frac{\sqrt{u^{2} - 4}}{2}) + c$<br>$= \ln (\frac{x + 2}{2} + \frac{\sqrt{x^{2} + 4x}}{2}) + c$</li>
 </ul>
@@ -518,8 +520,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Math/" rel="tag"># Math</a>
           
             <a href="/tags/Calculus/" rel="tag"># Calculus</a>
           
@@ -618,7 +618,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -632,6 +632,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
                     
                       
                     

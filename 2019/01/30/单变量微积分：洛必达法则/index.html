@@ -109,14 +109,14 @@
 
 
   <meta name="description" content="L’Hospital’s Ruleconvenient way to calculate limits including new ones:  $x \ln x \quad x \to 0^{+}$ $xe^{-x} \quad x \to \infty$ $\frac{\ln x}{x} \quad x \to \infty$">
-<meta name="keywords" content="Math,Calculus">
+<meta name="keywords" content="Calculus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单变量微积分：洛必达法则">
 <meta property="og:url" content="http://yoursite.com/2019/01/30/单变量微积分：洛必达法则/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
 <meta property="og:description" content="L’Hospital’s Ruleconvenient way to calculate limits including new ones:  $x \ln x \quad x \to 0^{+}$ $xe^{-x} \quad x \to \infty$ $\frac{\ln x}{x} \quad x \to \infty$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-01T05:58:54.602Z">
+<meta property="og:updated_time" content="2019-02-03T08:38:00.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单变量微积分：洛必达法则">
 <meta name="twitter:description" content="L’Hospital’s Ruleconvenient way to calculate limits including new ones:  $x \ln x \quad x \to 0^{+}$ $xe^{-x} \quad x \to \infty$ $\frac{\ln x}{x} \quad x \to \infty$">
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-01 13:58:54" itemprop="dateModified" datetime="2019-02-01T13:58:54+08:00">2019-02-01</time>
+                <time title="Modified: 2019-02-03 16:38:00" itemprop="dateModified" datetime="2019-02-03T16:38:00+08:00">2019-02-03</time>
               
             
           </span>
@@ -421,9 +421,7 @@
 <p>Example1 $\lim_{x \to 1} \frac{x^{10} - 1}{x^{2} - 1}$</p>
 </blockquote>
 <p>$\lim_{x \to 1} \frac{x^{10} - 1}{x^{2} - 1} = \lim_{x \to 1} \frac{(x^{10} - 1)/(x - 1)}{(x^{2} - 1)/(x - 1)} = \frac{10x^{9}}{2x} \mid_{x = 1} = \frac{10}{2} = 5$</p>
-<p>$$lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f(x) / (x - a)}{g(x) / (x - a)} = \frac{\lim_{x \to a} \frac{f(x) - f(a)}{x - a}}{\lim_{x \to a} \frac{g(x) - g(a)}{x - a}} = \frac{f’(a)}{g’(a)} (g’(a) \neq 0 \quad f(a) = g(a) = 0)$$</p>
-<h4 id="L’Hosptial’s-Rule-version-1"><a href="#L’Hosptial’s-Rule-version-1" class="headerlink" title="L’Hosptial’s Rule(version 1)"></a>L’Hosptial’s Rule(version 1)</h4><p>$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f’(x)}{g’(x)} (f(a) = g(a) = 0\ and\ the\ right-hand\ limit\ exists)$$</p>
-<blockquote>
+<script type="math/tex; mode=display">lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f(x) / (x - a)}{g(x) / (x - a)} = \frac{\lim_{x \to a} \frac{f(x) - f(a)}{x - a}}{\lim_{x \to a} \frac{g(x) - g(a)}{x - a}} = \frac{f'(a)}{g'(a)} (g'(a) \neq 0 \quad f(a) = g(a) = 0)</script><h4 id="L’Hosptial’s-Rule-version-1"><a href="#L’Hosptial’s-Rule-version-1" class="headerlink" title="L’Hosptial’s Rule(version 1)"></a>L’Hosptial’s Rule(version 1)</h4><script type="math/tex; mode=display">\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} (f(a) = g(a) = 0\ and\ the\ right-hand\ limit\ exists)</script><blockquote>
 <p>Example2 $\lim_{x \to 0} \frac{\sin 5x}{\sin 2x}$</p>
 </blockquote>
 <p>$\lim_{x \to 0} \frac{\sin 5x}{\sin 2x} = \lim_{x \to 0} \frac{5 \cos 5x}{2 \cos 2x} = \frac{5}{2}$</p>
@@ -431,8 +429,7 @@
 <p>Example3</p>
 </blockquote>
 <p>$\frac{\cos x - 1}{x^{2}} \sim \frac{- \sin x}{2x} \quad x \to 0$<br>$\frac{- \sin x}{2x} \sim \frac{- \cos x}{2} \quad x \to 0$<br>$\frac{- \cos x}{2} \sim \frac{- \cos 0}{2} = -\frac{1}{2} \quad x \to 0$</p>
-<h4 id="L’Hosptial’s-Rule"><a href="#L’Hosptial’s-Rule" class="headerlink" title="L’Hosptial’s Rule"></a>L’Hosptial’s Rule</h4><p>$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f’(x)}{g’(x)}$$</p>
-<blockquote>
+<h4 id="L’Hosptial’s-Rule"><a href="#L’Hosptial’s-Rule" class="headerlink" title="L’Hosptial’s Rule"></a>L’Hosptial’s Rule</h4><script type="math/tex; mode=display">\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}</script><blockquote>
 <p>provided $f(a) = g(a) = 0 and the right-hand limit exists$<br>other cases allowed</p>
 <ol>
 <li>$a = \pm \infty$</li>
@@ -460,7 +457,7 @@
 </blockquote>
 </li>
 </ul>
-<h4 id="Another-indetermination-form-0-0"><a href="#Another-indetermination-form-0-0" class="headerlink" title="Another indetermination form: $0^{0}$"></a>Another indetermination form: $0^{0}$</h4><p>$$\lim_{x \to 0^{+}} x^{x} = 1$$<br>use base $e$<br>$x^{x} = e^{x \ln x} \to e^{0}$</p>
+<h4 id="Another-indetermination-form-0-0"><a href="#Another-indetermination-form-0-0" class="headerlink" title="Another indetermination form: $0^{0}$"></a>Another indetermination form: $0^{0}$</h4><script type="math/tex; mode=display">\lim_{x \to 0^{+}} x^{x} = 1</script><p>use base $e$<br>$x^{x} = e^{x \ln x} \to e^{0}$</p>
 
       
     </div>
@@ -483,8 +480,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Math/" rel="tag"># Math</a>
           
             <a href="/tags/Calculus/" rel="tag"># Calculus</a>
           
@@ -583,7 +578,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -597,6 +592,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
                     
                       
                     

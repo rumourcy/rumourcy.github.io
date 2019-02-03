@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
-<meta name="keywords" content="Math">
+  <meta name="description" content="期望 随机变量期望E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) 随机变量函数期望E[g(x)] = \sum_ig(x_i)p(x_i)E[aX+b] = aE[X] + b n阶矩E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x)">
+<meta name="keywords" content="Probability">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率论：离散随机变量">
 <meta property="og:url" content="http://yoursite.com/2018/04/17/概率论：离散随机变量/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
+<meta property="og:description" content="期望 随机变量期望E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) 随机变量函数期望E[g(x)] = \sum_ig(x_i)p(x_i)E[aX+b] = aE[X] + b n阶矩E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T14:10:34.929Z">
+<meta property="og:updated_time" content="2019-02-03T08:53:52.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论：离散随机变量">
-<meta name="twitter:description" content="期望 随机变量期望$$ E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) $$ 随机变量函数期望$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$$$ E[aX+b] = aE[X] + b $$ n阶矩$$ E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x) $$">
+<meta name="twitter:description" content="期望 随机变量期望E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) 随机变量函数期望E[g(x)] = \sum_ig(x_i)p(x_i)E[aX+b] = aE[X] + b n阶矩E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x)">
 
 
 
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-29 22:10:34" itemprop="dateModified" datetime="2018-11-29T22:10:34+08:00">2018-11-29</time>
+                <time title="Modified: 2019-02-03 16:53:52" itemprop="dateModified" datetime="2019-02-03T16:53:52+08:00">2019-02-03</time>
               
             
           </span>
@@ -411,28 +411,32 @@
 
       
         <h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><ul>
-<li>随机变量期望<br>$$ E[X] = \sum_{x:p(x)&gt;0}xp(x) $$</li>
-<li>随机变量函数期望<br>$$ E[g(x)] = \sum_ig(x_i)p(x_i) $$<br>$$ E[aX+b] = aE[X] + b $$</li>
-<li>n阶矩<br>$$ E[X^n] = \sum_{x:p(x)&gt;0}x^np(x) $$</li>
+<li>随机变量期望<script type="math/tex; mode=display">E[X] = \sum_{x:p(x)>0}xp(x)</script></li>
+<li>随机变量函数期望<script type="math/tex; mode=display">E[g(x)] = \sum_ig(x_i)p(x_i)</script><script type="math/tex; mode=display">E[aX+b] = aE[X] + b</script></li>
+<li>n阶矩<script type="math/tex; mode=display">E[X^n] = \sum_{x:p(x)>0}x^np(x)</script></li>
 </ul>
 <a id="more"></a>
-<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>$$ Var(X) = E[(X-\mu)^2]$$<br>$$ Var(X) = E[X^2] - E^2[x] $$</p>
-<h3 id="离散随机变量分布"><a href="#离散随机变量分布" class="headerlink" title="离散随机变量分布"></a>离散随机变量分布</h3><h4 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h4><p>$$ X =<br>\begin{equation}<br>\begin{cases}<br>1, 试验成功\<br>0, 试验失败<br>\end{cases}<br>\end{equation} $$</p>
-<ul>
-<li>分布列<br>$$ p(0) = P{X=0} = 1 -p $$<br>$$ p(1) = P{X=1} = p $$</li>
+<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><script type="math/tex; mode=display">Var(X) = E[(X-\mu)^2]</script><script type="math/tex; mode=display">Var(X) = E[X^2] - E^2[x]</script><h3 id="离散随机变量分布"><a href="#离散随机变量分布" class="headerlink" title="离散随机变量分布"></a>离散随机变量分布</h3><h4 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h4><script type="math/tex; mode=display">X = 
+\begin{equation}
+\begin{cases}
+1, 试验成功\\
+0, 试验失败
+\end{cases}
+\end{equation}</script><ul>
+<li>分布列<script type="math/tex; mode=display">p(0) = P\{X=0\} = 1 -p</script><script type="math/tex; mode=display">p(1) = P\{X=1\} = p</script></li>
 </ul>
 <h4 id="二项随机变量"><a href="#二项随机变量" class="headerlink" title="二项随机变量"></a>二项随机变量</h4><blockquote>
 <p>参数为(n, p)的二项随机变量</p>
 </blockquote>
 <ul>
-<li>分布列<br>$$ p(i) = \binom{n}{i}p^i(1-p)^{n-i} i=0,1,…,n $$<br>$$ \sum_{i=0}^{\infty}p(i) = \sum_{i=0}^{n}\binom{n}{i}p^i(1-p)^{n-i} = [p+(1-p)]^n = 1 $$</li>
-<li>期望<br>$$ E[X] = np $$</li>
-<li>方差<br>$$ Var(X) = np(1-p) $$</li>
+<li>分布列<script type="math/tex; mode=display">p(i) = \binom{n}{i}p^i(1-p)^{n-i} i=0,1,...,n</script><script type="math/tex; mode=display">\sum_{i=0}^{\infty}p(i) = \sum_{i=0}^{n}\binom{n}{i}p^i(1-p)^{n-i} = [p+(1-p)]^n = 1</script></li>
+<li>期望<script type="math/tex; mode=display">E[X] = np</script></li>
+<li>方差<script type="math/tex; mode=display">Var(X) = np(1-p)</script></li>
 </ul>
 <h4 id="泊松随机变量"><a href="#泊松随机变量" class="headerlink" title="泊松随机变量"></a>泊松随机变量</h4><ul>
-<li>分布列<br>$$ p(i) = P{X = i} = e^{-\lambda}\frac{\lambda^i}{i!} i=0,1,2,… $$</li>
-<li>期望<br>$$ E[X] = \lambda $$</li>
-<li>方差<br>$$ Var(X) = \lambda $$</li>
+<li>分布列<script type="math/tex; mode=display">p(i) = P\{X = i\} = e^{-\lambda}\frac{\lambda^i}{i!} i=0,1,2,...</script></li>
+<li>期望<script type="math/tex; mode=display">E[X] = \lambda</script></li>
+<li>方差<script type="math/tex; mode=display">Var(X) = \lambda</script></li>
 </ul>
 <blockquote>
 <p>独立重复进行n次试验，每次成功的概率为p，当n充分大，而p足够小，使得np保持适当的话，那么成功次数近似地服从参数为$\lambda=np$的泊松分布</p>
@@ -449,25 +453,25 @@
 <p>独立重复试验直到成功为止</p>
 </blockquote>
 <ul>
-<li>分布列<br>$$ P{X=n} = (1-p)^{n-1}p $$</li>
-<li>期望<br>$$ E[X] = \frac{1}{p} $$</li>
-<li>方差<br>$$ Var(X) = \frac{1-p}{p^2} $$</li>
+<li>分布列<script type="math/tex; mode=display">P\{X=n\} = (1-p)^{n-1}p</script></li>
+<li>期望<script type="math/tex; mode=display">E[X] = \frac{1}{p}</script></li>
+<li>方差<script type="math/tex; mode=display">Var(X) = \frac{1-p}{p^2}</script></li>
 </ul>
 <h4 id="负二项随机变量"><a href="#负二项随机变量" class="headerlink" title="负二项随机变量"></a>负二项随机变量</h4><blockquote>
 <p>独立重复试验知道成功$r$次为止</p>
 </blockquote>
 <ul>
-<li>分布列<br>$$ P{X=n}=\binom{n-1}{r-1}p^r(1-p)^{n-r} $$</li>
-<li>期望<br>$$ E[X] = \frac{r}{p} $$</li>
-<li>方差<br>$$ Var(X) = \frac{r(1-p)}{p^2} $$<h4 id="超几何随机变量"><a href="#超几何随机变量" class="headerlink" title="超几何随机变量"></a>超几何随机变量</h4></li>
+<li>分布列<script type="math/tex; mode=display">P\{X=n\}=\binom{n-1}{r-1}p^r(1-p)^{n-r}</script></li>
+<li>期望<script type="math/tex; mode=display">E[X] = \frac{r}{p}</script></li>
+<li>方差<script type="math/tex; mode=display">Var(X) = \frac{r(1-p)}{p^2}</script><h4 id="超几何随机变量"><a href="#超几何随机变量" class="headerlink" title="超几何随机变量"></a>超几何随机变量</h4></li>
 </ul>
 <blockquote>
 <p>设坛子里面共有$N$个球，其中$m$个白球，$N-m$个黑球，从中随机地（无放回）取出$n$个球，令$X$表示取出来的白球数</p>
 </blockquote>
 <ul>
-<li>分布列<br>$$ P{X=i} = \frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}} $$</li>
-<li>期望<br>$$ E[X] = \frac{nm}{N} $$</li>
-<li>方差<br>$$ Var(X) = np(1-p)(1-\frac{n-1}{N-1}) $$</li>
+<li>分布列<script type="math/tex; mode=display">P\{X=i\} = \frac{\binom{m}{i}\binom{N-m}{n-i}}{\binom{N}{n}}</script></li>
+<li>期望<script type="math/tex; mode=display">E[X] = \frac{nm}{N}</script></li>
+<li>方差<script type="math/tex; mode=display">Var(X) = np(1-p)(1-\frac{n-1}{N-1})</script></li>
 </ul>
 
       
@@ -492,7 +496,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
+            <a href="/tags/Probability/" rel="tag"># Probability</a>
           
         </div>
       
@@ -589,7 +593,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -603,6 +607,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
                     
                       
                     

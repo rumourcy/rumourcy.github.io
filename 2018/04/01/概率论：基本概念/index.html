@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
-<meta name="keywords" content="Math,Probability">
+<meta name="keywords" content="Probability">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率论：基本概念">
 <meta property="og:url" content="http://yoursite.com/2018/04/01/概率论：基本概念/index.html">
@@ -117,7 +117,7 @@
 <meta property="og:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/probability/arrangement.png">
-<meta property="og:updated_time" content="2019-01-30T09:21:15.135Z">
+<meta property="og:updated_time" content="2019-02-03T08:53:25.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论：基本概念">
 <meta name="twitter:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
@@ -379,7 +379,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-30 17:21:15" itemprop="dateModified" datetime="2019-01-30T17:21:15+08:00">2019-01-30</time>
+                <time title="Modified: 2019-02-03 16:53:25" itemprop="dateModified" datetime="2019-02-03T16:53:25+08:00">2019-02-03</time>
               
             
           </span>
@@ -419,17 +419,17 @@
 </ul>
 <a id="more"></a>
 <h4 id="事件运算法则"><a href="#事件运算法则" class="headerlink" title="事件运算法则"></a>事件运算法则</h4><ul>
-<li>交换律<br>$$A \cup B = B \cup A$$ $$A \cap B = B \cap A$$</li>
-<li>结合律<br>$$A \cup (B \cup C) = (A \cup B) \cup C$$ $$A \cap (B \cap C) = (A \cap B) \cap C$$</li>
-<li>分配律<br>$$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$$ $$A \cup  (B \cap C) = (A \cup B) \cap (A \cup C)$$</li>
-<li>DeMorgan律<br>$$(A \cup B) ^{C} = A^{C} \cap B^{C}$$ $$(A \cap B)^{C} = A^{C} \cup B^{C}$$</li>
+<li>交换律<script type="math/tex; mode=display">A \cup B = B \cup A$$ $$A \cap B = B \cap A</script></li>
+<li>结合律<script type="math/tex; mode=display">A \cup (B \cup C) = (A \cup B) \cup C$$ $$A \cap (B \cap C) = (A \cap B) \cap C</script></li>
+<li>分配律<script type="math/tex; mode=display">A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$$ $$A \cup  (B \cap C) = (A \cup B) \cap (A \cup C)</script></li>
+<li>DeMorgan律<script type="math/tex; mode=display">(A \cup B) ^{C} = A^{C} \cap B^{C}$$ $$(A \cap B)^{C} = A^{C} \cup B^{C}</script></li>
 </ul>
 <h3 id="概率论公理"><a href="#概率论公理" class="headerlink" title="概率论公理"></a>概率论公理</h3><ul>
 <li>$ 0 \leq P(E) \leq 1 $</li>
 <li>$ P(S) = 1 $</li>
-<li>对任一列互不相容的事件$E_1$, $E_2$, …(即如果$i \neq j$, 则$E_iE_j = \phi$), 有<br>$$P(\bigcup_{i=1}^{\infty} E_i)=\sum^n P(E_i)$$<blockquote>
-<p>对于有限个互不相容事件的序列$E_1$, $E_2$, …, $E_n$, 有<br>$$P(\bigcup_{i=1}^n E_i)=\sum_{i=1}^n P(E_i)$$</p>
-</blockquote>
+<li>对任一列互不相容的事件$E_1$, $E_2$, …(即如果$i \neq j$, 则$E_iE_j = \phi$), 有<script type="math/tex; mode=display">P(\bigcup_{i=1}^{\infty} E_i)=\sum^n P(E_i)</script><blockquote>
+<p>对于有限个互不相容事件的序列$E_1$, $E_2$, …, $E_n$, 有</p>
+<script type="math/tex; mode=display">P(\bigcup_{i=1}^n E_i)=\sum_{i=1}^n P(E_i)</script></blockquote>
 </li>
 </ul>
 <h3 id="概率演算"><a href="#概率演算" class="headerlink" title="概率演算"></a>概率演算</h3><ul>
@@ -444,7 +444,8 @@
 </li>
 <li>$P(E_{1} \cup E_{2} \cup … \cup E_{n})$<br>$=\sum_{i = 1}^{n} P(E_{i}) - \sum_{i_{1} \lt i_{2}}P(E_{i_{1}} E_{i_{2}}) + … + (-1)^{r+1} \sum_{i_{1} \lt i_{2} \lt … \lt i_{r}} P(E_{i_{1}} E_{i_{2}} … E{i_{r}}) + … + (-1)^{n+1} P(E_{1} E_{2} … E_{n})$</li>
 </ul>
-<h3 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h3><table>
+<h3 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
@@ -465,42 +466,44 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
-<li>无序有放回<br>在44个数中抽取6个数,最简单的方法是把它看成给44个数标记6个记号.事实上,可以把这44个数看成44个箱子,6个记号M可以随意放置在这些箱子中,如下所示:<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/probability/arrangement.png" alt="arrangement"><br>于是所有可能的数目就等于将6个记号置于44个箱子中的全体可能方式的数目,只需要考察记号与箱壁的全排列,且两端的箱壁无意义.得到的排列数为:<br>$$\frac{49!}{6! 43!}$$</li>
+<li>无序有放回<br>在44个数中抽取6个数,最简单的方法是把它看成给44个数标记6个记号.事实上,可以把这44个数看成44个箱子,6个记号M可以随意放置在这些箱子中,如下所示:<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/probability/arrangement.png" alt="arrangement"><br>于是所有可能的数目就等于将6个记号置于44个箱子中的全体可能方式的数目,只需要考察记号与箱壁的全排列,且两端的箱壁无意义.得到的排列数为:<script type="math/tex; mode=display">\frac{49!}{6! 43!}</script></li>
 </ul>
-<h4 id="二项式系数"><a href="#二项式系数" class="headerlink" title="二项式系数"></a>二项式系数</h4><p>$$\binom{n}{r} = \frac{n!}{(n-r)! r!}$$</p>
-<ul>
-<li>二项式定理<br>$$(x+y)^n=\sum_{k=0}^n\binom{n}{k}x^ky^{n-k}$$</li>
+<h4 id="二项式系数"><a href="#二项式系数" class="headerlink" title="二项式系数"></a>二项式系数</h4><script type="math/tex; mode=display">\binom{n}{r} = \frac{n!}{(n-r)! r!}</script><ul>
+<li>二项式定理<script type="math/tex; mode=display">(x+y)^n=\sum_{k=0}^n\binom{n}{k}x^ky^{n-k}</script></li>
 </ul>
 <h4 id="多项式系数"><a href="#多项式系数" class="headerlink" title="多项式系数"></a>多项式系数</h4><blockquote>
-<p>若$n_1+n_2+…+n_r=n$, 则<br>$$\binom{n}{n_1,n_2,…,n_r}=\frac{n!}{n_1!n_2!…n_r!}$$</p>
-</blockquote>
+<p>若$n_1+n_2+…+n_r=n$, 则</p>
+<script type="math/tex; mode=display">\binom{n}{n_1,n_2,...,n_r}=\frac{n!}{n_1!n_2!...n_r!}</script></blockquote>
 <ul>
-<li>多项式定理<br>$$(x_{1} + x_{2} + … + x_{r})^{n} = \sum_{n_1+n_2+…+n_r=n}  \binom{n}{n_1,n_2,…,n_r} x_{1}^{n_{1}} x_{2}^{n_{2}} … x_{r}^{n_{r}}$$</li>
+<li>多项式定理<script type="math/tex; mode=display">(x_{1} + x_{2} + ... + x_{r})^{n} = \sum_{n_1+n_2+...+n_r=n}  \binom{n}{n_1,n_2,...,n_r} x_{1}^{n_{1}} x_{2}^{n_{2}} ... x_{r}^{n_{r}}</script></li>
 </ul>
 <h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><blockquote>
 <p>假定$F$发生的情况下$E$发生的条件概率, 记为$P(E|F)$<br>定义：如果$P(F)&gt;0$, 那么$P(E|F)=P(EF)/P(F)$</p>
 </blockquote>
-<p>$$P(EF) = P(F)P(E|F)$$</p>
-<h4 id="乘法规则"><a href="#乘法规则" class="headerlink" title="乘法规则"></a>乘法规则</h4><p>$$P(E_1E_2E_3…E_n) = P(E_1)P(E_2|E_1)P(E_3|E_1E_2)…P(E_n|E_1…E_{n-1})$$</p>
-<h4 id="P-cdot-F-是概率"><a href="#P-cdot-F-是概率" class="headerlink" title="$P(\cdot | F)$是概率"></a>$P(\cdot | F)$是概率</h4><ul>
+<script type="math/tex; mode=display">P(EF) = P(F)P(E|F)</script><h4 id="乘法规则"><a href="#乘法规则" class="headerlink" title="乘法规则"></a>乘法规则</h4><script type="math/tex; mode=display">P(E_1E_2E_3...E_n) = P(E_1)P(E_2|E_1)P(E_3|E_1E_2)...P(E_n|E_1...E_{n-1})</script><h4 id="P-cdot-F-是概率"><a href="#P-cdot-F-是概率" class="headerlink" title="$P(\cdot | F)$是概率"></a>$P(\cdot | F)$是概率</h4><ul>
 <li>$0 \leq P(E|F) \leq 1$</li>
 <li>$P(S|F) = 1$</li>
-<li>若$E_{i}(i = 1, 2, …)$为互不相容的事件序列,则<br>$$P(\cup_{i=1}^{\infty}) = \sum_{i=1}^{\infty} P(E_{i} | F)$$</li>
+<li>若$E_{i}(i = 1, 2, …)$为互不相容的事件序列,则<script type="math/tex; mode=display">P(\cup_{i=1}^{\infty}) = \sum_{i=1}^{\infty} P(E_{i} | F)</script></li>
 </ul>
 <blockquote>
 <p>证:<br>$P(E|F) = P(EF)/P(F) \geq 0$<br>$EF \subset F \to P(EF) \leq P(F)$<br>$P(S|F) = \frac{P(SF)}{P(F)} = \frac{P(F)}{P(F)} = 1$<br>$P(\cup_{i=1}^{\infty} E_{i} | F) = \frac{P((\cup_{i=1}^{\infty} E_{i})F)}{P(F)}=\frac{P(\cup_{i=1}^{\infty} E_{i} F)}{P(F)} = \frac{\sum_{i=1}^{\infty} P(E_{i} F)}{P(F)} = \sum_{i=1}^{\infty} P(E_{i} | F)$</p>
 </blockquote>
 <h3 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h3><h4 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h4><blockquote>
-<p>假定$F_1$, $F_2$, …, $F_n$是互不相容的事件, 且<br>$$\bigcup_{i=1}^{n} F_i = S$$<br>则$E=\cup {EF_i}$, 且$EF_i(i=1,…,n)$是互不相容的, 有<br>$$ P(E)=\sum_{i=1}^{n}P(EF_i)=\sum_{i=1}^{n}P(E|F_i)P(F_i) $$</p>
-</blockquote>
+<p>假定$F_1$, $F_2$, …, $F_n$是互不相容的事件, 且</p>
+<script type="math/tex; mode=display">\bigcup_{i=1}^{n} F_i = S</script><p>则$E=\cup {EF_i}$, 且$EF_i(i=1,…,n)$是互不相容的, 有</p>
+<script type="math/tex; mode=display">P(E)=\sum_{i=1}^{n}P(EF_i)=\sum_{i=1}^{n}P(E|F_i)P(F_i)</script></blockquote>
 <h4 id="贝叶斯公式-1"><a href="#贝叶斯公式-1" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h4><blockquote>
-<p>假定$F_1$, $F_2$, …, $F_n$是互不相容的事件, 且<br>$$\bigcup_{i=1}^{n} F_i = S$$<br>则<br>$$ P(F_j|E) = \frac{P(EF_j)}{P(E)} = \frac{P(E|F_j)P(F_j)}{\sum_{i=1}^{n}P(E|F_i)P(F_i)} $$<br>表示试验之前对这些假设条件所作的判断[$P(F_j)$], 根据试验结果$E$来修正</p>
+<p>假定$F_1$, $F_2$, …, $F_n$是互不相容的事件, 且</p>
+<script type="math/tex; mode=display">\bigcup_{i=1}^{n} F_i = S</script><p>则</p>
+<script type="math/tex; mode=display">P(F_j|E) = \frac{P(EF_j)}{P(E)} = \frac{P(E|F_j)P(F_j)}{\sum_{i=1}^{n}P(E|F_i)P(F_i)}</script><p>表示试验之前对这些假设条件所作的判断[$P(F_j)$], 根据试验结果$E$来修正</p>
 </blockquote>
-<h3 id="独立事件"><a href="#独立事件" class="headerlink" title="独立事件"></a>独立事件</h3><p>因为$P(E|F) = P(EF) / P(F)$, 所以如果<br>$$P(EF) = P(E)P(F)$$<br>那么$E$和$F$独立</p>
+<h3 id="独立事件"><a href="#独立事件" class="headerlink" title="独立事件"></a>独立事件</h3><p>因为$P(E|F) = P(EF) / P(F)$, 所以如果</p>
+<script type="math/tex; mode=display">P(EF) = P(E)P(F)</script><p>那么$E$和$F$独立</p>
 <blockquote>
-<p>事件$E_1$, …, $E_n$称为独立的, 如果对任何子集$E_{i_1}$, …, $E_{i_r}$, 有<br>$$P(E_{i_1}…E_{i_r})=P(E_{i_1})…P(E_{i_r})$$</p>
-</blockquote>
+<p>事件$E_1$, …, $E_n$称为独立的, 如果对任何子集$E_{i_1}$, …, $E_{i_r}$, 有</p>
+<script type="math/tex; mode=display">P(E_{i_1}...E_{i_r})=P(E_{i_1})...P(E_{i_r})</script></blockquote>
 
       
     </div>
@@ -523,8 +526,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Math/" rel="tag"># Math</a>
           
             <a href="/tags/Probability/" rel="tag"># Probability</a>
           
@@ -623,7 +624,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -637,6 +638,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
                     
                       
                     
