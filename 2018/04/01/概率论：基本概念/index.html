@@ -117,7 +117,7 @@
 <meta property="og:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/probability/arrangement.png">
-<meta property="og:updated_time" content="2019-02-03T08:53:25.406Z">
+<meta property="og:updated_time" content="2019-02-03T12:27:56.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论：基本概念">
 <meta name="twitter:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
@@ -379,7 +379,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-03 16:53:25" itemprop="dateModified" datetime="2019-02-03T16:53:25+08:00">2019-02-03</time>
+                <time title="Modified: 2019-02-03 20:27:56" itemprop="dateModified" datetime="2019-02-03T20:27:56+08:00">2019-02-03</time>
               
             
           </span>
@@ -419,10 +419,14 @@
 </ul>
 <a id="more"></a>
 <h4 id="事件运算法则"><a href="#事件运算法则" class="headerlink" title="事件运算法则"></a>事件运算法则</h4><ul>
-<li>交换律<script type="math/tex; mode=display">A \cup B = B \cup A$$ $$A \cap B = B \cap A</script></li>
-<li>结合律<script type="math/tex; mode=display">A \cup (B \cup C) = (A \cup B) \cup C$$ $$A \cap (B \cap C) = (A \cap B) \cap C</script></li>
-<li>分配律<script type="math/tex; mode=display">A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$$ $$A \cup  (B \cap C) = (A \cup B) \cap (A \cup C)</script></li>
-<li>DeMorgan律<script type="math/tex; mode=display">(A \cup B) ^{C} = A^{C} \cap B^{C}$$ $$(A \cap B)^{C} = A^{C} \cup B^{C}</script></li>
+<li><p>交换律</p>
+<script type="math/tex; mode=display">A \cup B = B \cup A$$ $$A \cap B = B \cap A</script></li>
+<li><p>结合律</p>
+<script type="math/tex; mode=display">A \cup (B \cup C) = (A \cup B) \cup C</script><script type="math/tex; mode=display">A \cap (B \cap C) = (A \cap B) \cap C</script></li>
+<li><p>分配律</p>
+<script type="math/tex; mode=display">A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</script><script type="math/tex; mode=display">A \cup  (B \cap C) = (A \cup B) \cap (A \cup C)</script></li>
+<li><p>DeMorgan律</p>
+<script type="math/tex; mode=display">(A \cup B) ^{C} = A^{C} \cap B^{C}</script><script type="math/tex; mode=display">(A \cap B)^{C} = A^{C} \cup B^{C}</script></li>
 </ul>
 <h3 id="概率论公理"><a href="#概率论公理" class="headerlink" title="概率论公理"></a>概率论公理</h3><ul>
 <li>$ 0 \leq P(E) \leq 1 $</li>
@@ -442,7 +446,9 @@
 </li>
 <li><p>$P(E \cup F) = P(E) + P(F) - P(E \cap F)$</p>
 </li>
-<li>$P(E_{1} \cup E_{2} \cup … \cup E_{n})$<br>$=\sum_{i = 1}^{n} P(E_{i}) - \sum_{i_{1} \lt i_{2}}P(E_{i_{1}} E_{i_{2}}) + … + (-1)^{r+1} \sum_{i_{1} \lt i_{2} \lt … \lt i_{r}} P(E_{i_{1}} E_{i_{2}} … E{i_{r}}) + … + (-1)^{n+1} P(E_{1} E_{2} … E_{n})$</li>
+<li><p>$P(E_{1} \cup E_{2} \cup … \cup E_{n})$<br>$=\sum_{i = 1}^{n} P(E_{i}) - \sum_{i_{1} \lt i_{2}}P(E_{i_{1}} E_{i_{2}}) + … $</p>
+<p>$+ (-1)^{r+1} \sum_{i_{1} \lt i_{2} \lt … \lt i_{r}} P(E_{i_{1}} E_{i_{2}} … E{i_{r}}) + … + (-1)^{n+1} P(E_{1} E_{2} … E_{n})$</p>
+</li>
 </ul>
 <h3 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h3><div class="table-container">
 <table>
@@ -624,7 +630,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
