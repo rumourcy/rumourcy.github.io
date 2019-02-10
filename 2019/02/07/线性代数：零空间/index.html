@@ -108,36 +108,27 @@
 
 
 
-  <meta name="description" content="复数概述复数表示 笛卡儿坐标系  z=a+ib$a$表示实部，$b$表示虚部可以将 $a+ib$ 看成xy平面上以$(a, b)$为坐标的点，或者等价地看作连接原点到此点的向量这样的平面记作$C$，称为复平面   极坐标  z=r\angle\theta$r=|z|$, $\theta=\arg z$">
-<meta name="keywords" content="Complex Analysis">
+  <meta name="description" content="Null SpaceNull space of $A$ = all solutions $x = \left[\begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$ to $Ax = 0$ in $R^{3}$  $N(A)$">
+<meta name="keywords" content="Linear Algebra">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Complex Number">
-<meta property="og:url" content="http://yoursite.com/2018/01/15/Complex-Number/index.html">
+<meta property="og:title" content="线性代数：零空间">
+<meta property="og:url" content="http://yoursite.com/2019/02/07/线性代数：零空间/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="复数概述复数表示 笛卡儿坐标系  z=a+ib$a$表示实部，$b$表示虚部可以将 $a+ib$ 看成xy平面上以$(a, b)$为坐标的点，或者等价地看作连接原点到此点的向量这样的平面记作$C$，称为复平面   极坐标  z=r\angle\theta$r=|z|$, $\theta=\arg z$">
+<meta property="og:description" content="Null SpaceNull space of $A$ = all solutions $x = \left[\begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$ to $Ax = 0$ in $R^{3}$  $N(A)$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/complex_plan.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/operation.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/sign.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/ei.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/peano.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/Lagrange.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/ex.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/ecossin.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/sinx.png">
-<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/eiz.png">
-<meta property="og:updated_time" content="2019-02-03T08:54:17.891Z">
+<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/null-space/NA.png">
+<meta property="og:updated_time" content="2019-02-10T11:47:46.993Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Complex Number">
-<meta name="twitter:description" content="复数概述复数表示 笛卡儿坐标系  z=a+ib$a$表示实部，$b$表示虚部可以将 $a+ib$ 看成xy平面上以$(a, b)$为坐标的点，或者等价地看作连接原点到此点的向量这样的平面记作$C$，称为复平面   极坐标  z=r\angle\theta$r=|z|$, $\theta=\arg z$">
-<meta name="twitter:image" content="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/complex_plan.png">
+<meta name="twitter:title" content="线性代数：零空间">
+<meta name="twitter:description" content="Null SpaceNull space of $A$ = all solutions $x = \left[\begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$ to $Ax = 0$ in $R^{3}$  $N(A)$">
+<meta name="twitter:image" content="https://github.com/trierbo/blog-source/raw/master/pics/null-space/NA.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/15/Complex-Number/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/07/线性代数：零空间/">
 
 
 
@@ -147,7 +138,7 @@
   };
 </script>
 
-  <title>Complex Number | trierbo's blog</title>
+  <title>线性代数：零空间 | trierbo's blog</title>
   
 
 
@@ -329,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/15/Complex-Number/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/07/线性代数：零空间/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -346,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Complex Number
+          <h1 class="post-title" itemprop="name headline">线性代数：零空间
               
             
           </h1>
@@ -371,7 +362,7 @@
                 
               
 
-              <time title="Created: 2018-01-15 11:18:43" itemprop="dateCreated datePublished" datetime="2018-01-15T11:18:43+08:00">2018-01-15</time>
+              <time title="Created: 2019-02-07 17:12:22" itemprop="dateCreated datePublished" datetime="2019-02-07T17:12:22+08:00">2019-02-07</time>
             
 
             
@@ -388,7 +379,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-03 16:54:17" itemprop="dateModified" datetime="2019-02-03T16:54:17+08:00">2019-02-03</time>
+                <time title="Modified: 2019-02-10 19:47:46" itemprop="dateModified" datetime="2019-02-10T19:47:46+08:00">2019-02-10</time>
               
             
           </span>
@@ -421,109 +412,162 @@
       
 
       
-        <h3 id="复数概述"><a href="#复数概述" class="headerlink" title="复数概述"></a>复数概述</h3><h4 id="复数表示"><a href="#复数表示" class="headerlink" title="复数表示"></a>复数表示</h4><ul>
-<li><p>笛卡儿坐标系</p>
+        <h3 id="Null-Space"><a href="#Null-Space" class="headerlink" title="Null Space"></a>Null Space</h3><p>Null space of $A$ = all solutions $x = \left[\begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$ to $Ax = 0$ in $R^{3}$</p>
 <blockquote>
-<script type="math/tex; mode=display">z=a+ib</script><p>$a$表示实部，$b$表示虚部<br>可以将 $a+ib$ 看成xy平面上以$(a, b)$为坐标的点，或者等价地看作连接原点到此点的向量<br>这样的平面记作$C$，称为复平面<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/complex_plan.png" alt="complex plan"></p>
+<p>$N(A)$</p>
 </blockquote>
-</li>
-<li><p>极坐标</p>
-<blockquote>
-<script type="math/tex; mode=display">z=r\angle\theta</script><p>$r=|z|$, $\theta=\arg z$</p>
-</blockquote>
-</li>
-</ul>
 <a id="more"></a>
-<h4 id="复数算术"><a href="#复数算术" class="headerlink" title="复数算术"></a>复数算术</h4><ul>
-<li>几何算术<ul>
-<li>加法法则：两个复数之和$A+B$通常由向量加法的平行四边形法则给出</li>
-<li>乘法法则：$AB$之长是$A$之长与$B$之长的乘积，$AB$的辐角是$A$与$B$的辐角之和<blockquote>
-<p>极坐标表示几何乘法法则：</p>
-<script type="math/tex; mode=display">(R \angle \phi)(r \angle \theta) = (Rr) \angle (\phi\theta)</script></blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/operation.png" alt="operation"></p>
-<ul>
-<li>符号算术<ul>
-<li>加法法则：$A+B = (a+ib)+(c+id) = (a+c)+i(b+d)$</li>
-<li>乘法法则：$(a+ib)(c+id) = ac+i(ad+bc)+i^2{bd}$</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>两者是等价的</p>
+<script type="math/tex; mode=display">
+A = \left[\begin{array}{c}
+1 & 1 & 2 \\
+2 & 1 & 3 \\
+3 & 1 & 4 \\
+4 & 1 & 5
+\end{array}\right]</script><script type="math/tex; mode=display">
+Ax = 0 \to x = c\left[\begin{array}{c}1 \\ 1 \\ -1\end{array}\right]</script><blockquote>
+<p>Line in $R^{3}$</p>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/null-space/NA.png" alt="null space"></p>
 </blockquote>
-<h4 id="术语与记号"><a href="#术语与记号" class="headerlink" title="术语与记号"></a>术语与记号</h4><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">含意</th>
-<th style="text-align:center">记号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">$z$的模</td>
-<td style="text-align:center">$z$的长度$r$</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">$z$的辐角</td>
-<td style="text-align:center">$z$的角度$\theta$</td>
-<td style="text-align:center">$ \arg z $</td>
-</tr>
-<tr>
-<td style="text-align:center">$z$的实部</td>
-<td style="text-align:center">$z$的$x$坐标</td>
-<td style="text-align:center">$ Re(z) $</td>
-</tr>
-<tr>
-<td style="text-align:center">$z$的虚部</td>
-<td style="text-align:center">$z$的$y$坐标</td>
-<td style="text-align:center">$ Im(z) $</td>
-</tr>
-<tr>
-<td style="text-align:center">虚数</td>
-<td style="text-align:center">$i$的实数倍</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">实轴</td>
-<td style="text-align:center">实数的集合</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">虚轴</td>
-<td style="text-align:center">虚数的集合</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">$z$的复共轭</td>
-<td style="text-align:center">$z$对实轴的反射</td>
-<td style="text-align:center">$\overline{z}$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/sign.png" alt="sign"></p>
-<h3 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h3><script type="math/tex; mode=display">e^{i\theta} = \cos\theta + i\sin\theta</script><h4 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h4><blockquote>
-<p>这个公式表明$e^{i\theta}$是单位圆上辐角为$\theta$的一点<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/ei.png" alt="mean"><br>因此，</p>
-<script type="math/tex; mode=display">z = r\angle\theta</script><p>可以写为</p>
-<script type="math/tex; mode=display">z = re^{i\theta}</script><p>则复数乘法的几何法则可表示为：</p>
-<script type="math/tex; mode=display">(Re^{i\phi})(re^{i\theta}) = Rre^{i(\theta+\phi)}</script></blockquote>
-<h4 id="泰勒公式"><a href="#泰勒公式" class="headerlink" title="泰勒公式"></a>泰勒公式</h4><ul>
-<li>佩亚诺(Peano)型余项<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/peano.png" alt="Peano"></li>
-<li>拉格朗日(Lagrange)型余项<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/Lagrange.png" alt="Lagrange"></li>
-</ul>
-<h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><p><strong>利用上述泰勒公式进行证明</strong></p>
-<blockquote>
-<p>把函数$e^x$,$\cos x$和$\sin x$利用泰勒公式展开：<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/ex.png" alt="ex"><br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/ecossin.png" alt="cosx"><br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/sinx.png" alt="sinx"><br>将$x=iz$带入$e^x$得：<br><img src="https://github.com/trierbo/blog-source/raw/master/pics/complex-number/eiz.png" alt="e^iz"></p>
+<p>Check that solutions to $Ax = 0$ always give a subspace</p>
+<p>If $Ax = 0$ and $Ax^{*} = 0$</p>
+<p>then $A(x + x^{*}) = 0$ and $A(cx) = 0$</p>
+<script type="math/tex; mode=display">
+Ax = \left[\begin{array}{c}
+1 & 1 & 2 \\
+2 & 1 & 3 \\
+3 & 1 & 4 \\
+4 & 1 & 5
+\end{array}\right]
+\left[\begin{array}{c}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right] = 
+\left[\begin{array}{c}
+1 \\
+2 \\
+3 \\
+4
+\end{array}\right]</script><p>$x$的解不是子空间</p>
+<h3 id="Computing-the-Null-Space"><a href="#Computing-the-Null-Space" class="headerlink" title="Computing the Null Space"></a>Computing the Null Space</h3><script type="math/tex; mode=display">
+Ax = 0</script><script type="math/tex; mode=display">
+A = \left[\begin{array}{c}
+1 & 2 & 2 & 2 \\
+2 & 4 & 6 & 8 \\
+3 & 6 & 8 & 10
+\end{array}\right] \to
+\left[\begin{array}{c}
+1 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 2 & 4
+\end{array}\right] \to
+\left[\begin{array}{c}
+{\color{red} 1} & 2 & 2 & 2 \\
+0 & 0 & {\color{red} 2} & 4 \\
+0 & 0 & 0 & 0
+\end{array}\right] = U</script><blockquote>
+<p>红色标注为主元, 其所在的列为主元列 <code>2 pivot columns</code></p>
+<p>剩余列为<code>free columns</code> $x_{2} x_{4}$可取任意解</p>
+<p>$U$ <code>echelon form</code> <code>梯形形式</code></p>
 </blockquote>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><em>复分析 可视化方法</em><br><a href="https://en.wikipedia.org/wiki/Euler%27s_formula" target="_blank" rel="noopener">Euler’s formula</a><br><a href="https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E5%85%AC%E5%BC%8F" target="_blank" rel="noopener">欧拉公式</a></p>
-
+<p>rank of $A$ = num of pivots = $2$</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{1} + 2x_{2} + 2x_{3} + 2x_{4} = 0 \\
+2x_{3} + 4x_{4} = 0
+\end{cases} \to
+x = c\left[\begin{array}{c}
+-2 \\
+1 \\
+0 \\
+0 
+\end{array}\right] + 
+d\left[\begin{array}{c}
+2 \\
+0 \\
+-2 \\
+1
+\end{array}\right]</script><h4 id="Reduced-Row-Echelon-Form"><a href="#Reduced-Row-Echelon-Form" class="headerlink" title="Reduced Row Echelon Form"></a>Reduced Row Echelon Form</h4><blockquote>
+<p>$0$ above and below pivots</p>
+<p>pivot = $1$</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\left[\begin{array}{c}
+1 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{array}\right] \to
+\left[\begin{array}{c}
+1 & 2 & 0 & -2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{array}\right] \to
+\left[\begin{array}{c}
+{\color{red} 1} & 2 & 0 & -2 \\
+0 & 0 & {\color{red} 1} & 2 \\
+0 & 0 & 0 & 0
+\end{array}\right] = R</script><p>notice $\left[\begin{array}{c}1 &amp; 0 \\ 0 &amp; 1 \end{array}\right] = I$ in pivot rows and cols</p>
+<script type="math/tex; mode=display">
+Rx = 0</script><script type="math/tex; mode=display">
+\begin{cases}
+x_{1} + 2x_{2} - 2x_{4} = 0 \\
+x_{3} + 2x_{4} = 0
+\end{cases}</script><ul>
+<li><p>pivot cols</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+1 & 0 \\
+0 & 1 \\
+0 & 0
+\end{array}</script></li>
+<li><p>free cols</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+2 & -2 \\
+0 & 2 \\
+0 & 0
+\end{array}</script><script type="math/tex; mode=display">
+F = \left[\begin{array}{c}
+2 & -2 \\
+0 & 2 \\
+\end{array}\right]</script></li>
+<li><p>rref form</p>
+<script type="math/tex; mode=display">
+R = \left[\begin{array}{c}
+I & F \\
+0 & 0
+\end{array}\right]</script><ul>
+<li>$I \to r \times r$</li>
+<li>$F \to r \times (n - r)$</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+Rx = 0 \to 
+\left[\begin{array}{c}
+I & F
+\end{array}\right]
+\left[\begin{array}{c}
+x_{poivt} \\
+x_{free}
+\end{array}\right] = 0 \to
+x_{poivt} = -Fx_{free}</script><p>null space matrix $N$</p>
+<script type="math/tex; mode=display">
+RN = 0 \\
+\left[\begin{array}{c}
+I & F
+\end{array}\right]
+\left[\begin{array}{c}
+-F \\
+I
+\end{array}\right] = 0 \\
+N = \left[\begin{array}{c}
+-F \\
+I
+\end{array}\right]</script><blockquote>
+<p>$N$ special solution</p>
+</blockquote>
+<h3 id="Computing-Solution-of-Ax-b"><a href="#Computing-Solution-of-Ax-b" class="headerlink" title="Computing Solution of $Ax = b$"></a>Computing Solution of $Ax = b$</h3>
       
     </div>
 
@@ -546,7 +590,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Complex-Analysis/" rel="tag"># Complex Analysis</a>
+            <a href="/tags/Linear-Algebra/" rel="tag"># Linear Algebra</a>
           
         </div>
       
@@ -559,8 +603,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/12/Harmonics/" rel="next" title="Harmonics">
-                <i class="fa fa-chevron-left"></i> Harmonics
+              <a href="/2019/02/05/线性代数：向量空间/" rel="next" title="线性代数：向量空间">
+                <i class="fa fa-chevron-left"></i> 线性代数：向量空间
               </a>
             
           </div>
@@ -568,10 +612,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/01/概率论：基本概念/" rel="prev" title="概率论：基本概念">
-                概率论：基本概念 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -731,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#复数概述"><span class="nav-number">1.</span> <span class="nav-text">复数概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#复数表示"><span class="nav-number">1.1.</span> <span class="nav-text">复数表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复数算术"><span class="nav-number">1.2.</span> <span class="nav-text">复数算术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#术语与记号"><span class="nav-number">1.3.</span> <span class="nav-text">术语与记号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#欧拉公式"><span class="nav-number">2.</span> <span class="nav-text">欧拉公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#物理意义"><span class="nav-number">2.1.</span> <span class="nav-text">物理意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泰勒公式"><span class="nav-number">2.2.</span> <span class="nav-text">泰勒公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#证明"><span class="nav-number">2.3.</span> <span class="nav-text">证明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Null-Space"><span class="nav-number">1.</span> <span class="nav-text">Null Space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computing-the-Null-Space"><span class="nav-number">2.</span> <span class="nav-text">Computing the Null Space</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduced-Row-Echelon-Form"><span class="nav-number">2.1.</span> <span class="nav-text">Reduced Row Echelon Form</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computing-Solution-of-Ax-b"><span class="nav-number">3.</span> <span class="nav-text">Computing Solution of $Ax = b$</span></a></li></ol></div>
             
 
           </div>
