@@ -117,7 +117,7 @@
 <meta property="og:description" content="Null SpaceNull space of $A$ = all solutions $x = \left[\begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$ to $Ax = 0$ in $R^{3}$  $N(A)$">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/null-space/NA.png">
-<meta property="og:updated_time" content="2019-02-10T11:47:46.993Z">
+<meta property="og:updated_time" content="2019-02-11T05:31:24.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性代数：零空间">
 <meta name="twitter:description" content="Null SpaceNull space of $A$ = all solutions $x = \left[\begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$ to $Ax = 0$ in $R^{3}$  $N(A)$">
@@ -379,7 +379,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-10 19:47:46" itemprop="dateModified" datetime="2019-02-10T19:47:46+08:00">2019-02-10</time>
+                <time title="Modified: 2019-02-11 13:31:24" itemprop="dateModified" datetime="2019-02-11T13:31:24+08:00">2019-02-11</time>
               
             
           </span>
@@ -567,7 +567,126 @@ I
 \end{array}\right]</script><blockquote>
 <p>$N$ special solution</p>
 </blockquote>
-<h3 id="Computing-Solution-of-Ax-b"><a href="#Computing-Solution-of-Ax-b" class="headerlink" title="Computing Solution of $Ax = b$"></a>Computing Solution of $Ax = b$</h3>
+<h3 id="Computing-Solution-of-Ax-b"><a href="#Computing-Solution-of-Ax-b" class="headerlink" title="Computing Solution of $Ax = b$"></a>Computing Solution of $Ax = b$</h3><script type="math/tex; mode=display">
+\begin{cases}
+x_{1} + 2x_{2} + 2x_{3} + 2x_{4} = b_{1} \\
+2x_{1} + 4x_{2} + 6x_{3} + 8x_{4} = b_{2} \\
+3x_{1} + 6x_{2} + 8x_{3} + 10x_{4} = b_{3}
+\end{cases}</script><script type="math/tex; mode=display">
+\left[\begin{array}{c:c}
+\begin{matrix}
+1 & 2 & 2 & 2 \\
+2 & 4 & 6 & 8 \\
+3 & 6 & 8 & 10
+\end{matrix} &
+\begin{matrix}
+b_{1} \\
+b_{2} \\
+b_{3}
+\end{matrix}
+\end{array}\right] \to
+\left[\begin{array}{c:c}
+\begin{matrix}
+1 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 2 & 4
+\end{matrix} &
+\begin{matrix}
+b_{1} \\
+b_{2} - 2b_{1} \\
+b_{3} - 3b_{1}
+\end{matrix}
+\end{array}\right] \to
+\left[\begin{array}{c:c}
+\begin{matrix}
+1 & 2 & 2 & 2 \\
+0 & 0 & 2 & 4 \\
+0 & 0 & 0 & 0
+\end{matrix} &
+\begin{matrix}
+b_{1} \\
+b_{2} - 2b_{1} \\
+b_{3} - b_{2} - b_{1}
+\end{matrix}
+\end{array}\right]</script><blockquote>
+<p><strong>Solvability</strong></p>
+<p>Condition on $b$</p>
+<p>$Ax = b$ solvable: when $b$ is in $C(A)$</p>
+<p>If a combination of rows $A$ gives zero row, then same combination of entries of $B$ must give $0$.</p>
+</blockquote>
+<h4 id="To-find-complete-solutions-to-Ax-b"><a href="#To-find-complete-solutions-to-Ax-b" class="headerlink" title="To find complete solutions to $Ax = b$"></a>To find complete solutions to $Ax = b$</h4><ul>
+<li><p>$x_{particular}$</p>
+<blockquote>
+<p>set all free variables to $0$, solve $Ax = b$ for pivot variables</p>
+</blockquote>
+<p>$x_{2} = 0 \quad x_{4} = 0$</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x_{1} + 2x_{3} = 1 \\
+2x_{3} = 3
+\end{cases} \to
+\begin{cases}
+x_{1} = -2 \\
+x_{3} = \frac{3}{2}
+\end{cases}</script><script type="math/tex; mode=display">
+x_{p} = 
+\left[\begin{array}{c}
+-2 \\
+0 \\
+\frac{3}{2} \\
+0
+\end{array}\right]</script></li>
+<li><p>$x_{nullspace}$</p>
+<script type="math/tex; mode=display">
+x = x_{p} + x_{n}</script><blockquote>
+<p>$Ax_{p} = b \quad Ax_{n} = 0$</p>
+<p>$A(x_{p} + x_{n}) = b$</p>
+</blockquote>
+<script type="math/tex; mode=display">
+x_{complete} = 
+\left[\begin{array}{c}
+-2 \\
+0 \\
+\frac{3}{2} \\
+0
+\end{array}\right] + 
+c_{1} \left[\begin{array}{c}
+-2 \\
+1 \\
+0 \\
+0
+\end{array}\right] + 
+c_{2} \left[\begin{array}{c}
+2 \\
+0 \\
+-2 \\
+1
+\end{array}\right]</script></li>
+</ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><h4 id="m-times-n-matrix-A-of-rank-r"><a href="#m-times-n-matrix-A-of-rank-r" class="headerlink" title="$m \times n$ matrix $A$ of rank $r$"></a>$m \times n$ matrix $A$ of rank $r$</h4><ul>
+<li><p>Full column rank means $r = n$: No free variables</p>
+<p>$N(A) = {zero vector}$</p>
+<p>solution to $Ax = b$: $x = x_{p}$ unique solution  if it exists(0 or 1 solution)</p>
+</li>
+<li><p>Full row rank means $r = m$</p>
+<p>can solve $Ax = b$ for every $b$, left with $n - r$ free variables</p>
+</li>
+</ul>
+<h4 id="Solutions-to-Ax-b"><a href="#Solutions-to-Ax-b" class="headerlink" title="Solutions to $Ax = b$"></a>Solutions to $Ax = b$</h4><ul>
+<li><p>$r = m = n$ </p>
+<p>$R = I$ $1$ solution</p>
+</li>
+<li><p>$r = n \lt m$</p>
+<p>$R = \left[\begin{array}{c}I \\ 0 \end{array}\right]$ $0$ or $1$ solution</p>
+</li>
+<li><p>$r = m \lt n$</p>
+<p>$R = \left[\begin{array}{c}I &amp; F \end{array}\right]$ $\infty$ solutions</p>
+</li>
+<li><p>$r \lt m \quad r \lt n$</p>
+<p>$R = \left[\begin{array}{c}I  &amp; F \\ 0 &amp; 0 \end{array}\right]$ $0$ or $\infty$ solutions</p>
+</li>
+</ul>
+
       
     </div>
 
@@ -771,7 +890,7 @@ I
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Null-Space"><span class="nav-number">1.</span> <span class="nav-text">Null Space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computing-the-Null-Space"><span class="nav-number">2.</span> <span class="nav-text">Computing the Null Space</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduced-Row-Echelon-Form"><span class="nav-number">2.1.</span> <span class="nav-text">Reduced Row Echelon Form</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computing-Solution-of-Ax-b"><span class="nav-number">3.</span> <span class="nav-text">Computing Solution of $Ax = b$</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Null-Space"><span class="nav-number">1.</span> <span class="nav-text">Null Space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computing-the-Null-Space"><span class="nav-number">2.</span> <span class="nav-text">Computing the Null Space</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reduced-Row-Echelon-Form"><span class="nav-number">2.1.</span> <span class="nav-text">Reduced Row Echelon Form</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computing-Solution-of-Ax-b"><span class="nav-number">3.</span> <span class="nav-text">Computing Solution of $Ax = b$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#To-find-complete-solutions-to-Ax-b"><span class="nav-number">3.1.</span> <span class="nav-text">To find complete solutions to $Ax = b$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">4.</span> <span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#m-times-n-matrix-A-of-rank-r"><span class="nav-number">4.1.</span> <span class="nav-text">$m \times n$ matrix $A$ of rank $r$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solutions-to-Ax-b"><span class="nav-number">4.2.</span> <span class="nav-text">Solutions to $Ax = b$</span></a></li></ol></li></ol></div>
             
 
           </div>
