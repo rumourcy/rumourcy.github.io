@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="trierbo&#39;s blog">
 <meta property="og:description" content="Vector direction magnitude length   \vec{A} = a_{1}\vec{i} + a_{2}\vec{j} + a_{3}\vec{k} =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-24T14:14:03.903Z">
+<meta property="og:updated_time" content="2019-04-02T13:40:45.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多变量微积分：向量">
 <meta name="twitter:description" content="Vector direction magnitude length   \vec{A} = a_{1}\vec{i} + a_{2}\vec{j} + a_{3}\vec{k} =">
@@ -360,12 +360,24 @@
                 
               
 
-              <time title="Created: 2019-03-24 20:43:42 / Modified: 22:14:03" itemprop="dateCreated datePublished" datetime="2019-03-24T20:43:42+08:00">2019-03-24</time>
+              <time title="Created: 2019-03-24 20:43:42" itemprop="dateCreated datePublished" datetime="2019-03-24T20:43:42+08:00">2019-03-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-02 21:40:45" itemprop="dateModified" datetime="2019-04-02T21:40:45+08:00">2019-04-02</time>
               
             
           </span>
@@ -462,6 +474,110 @@ x + 2y + 3z = 0 \Leftrightarrow \vec{OP}\cdot\vec{A} = 0 \Leftrightarrow \vec{OP
 </li>
 </ul>
 </li>
+<li><p>determinat</p>
+<ul>
+<li><p>area</p>
+<ul>
+<li><p>easier: area of triangle?</p>
+<script type="math/tex; mode=display">
+area = \frac{1}{2} |\vec{A}| |\vec{B}| \sin \theta</script><p>we could find $\cos \theta$, then solve $\sin^2 \theta + \cos^2 \theta = 1$</p>
+<p>$\hat{A’} = \hat{A}$ rotated $90^{\circ}$</p>
+<script type="math/tex; mode=display">
+\vec{A} = <a_1, a_2> \\
+\vec{A'} = <-a_2, a_1> \\
+\theta' = \frac{\pi}{2} - \theta \\
+\cos \theta' = \sin \theta</script><script type="math/tex; mode=display">
+|\vec{A}| |\vec{B}| \sin \theta = |\vec{A'}| |\vec{B}| \cos \theta' = \vec{A'} \cdot \vec{B} \\
+= <-a_2, a_1> \cdot <b_1, b_2> = a_1 b_2 - a_2 b_1 = det(\vec{A}, \vec{B})</script><p>area of triangle = $\pm \frac{1}{2} det(\vec{A}, \vec{B})$</p>
+</li>
+<li><p>determinat in space</p>
+<p>$3$ vectors $\vec{A}$, $\vec{B}$, $\vec{C}$</p>
+<script type="math/tex; mode=display">
+det(\vec{A}, \vec{B}, \vec{C}) =
+\left|\begin{array}{cccc} 
+    a_1&  a_2& a_3\\ 
+    b_1&  b_2& b_3\\ 
+    c_1&  c_2& c_3 
+\end{array}\right| = 
+a_1 \left|\begin{array}{cccc}
+b_2& b_3 \\
+c_2& c_3
+\end{array}\right| - 
+a_2 \left|\begin{array}{cccc}
+b_1& b_3 \\
+c_1& c_3
+\end{array}\right| +
+a_3 \left|\begin{array}{cccc}
+b_1& b_2 \\
+c_1& c_2
+\end{array}\right|</script><p>theorem: geometrically</p>
+<script type="math/tex; mode=display">
+det(\vec{A}, \vec{B}, \vec{C}) = \pm volume\ of\ parallelepiped(六面体)</script></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>cross product of $2$ vectors in 3 space</p>
+<p>Def: is a vector</p>
+<script type="math/tex; mode=display">
+\vec{A} \times \vec{B} =
+\left|\begin{array}{cccc}
+\hat{i}& \hat{j}& \hat{k} \\
+a_1& a_2& a_3 \\
+b_1& b_2& b_3
+\end{array}\right| =
+\left|\begin{array}{cccc}
+a_2& a_3\\
+b_2& b_3
+\end{array}\right| \hat{i} - 
+\left|\begin{array}{cccc}
+a_1& a_3\\
+b_1& b_3
+\end{array}\right| \hat{j} + 
+\left|\begin{array}{cccc}
+a_1& a_2 \\
+b_1& b_2
+\end{array}\right| \hat{k}</script><p>Theorem:</p>
+<ul>
+<li><script type="math/tex; mode=display">
+|\vec{A} \times \vec{B}| = area\ of\ parallelogram</script></li>
+<li><script type="math/tex; mode=display">
+dir(\vec{A} \times \vec{B}) \bot to\ plane\ of\ the\ parallelogram</script><p>with right-hand rule</p>
+<ul>
+<li>right hand points $\vec{A}$</li>
+<li>fingers point $\vec{B}$</li>
+<li>thumb points $\vec{A} \times \vec{B}$</li>
+</ul>
+</li>
+</ul>
+<p>Another look at volume</p>
+<script type="math/tex; mode=display">
+\hat{n} = \frac{\vec{B} \times \vec{C}}{|\vec{B} \times \vec{C}|} \\
+volume = area(base) \times height = |\vec{B} \times \vec{C}|(\vec{A} \cdot \hat{n}) = |\vec{B} \times \vec{C}|(\vec{A} \cdot \frac{\vec{B} \times \vec{C}}{|\vec{B} \times \vec{C}|}) = \vec{A} \cdot (\vec{B} \times \vec{C}) \\
+det(\vec{A}, \vec{B}, \vec{C}) = \vec{A} \cdot (\vec{B} \times \vec{C})</script></li>
+</ul>
+<ul>
+<li><script type="math/tex; mode=display">
+\vec{A} \times \vec{B} = - \vec{B} \times \vec{A}\quad in\ particular\ \vec{A} \times \vec{A} = 0</script></li>
+<li><p>Application</p>
+<ul>
+<li><p>equation of plane containing $p_1$, $p_2$, $p_3$</p>
+<p>= condition on $P(x, y, z)$ telling us either $P$ is in the plane</p>
+<ul>
+<li><script type="math/tex; mode=display">
+det(\vec{PP_1}, \vec{PP_2}, \vec{PP_3}) = 0</script></li>
+<li><p>other solution</p>
+<p>$P$ is in the plane $\Leftrightarrow \vec{P_1P} \bot \vec{N}$ $\vec{N}$ is normal vector</p>
+<p>$\Leftrightarrow \vec{P_1P} \cdot \vec{N} = 0$</p>
+<p>How to find $\vec{N} \bot\ plane$?</p>
+<p>Answer:</p>
+<script type="math/tex; mode=display">
+\vec{N} = \vec{P_1P_2} \times \vec{P_1P_3} \\
+\vec{P_1P} \cdot \vec{N} = \vec{P_1P} \cdot (\vec{P_1P_2} \times \vec{P_1P_3}) = 0</script></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
       
@@ -508,6 +624,10 @@ x + 2y + 3z = 0 \Leftrightarrow \vec{OP}\cdot\vec{A} = 0 \Leftrightarrow \vec{OP
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/02/多变量微积分：矩阵/" rel="prev" title="多变量微积分：矩阵">
+                多变量微积分：矩阵 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -579,7 +699,7 @@ x + 2y + 3z = 0 \Leftrightarrow \vec{OP}\cdot\vec{A} = 0 \Leftrightarrow \vec{OP
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
