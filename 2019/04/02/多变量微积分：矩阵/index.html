@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="trierbo&#39;s blog">
 <meta property="og:description" content="Matricesoften linear relations between variables example: change of coordinate system  P = (x_1, x_2, x_3) = (u_1, u_2, u_3)for example:  \begin{cases}  u_1 = 2x_1 + 3x_2 + 3x_3 \\  u_2 = 2x_1 + 4x_2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-02T13:39:45.533Z">
+<meta property="og:updated_time" content="2019-04-18T14:40:35.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多变量微积分：矩阵">
 <meta name="twitter:description" content="Matricesoften linear relations between variables example: change of coordinate system  P = (x_1, x_2, x_3) = (u_1, u_2, u_3)for example:  \begin{cases}  u_1 = 2x_1 + 3x_2 + 3x_3 \\  u_2 = 2x_1 + 4x_2">
@@ -360,12 +360,24 @@
                 
               
 
-              <time title="Created: 2019-04-02 20:08:11 / Modified: 21:39:45" itemprop="dateCreated datePublished" datetime="2019-04-02T20:08:11+08:00">2019-04-02</time>
+              <time title="Created: 2019-04-02 20:08:11" itemprop="dateCreated datePublished" datetime="2019-04-02T20:08:11+08:00">2019-04-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-18 22:40:35" itemprop="dateModified" datetime="2019-04-18T22:40:35+08:00">2019-04-18</time>
               
             
           </span>
@@ -423,8 +435,7 @@ x_3
 u_1 \\
 u_2 \\
 u_3
-\end{array}\right]</script><a id="more"></a>
-<p>entries in matrix product $AX$</p>
+\end{array}\right]</script><p>entries in matrix product $AX$</p>
 <p>dot product between rows of $A$ and columns of $X$</p>
 <p>what $AB$ represents:</p>
 <p>do transformation $B$ then transformation $A$</p>
@@ -485,16 +496,111 @@ A =
 4& 5\\
 1& 2
 \end{array}\right|</script><script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
+\left[\begin{array}{cccc}
 3& -1& -2 \\
 3& 1& -1 \\
 3& 4& 2
-\end{array}\right|</script></li>
+\end{array}\right]</script></li>
 <li><p>cofactor：代数余子式</p>
-</li>
+<p>flip signs in checkerboard</p>
+<script type="math/tex; mode=display">
+\begin{array}{cccc}
++& -& + \\
+-& +& - \\
++& -& +
+\end{array}</script><script type="math/tex; mode=display">
+\left[\begin{array}{cccc}
+3& 1& -2 \\
+-3& 1& 1 \\
+3& -4& 2
+\end{array}\right]</script></li>
 </ul>
 <ul>
-<li>transpose</li>
+<li><p>transpose</p>
+<p>switch rows and columns</p>
+<script type="math/tex; mode=display">
+adj(A) = 
+\left[\begin{array}{cccc}
+3& -3& 3 \\
+1& 1& 4 \\
+-2& 1& 2
+\end{array}\right]</script></li>
+<li><p>divide by determinant of $A$</p>
+<script type="math/tex; mode=display">
+det(A) = 
+\left|\begin{array}{cccc}
+2& 3& 3\\
+2& 4& 5\\
+1& 1& 2
+\end{array}\right| = 3</script><script type="math/tex; mode=display">
+A^{-1} = \frac{1}{3}
+\left[\begin{array}{cccc}
+3& -3& 3 \\
+1& 1& 4 \\
+-2& 1& 2
+\end{array}\right]</script></li>
+</ul>
+<h3 id="Equations-of-plane"><a href="#Equations-of-plane" class="headerlink" title="Equations of plane"></a>Equations of plane</h3><p>recall an equation of the form</p>
+<script type="math/tex; mode=display">
+ax + by + cz = d</script><p>defines a plane</p>
+<ul>
+<li><p>plane through origin with normal vector</p>
+<script type="math/tex; mode=display">
+\vec{N} = <1, 5, 10></script><script type="math/tex; mode=display">
+P\ is\ on\ the\ plane \\
+\Leftrightarrow \vec{OP} \cdot \vec{N} = 0 \\
+\Leftrightarrow x + 5y +10z = 0</script></li>
+<li><p>plane through $P_{0}(2, 1, -1)$ and $\vec{N} = <1, 10="" 5,="">$</1,></p>
+<script type="math/tex; mode=display">
+P\ is\ on\ the\ plane \\
+\Leftrightarrow \vec{P_{0}P} \cdot \vec{N} = 0 \\
+\Leftrightarrow <x-2, y-1, z+1> \cdot <1, 5, 10> = 0 \\
+x + 5y +10z = -3 \\
+\vec{OP} \cdot \vec{N} = \vec{OP_{0}} \cdot \vec{N}</script></li>
+</ul>
+<p>in equation $ax + by + cz = d$</p>
+<script type="math/tex; mode=display">
+<a, b, c> = \vec{N}</script><h3 id="3-times-3-linear-system"><a href="#3-times-3-linear-system" class="headerlink" title="$3 \times 3$ linear system"></a>$3 \times 3$ linear system</h3><p>example</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+ x + z = 1 \\
+ x + y = 2 \\
+ x + 2y + 3z = 3
+\end{cases}</script><p>the line $P_{1} \cap P_{2}$ intersects $P_{3}$ in a point = the solution</p>
+<p>solution to $AX = B$ is given by</p>
+<script type="math/tex; mode=display">
+X = A^{-1}B</script><p>unless the $3^{rd}$ place is parallel to the line where $P_{1}$ and $P_{2}$ intersect</p>
+<ul>
+<li>if line $P_{1} \cap P_{2}$ is contained $P_{3}$, infinitely many solutions(any point on the line is a solution)</li>
+<li>if line $P_{1} \cap P_{2}$ is parallel to $P_{3}$(and not in it), no solution</li>
+</ul>
+<p>recall:</p>
+<script type="math/tex; mode=display">
+A^{-1} = \frac{1}{det(A)} adj(A)</script><script type="math/tex; mode=display">
+A\ is\ invertible \Leftrightarrow det(A) \neq 0</script><h4 id="Homogeneous-case"><a href="#Homogeneous-case" class="headerlink" title="Homogeneous case"></a>Homogeneous case</h4><script type="math/tex; mode=display">
+AX = 0</script><script type="math/tex; mode=display">
+eg.
+\begin{cases}
+ x + z = 0 \\
+ x + y = 0 \\
+ x + 2y + 3z = 0
+\end{cases}</script><p>there’s always an obvious solution:</p>
+<script type="math/tex; mode=display">
+(0, 0, 0)</script><p>(origin is a solution because the $3$ planes pass through $0$)</p>
+<ul>
+<li><p>if $det(A) \neq 0$, can invert $A$</p>
+<script type="math/tex; mode=display">
+AX = 0 \Leftrightarrow X = A^{-1}0 = 0</script><p>no other solution</p>
+</li>
+<li><script type="math/tex; mode=display">
+det(A) = 0 \Leftrightarrow det(\vec{N_{1}}, \vec{N_{2}}, \vec{N_{3}}) = 0 \Leftrightarrow \vec{N_{1}}, \vec{N_{2}}, \vec{N_{3}}\ coplanar(共面)</script><p>line through $0$ perpendicular to the plane of $\vec{N_{1}}, \vec{N_{2}}, \vec{N_{3}}$</p>
+<p>is // to all $3$ planes and in fact contained in them, $\\infty$ many solutions</p>
+</li>
+</ul>
+<h4 id="General-case"><a href="#General-case" class="headerlink" title="General case"></a>General case</h4><script type="math/tex; mode=display">
+AX = B</script><ul>
+<li>if $det(A) \neq 0$, then unique solution $X = A^{-1}B$</li>
+<li>if $det(A) = 0$, then either no solution or $\infty$ solutions</li>
 </ul>
 
       
@@ -541,6 +647,10 @@ A =
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/16/多变量微积分：参数方程/" rel="prev" title="多变量微积分：参数方程">
+                多变量微积分：参数方程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -612,7 +722,7 @@ A =
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -704,7 +814,7 @@ A =
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Matrices"><span class="nav-number">1.</span> <span class="nav-text">Matrices</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Matrices"><span class="nav-number">1.</span> <span class="nav-text">Matrices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Equations-of-plane"><span class="nav-number">2.</span> <span class="nav-text">Equations of plane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-times-3-linear-system"><span class="nav-number">3.</span> <span class="nav-text">$3 \times 3$ linear system</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Homogeneous-case"><span class="nav-number">3.1.</span> <span class="nav-text">Homogeneous case</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#General-case"><span class="nav-number">3.2.</span> <span class="nav-text">General case</span></a></li></ol></li></ol></div>
             
 
           </div>
