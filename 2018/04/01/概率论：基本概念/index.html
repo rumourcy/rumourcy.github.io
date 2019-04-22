@@ -117,7 +117,7 @@
 <meta property="og:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/probability/arrangement.png">
-<meta property="og:updated_time" content="2019-04-13T13:40:12.259Z">
+<meta property="og:updated_time" content="2019-04-22T14:00:36.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论：基本概念">
 <meta name="twitter:description" content="样本空间和事件 样本空间某次试验全体可能的结果所构成的集合$S$称为该试验的样本空间 事件样本空间的任一子集$E$称为事件 划分如果事件$E_{1}, E_{2}, …$两两不交,并且$\cup_{i=1}^{\infty} A_{i} = S$,则称$A_{1}, A_{2}, …$构成$S$的一个划分">
@@ -379,7 +379,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-13 21:40:12" itemprop="dateModified" datetime="2019-04-13T21:40:12+08:00">2019-04-13</time>
+                <time title="Modified: 2019-04-22 22:00:36" itemprop="dateModified" datetime="2019-04-22T22:00:36+08:00">2019-04-22</time>
               
             
           </span>
@@ -419,14 +419,24 @@
 </ul>
 <a id="more"></a>
 <h4 id="事件运算法则"><a href="#事件运算法则" class="headerlink" title="事件运算法则"></a>事件运算法则</h4><ul>
-<li><p>交换律</p>
-<script type="math/tex; mode=display">A \cup B = B \cup A$$ $$A \cap B = B \cap A</script></li>
-<li><p>结合律</p>
-<script type="math/tex; mode=display">A \cup (B \cup C) = (A \cup B) \cup C</script><script type="math/tex; mode=display">A \cap (B \cap C) = (A \cap B) \cap C</script></li>
-<li><p>分配律</p>
-<script type="math/tex; mode=display">A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</script><script type="math/tex; mode=display">A \cup  (B \cap C) = (A \cup B) \cap (A \cup C)</script></li>
-<li><p>DeMorgan律</p>
-<script type="math/tex; mode=display">(A \cup B) ^{C} = A^{C} \cap B^{C}</script><script type="math/tex; mode=display">(A \cap B)^{C} = A^{C} \cup B^{C}</script></li>
+<li>交换律<script type="math/tex; mode=display">
+A \cup B = B \cup A\\
+A \cap B = B \cap A</script></li>
+</ul>
+<ul>
+<li>结合律<script type="math/tex; mode=display">
+A \cup (B \cup C) = (A \cup B) \cup C\\
+A \cap (B \cap C) = (A \cap B) \cap C</script></li>
+</ul>
+<ul>
+<li>分配律<script type="math/tex; mode=display">
+A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
+A \cup  (B \cap C) = (A \cup B) \cap (A \cup C)</script></li>
+</ul>
+<ul>
+<li>DeMorgan律<script type="math/tex; mode=display">
+(A \cup B) ^{C} = A^{C} \cap B^{C} \\
+(A \cap B)^{C} = A^{C} \cup B^{C}</script></li>
 </ul>
 <h3 id="概率论公理"><a href="#概率论公理" class="headerlink" title="概率论公理"></a>概率论公理</h3><ul>
 <li>$ 0 \leq P(E) \leq 1 $</li>
@@ -503,7 +513,7 @@
 <h4 id="贝叶斯公式-1"><a href="#贝叶斯公式-1" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h4><blockquote>
 <p>假定$F_1$, $F_2$, …, $F_n$是互不相容的事件, 且</p>
 <script type="math/tex; mode=display">\bigcup_{i=1}^{n} F_i = S</script><p>则</p>
-<script type="math/tex; mode=display">P(F_j|E) = \frac{P(EF_j)}{P(E)} = \frac{P(E|F_j)P(F_j)}{\sum_{i=1}^{n}P(E|F_i)P(F_i)}</script><p>表示试验之前对这些先验概率所作的判断$P(F_j)$, 根据试验结果$E$来修正</p>
+<script type="math/tex; mode=display">P(F_j|E) = \frac{P(EF_j)}{P(E)} = \frac{P(E|F_j)P(F_j)}{\sum_{i=1}^{n}P(E|F_i)P(F_i)}</script><p>表示试验之前对这些假设条件所作的判断[$P(F_j)$], 根据试验结果$E$来修正</p>
 </blockquote>
 <h3 id="独立事件"><a href="#独立事件" class="headerlink" title="独立事件"></a>独立事件</h3><p>因为$P(E|F) = P(EF) / P(F)$, 所以如果</p>
 <script type="math/tex; mode=display">P(EF) = P(E)P(F)</script><p>那么$E$和$F$独立</p>
@@ -630,7 +640,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
