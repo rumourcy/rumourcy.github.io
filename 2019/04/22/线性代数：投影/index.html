@@ -117,7 +117,11 @@
 <meta property="og:description" content="Orthogonal">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/subspace/subspace.png">
-<meta property="og:updated_time" content="2019-04-22T14:14:00.690Z">
+<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/projection/projection.png">
+<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/projection/projection3D.png">
+<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/projection/leastsquare.png">
+<meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/projection/e.png">
+<meta property="og:updated_time" content="2019-04-24T14:07:41.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性代数：投影">
 <meta name="twitter:description" content="Orthogonal">
@@ -362,12 +366,24 @@
                 
               
 
-              <time title="Created: 2019-04-22 20:58:22 / Modified: 22:14:00" itemprop="dateCreated datePublished" datetime="2019-04-22T20:58:22+08:00">2019-04-22</time>
+              <time title="Created: 2019-04-22 20:58:22" itemprop="dateCreated datePublished" datetime="2019-04-22T20:58:22+08:00">2019-04-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-24 22:07:41" itemprop="dateModified" datetime="2019-04-24T22:07:41+08:00">2019-04-24</time>
               
             
           </span>
@@ -416,14 +432,279 @@ row\ 2\ of\ A \\
 \vdots\\
 row\ m\ of\ A
 \end{array}\right]
-\left[x\right] = 
+\left[\begin{array}{cccc}x\end{array}\right] = 
 \left[\begin{array}{cccc}
 0 \\
 0 \\
 \vdots \\
 0
 \end{array}\right]</script><script type="math/tex; mode=display">
-c_{1}(row1)^Tx + c_{2}(row2)^Tx + \cdots + c_{m}(rowm)^Tx = 0</script>
+c_{1}(row1)^Tx + c_{2}(row2)^Tx + \cdots + c_{m}(rowm)^Tx = 0 \to \\
+(c_{1}row1 + c_{2}row_{2} + \cdots + c_{m}rowm)^Tx = 0</script><p>null space and row space are orthogonal complements in $R^{n}$</p>
+<p>null space($n-r$) contains all vectors $\bot$ row space($r$)</p>
+<h3 id="Projection"><a href="#Projection" class="headerlink" title="Projection"></a>Projection</h3><p>Coming: $Ax = b$ when there is no solution</p>
+<p>How to “solve”?</p>
+<script type="math/tex; mode=display">
+N(A^TA) = N(A) \\
+rank\ of\ A^TA = rank\ of\ A</script><blockquote>
+<p>$Ax = 0 \Rightarrow A^TAx = 0$</p>
+<p>$Ax = 0 \Rightarrow x^TA^TAx = 0 \Rightarrow (Ax)^TAx = 0 \Rightarrow Ax = 0$</p>
+<p>$N(A^TA) = N(A) \Leftrightarrow rank\ of\ A^TA = rank\ of\ A$</p>
+</blockquote>
+<p>$A^TA$ is invertible exactly if $A$ has independent columns</p>
+<blockquote>
+<p>If $A$ has independent columns, then $A^TA$ is invertiable</p>
+<p>To prove:</p>
+<p>Suppose $A^TAx = 0$, $x$ must be $0$</p>
+<p>TRICK:</p>
+<script type="math/tex; mode=display">
+x^TA^TAx = 0 \Rightarrow (Ax)^TAx = 0 \Rightarrow Ax = 0 \Rightarrow x = 0</script></blockquote>
+<h4 id="Projection-1"><a href="#Projection-1" class="headerlink" title="Projection"></a>Projection</h4><p><img src="https://github.com/trierbo/blog-source/raw/master/pics/projection/projection.png" alt="projection"></p>
+<script type="math/tex; mode=display">
+a^T(b-xa) = 0 \Rightarrow xa^Ta = a^Tb \Rightarrow x = \frac{a^Tb}{a^Ta} \\
+p = ax\\
+p = a\frac{a^Tb}{a^Ta} = Pb\ in\ C(P) \\
+P = \frac{aa^T}{a^Ta}(Projection\ matrix)</script><ul>
+<li>$C(P) = line\ through\ a$<ul>
+<li>$rank(P) = 1$</li>
+</ul>
+</li>
+<li>$P^T = P$</li>
+<li>$P^2 = P$ 投影两次结果相同</li>
+</ul>
+<h4 id="Why-project"><a href="#Why-project" class="headerlink" title="Why project?"></a>Why project?</h4><blockquote>
+<p>Because $Ax = b$ many have no solution</p>
+<p>Solve $A\hat{x} = p$ instead, where $p$ is projection of $b$ onto col space!</p>
+</blockquote>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/projection/projection3D.png" alt="projection3d"></p>
+<p>plane of $a_{1}$, $a_{2}$ = col space of $A = [a_{1}, a_{2}]$</p>
+<script type="math/tex; mode=display">
+p = A\hat{x}</script><p>Find $\hat{x}$<br>key: $b - A\hat{x}$ is prep to plane</p>
+<script type="math/tex; mode=display">
+a_1^T(b-A\hat{x}) = 0 \\
+a_2^T(b-A\hat{x}) = 0 \\
+\left[\begin{array}{cccc}
+a_1^T \\
+a_2^T
+\end{array}\right]
+(b - A\hat{x}) = 
+\left[\begin{array}{cccc}
+0 \\
+0
+\end{array}\right] \\
+A^T(b-A\hat{x}) = 0 \Rightarrow A^TA\hat{x} = A^Tb \\
+e = b - p = b - A\hat{x}\ in\ N(A^T) \Rightarrow e \bot C(A)</script><script type="math/tex; mode=display">
+\hat{x} = (A^TA)^{-1}A^Tb \\
+p = A\hat{x} = A(A^TA)^{-1}A^Tb</script><ul>
+<li><p>matrix: $P = A(A^TA)^{-1}A^T$</p>
+</li>
+<li><p>$P^T = P$</p>
+<script type="math/tex; mode=display">
+A^{TT}(A(A^TA)^{-1})^T = A((A^TA)^{-1})^TA^T = A((A^TA)^T)^{-1}A^T = A(A^TA)^{-1}A^T</script></li>
+<li><p>$P^{2} = P$</p>
+<script type="math/tex; mode=display">
+A(A^TA)^{-1}A^TA(A^TA)^{-1}A^{T}</script></li>
+</ul>
+<h3 id="Least-Squares"><a href="#Least-Squares" class="headerlink" title="Least Squares"></a>Least Squares</h3><blockquote>
+<p>fitting by a line</p>
+</blockquote>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/projection/leastsquare.png" alt="least squares"></p>
+<script type="math/tex; mode=display">
+\begin{cases}
+C + D = 1 \\
+C + 2D = 2 \\
+C + 3D = 2
+\end{cases}</script><script type="math/tex; mode=display">
+\left[\begin{array}{cccc}
+1 & 1 \\
+1 & 2 \\
+1 & 3
+\end{array}\right]
+\left[\begin{array}{cccc}
+C \\
+D
+\end{array}\right] = 
+\left[\begin{array}{cccc}
+1 \\
+2 \\
+2
+\end{array}\right] \\
+Ax = b</script><p>Minimize $\VertAx - b\Vert^2 = \Verte\Vert^{2} = e_1^2 + e_2^2 + e_3^2$</p>
+<p>Find:</p>
+<script type="math/tex; mode=display">
+\hat{x} =
+\left[\
+\begin{array}{cccc}
+\hat{C} \\
+\hat{D}
+\end{array}\right] \quad p</script><script type="math/tex; mode=display">
+A^TAx = A^Tb \\
+\left[\begin{array}{cccc}
+1 & 1 & 1 \\
+1 & 2 & 3
+\end{array}\right]
+\left[\begin{array}{c:c}
+\begin{matrix}
+1 & 1 \\
+1 & 2 \\
+1 & 3
+\end{matrix} &
+\begin{matrix}
+1 \\
+2 \\
+2
+\end{matrix}
+\end{array}\right] = 
+\left[\begin{array}{c:c}
+\begin{matrix}
+3 & 6 \\
+6 & 14
+\end{matrix} &
+\begin{matrix}
+5 \\
+11
+\end{matrix}
+\end{array}\right] \\
+\begin{cases}
+3C + 6D = 5 \\
+6C + 14D = 11
+\end{cases} \Rightarrow
+\begin{cases}
+C = \frac{2}{3} \\
+D = \frac{1}{2}
+\end{cases} \\
+p(\frac{7}{6}, \frac{5}{3}, \frac{13}{6})</script><p>Best line:</p>
+<script type="math/tex; mode=display">
+b = \frac{2}{3} + \frac{1}{2}t</script><h4 id="Projection-Matrix"><a href="#Projection-Matrix" class="headerlink" title="Projection Matrix"></a>Projection Matrix</h4><script type="math/tex; mode=display">
+P = A(A^TA)^{-1}A^T</script><ul>
+<li><p>if $b$ in column space($b = Ax$), $Pb = b$</p>
+<script type="math/tex; mode=display">
+p = Pb = A(A^TA)^{-1}A^TAx = Ax = b</script></li>
+<li><p>if $b \bot$ column space, $Pb = 0$</p>
+<p>$b$ in $N(A^T)$</p>
+<p>$p = Pb = A(A^TA)^{-1}A^Tb = 0$</p>
+</li>
+</ul>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/projection/e.png" alt="pe"></p>
+<script type="math/tex; mode=display">
+e \bot col\ space \Rightarrow e\ in\ N(A^T) \\
+p + e = b \\
+p = Pb \Rightarrow e = (I - P)b \quad projection\ onto\ the \bot space</script><h3 id="Orthogonal-Basis"><a href="#Orthogonal-Basis" class="headerlink" title="Orthogonal Basis"></a>Orthogonal Basis</h3><blockquote>
+<p>Columns definitely independent if they are perp unit vectors(orthonormal vectors)</p>
+</blockquote>
+<p>Orthogonal basis: $q_1, \cdots, q_n$</p>
+<p>orthonormal vectors</p>
+<script type="math/tex; mode=display">
+q_{i}^{T}q_{j} =
+\begin{cases}
+0 \quad if\ i \neq j \\
+1 \quad if\ i = j
+\end{cases}</script><script type="math/tex; mode=display">
+Q = 
+\left[\begin{array}{cccc}
+\vdots& \cdots& \vdots\\
+q_{1}& \cdots& q_{n}\\
+\vdots& \cdots& \vdots
+\end{array}\right] \\
+Q^TQ = 
+\left[\begin{array}{cccc}
+\cdots& q_{1}^{T}& \cdots\\
+\vdots& \vdots& \vdots\\
+\cdots& q_{n}^{T}& \cdots
+\end{array}\right]
+\left[\begin{array}{cccc}
+\vdots& \cdots& \vdots\\
+q_{1}& \cdots& q_{n}\\
+\vdots& \cdots& \vdots
+\end{array}\right] =
+I</script><blockquote>
+<p>If $Q$ is square then $Q^TQ = I$, tell us $Q^T = Q^{-1}$</p>
+</blockquote>
+<p>$Q$ has orthonormal columns, project onto its column space</p>
+<script type="math/tex; mode=display">
+P = Q(Q^TQ)^{-1}Q^{T} = QQ^{T} \overset{Q\ is\ aquare}{=} I</script><script type="math/tex; mode=display">
+AA^T\hat{x} = A^Tb</script><p>when $A$ is $Q$\</p>
+<script type="math/tex; mode=display">
+Q^TQ\hat{x} = Q^Tb \Rightarrow \hat{x} = Q^Tb \\
+\hat{x_i} = q_{i}^{T}b</script><h4 id="Gram-Schmidt"><a href="#Gram-Schmidt" class="headerlink" title="Gram-Schmidt"></a>Gram-Schmidt</h4><ul>
+<li>independent vectors $a$, $b$ $\to$</li>
+</ul>
+<p>orthogonal $A$, $b$ $\to$</p>
+<p>orthonormal $q_{1} = \frac{A}{\Vert A \Vert}$ $q_{2} = \frac{B}{\Vert B \Vert}$</p>
+<script type="math/tex; mode=display">
+A = a\\
+B = b - p = b - \frac{A^Tb}{A^TA}A \\
+A \bot B \\
+A^TB = A^T(b - \frac{A^Tb}{A^TA}A) = 0</script><p>Example:</p>
+<script type="math/tex; mode=display">
+a = \left[\begin{array}{cccc}
+1 \\
+1 \\
+1
+\end{array}\right] \quad
+b = \left[\begin{array}{cccc}
+1 \\
+0 \\
+2
+\end{array}\right] \to \\
+A = \left[\begin{array}{cccc}
+1 \\
+1 \\
+1
+\end{array}\right] \quad
+B = \left[\begin{array}{cccc}
+1 \\
+0 \\
+2
+\end{array}\right] - \frac{3}{3}\left[\begin{array}{cccc}
+1 \\
+1 \\
+1
+\end{array}\right] =
+\left[\begin{array}{cccc}
+0 \\
+-1 \\
+1
+\end{array}\right] \to \\
+q_{1} = 
+\left[\begin{array}{cccc}
+\frac{1}{\sqrt{3}} \\
+\frac{1}{\sqrt{3}} \\
+\frac{1}{\sqrt{3}}
+\end{array}\right] \quad
+q_{2} =
+\left[\begin{array}{cccc}
+0 \\
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{array}\right] \to \\
+Q = \left[\begin{array}{cccc}
+\frac{1}{\sqrt{3}} & 0 \\
+\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}
+\end{array}\right]</script><ul>
+<li>independent vectors $a$, $b$, $c$<script type="math/tex; mode=display">
+A = a\\
+B = b - p = b - \frac{A^Tb}{A^TA}A \\
+C = c - \frac{A^Tc}{A^TA}A - \frac{B^Tc}{B^TB}B \\
+C \bot A \quad C \bot B</script></li>
+</ul>
+<h4 id="QR分解"><a href="#QR分解" class="headerlink" title="QR分解"></a>QR分解</h4><script type="math/tex; mode=display">
+A = QR \\
+\left[\begin{array}{cccc}
+\vdots& \vdots \\
+a_{1}& a_{2} \\
+\vdots& \vdots
+\end{array}\right] = 
+\left[\begin{array}{cccc}
+\vdots& \vdots \\
+q_{1}& q_{2} \\
+\vdots& \vdots
+\end{array}\right]
+\left[\begin{array}{cccc}
+a_{1}^{T}q_{1} & a_{2}^{T}q_{1} \\
+a_{1}^{T}q_{2} & a_{2}^{T}q_{2}
+\end{array}\right]</script>
       
     </div>
 
@@ -468,6 +749,10 @@ c_{1}(row1)^Tx + c_{2}(row2)^Tx + \cdots + c_{m}(rowm)^Tx = 0</script>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/24/线性代数：行列式/" rel="prev" title="线性代数：行列式">
+                线性代数：行列式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -539,7 +824,7 @@ c_{1}(row1)^Tx + c_{2}(row2)^Tx + \cdots + c_{m}(rowm)^Tx = 0</script>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -631,7 +916,7 @@ c_{1}(row1)^Tx + c_{2}(row2)^Tx + \cdots + c_{m}(rowm)^Tx = 0</script>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Orthogonal"><span class="nav-number">1.</span> <span class="nav-text">Orthogonal</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Orthogonal-Vectors"><span class="nav-number">1.1.</span> <span class="nav-text">Orthogonal Vectors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subspace-S-is-orthogonal-to-subspace-T"><span class="nav-number">1.2.</span> <span class="nav-text">Subspace $S$ is orthogonal to subspace $T$</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Orthogonal"><span class="nav-number">1.</span> <span class="nav-text">Orthogonal</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Orthogonal-Vectors"><span class="nav-number">1.1.</span> <span class="nav-text">Orthogonal Vectors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subspace-S-is-orthogonal-to-subspace-T"><span class="nav-number">1.2.</span> <span class="nav-text">Subspace $S$ is orthogonal to subspace $T$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Projection"><span class="nav-number">2.</span> <span class="nav-text">Projection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Projection-1"><span class="nav-number">2.1.</span> <span class="nav-text">Projection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Why-project"><span class="nav-number">2.2.</span> <span class="nav-text">Why project?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Least-Squares"><span class="nav-number">3.</span> <span class="nav-text">Least Squares</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Projection-Matrix"><span class="nav-number">3.1.</span> <span class="nav-text">Projection Matrix</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Orthogonal-Basis"><span class="nav-number">4.</span> <span class="nav-text">Orthogonal Basis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gram-Schmidt"><span class="nav-number">4.1.</span> <span class="nav-text">Gram-Schmidt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QR分解"><span class="nav-number">4.2.</span> <span class="nav-text">QR分解</span></a></li></ol></li></ol></div>
             
 
           </div>
