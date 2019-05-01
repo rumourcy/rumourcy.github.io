@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="Determinants $det(A) = |A|$    $det(I) = 1$  \left|\begin{array}{cccc} 1&amp; 0\\ 0&amp; 1 \end{array}\right| = 1 exchange rows: reverse sign of  $det$ $det(P) = 1 or -1$  \left|\begin{array}{cccc} 0&amp; 1 \\ 1&amp;">
+  <meta name="description" content="Eigenvectors$Ax$ parallel to $x$, $x \neq 0$  Ax = \lambda xIf $A$ is singular, $\lambda = 0$ is an eigenvalue What are $x$’s and $\lambda$’s for projection matrix?  Any vector $x$ in plane: $Px = x \">
 <meta name="keywords" content="Linear Algebra">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性代数：行列式">
-<meta property="og:url" content="http://yoursite.com/2019/04/24/线性代数：行列式/index.html">
+<meta property="og:title" content="线性代数：特征值与特征向量">
+<meta property="og:url" content="http://yoursite.com/2019/04/29/线性代数：特征值与特征向量/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="Determinants $det(A) = |A|$    $det(I) = 1$  \left|\begin{array}{cccc} 1&amp; 0\\ 0&amp; 1 \end{array}\right| = 1 exchange rows: reverse sign of  $det$ $det(P) = 1 or -1$  \left|\begin{array}{cccc} 0&amp; 1 \\ 1&amp;">
+<meta property="og:description" content="Eigenvectors$Ax$ parallel to $x$, $x \neq 0$  Ax = \lambda xIf $A$ is singular, $\lambda = 0$ is an eigenvalue What are $x$’s and $\lambda$’s for projection matrix?  Any vector $x$ in plane: $Px = x \">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T13:50:14.900Z">
+<meta property="og:updated_time" content="2019-05-01T12:56:33.192Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性代数：行列式">
-<meta name="twitter:description" content="Determinants $det(A) = |A|$    $det(I) = 1$  \left|\begin{array}{cccc} 1&amp; 0\\ 0&amp; 1 \end{array}\right| = 1 exchange rows: reverse sign of  $det$ $det(P) = 1 or -1$  \left|\begin{array}{cccc} 0&amp; 1 \\ 1&amp;">
+<meta name="twitter:title" content="线性代数：特征值与特征向量">
+<meta name="twitter:description" content="Eigenvectors$Ax$ parallel to $x$, $x \neq 0$  Ax = \lambda xIf $A$ is singular, $\lambda = 0$ is an eigenvalue What are $x$’s and $\lambda$’s for projection matrix?  Any vector $x$ in plane: $Px = x \">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/24/线性代数：行列式/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/29/线性代数：特征值与特征向量/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>线性代数：行列式 | trierbo's blog</title>
+  <title>线性代数：特征值与特征向量 | trierbo's blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/线性代数：行列式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/线性代数：特征值与特征向量/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">线性代数：行列式
+          <h1 class="post-title" itemprop="name headline">线性代数：特征值与特征向量
               
             
           </h1>
@@ -360,7 +360,7 @@
                 
               
 
-              <time title="Created: 2019-04-24 21:00:08" itemprop="dateCreated datePublished" datetime="2019-04-24T21:00:08+08:00">2019-04-24</time>
+              <time title="Created: 2019-04-29 19:22:32" itemprop="dateCreated datePublished" datetime="2019-04-29T19:22:32+08:00">2019-04-29</time>
             
 
             
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-27 21:50:14" itemprop="dateModified" datetime="2019-04-27T21:50:14+08:00">2019-04-27</time>
+                <time title="Modified: 2019-05-01 20:56:33" itemprop="dateModified" datetime="2019-05-01T20:56:33+08:00">2019-05-01</time>
               
             
           </span>
@@ -410,294 +410,168 @@
       
 
       
-        <h3 id="Determinants"><a href="#Determinants" class="headerlink" title="Determinants"></a>Determinants</h3><blockquote>
-<p>$det(A) = |A|$</p>
-</blockquote>
-<hr>
+        <h3 id="Eigenvectors"><a href="#Eigenvectors" class="headerlink" title="Eigenvectors"></a>Eigenvectors</h3><p>$Ax$ parallel to $x$, $x \neq 0$</p>
+<script type="math/tex; mode=display">
+Ax = \lambda x</script><p>If $A$ is singular, $\lambda = 0$ is an eigenvalue</p>
+<p>What are $x$’s and $\lambda$’s for projection matrix?</p>
 <ul>
-<li><p>$det(I) = 1$</p>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-1& 0\\
-0& 1
-\end{array}\right| = 1</script></li>
-<li><p>exchange rows: reverse sign of  $det$</p>
-<p>$det(P) = 1 or -1$</p>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-0& 1 \\
-1& 0
-\end{array}\right| = -1</script></li>
-<li><p>linear for each row</p>
-</li>
+<li>Any vector $x$ in plane: $Px = x \Rightarrow \lambda = 1$</li>
+<li>Any $x \bot$ plane: $Px = 0x \Rightarrow \lambda = 0$</li>
 </ul>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-ta& tb\\
-c& d
-\end{array}\right| = 
-t\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| \\
-\left|\begin{array}{cccc}
-a + a'& b + b'\\
-c& d
-\end{array}\right| = 
-\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| +
-\left|\begin{array}{cccc}
-a'& b'\\
-c& d
-\end{array}\right|</script><hr>
 <a id="more"></a>
-<ul>
-<li><p>$2$ equal rows $\to$ $det = 0$</p>
-<p>exchange those rows $\to$ same matrix</p>
-</li>
-<li><p>subtract $l \times row_{i}$ from $row_{k}$</p>
-<p>$det$ doesn’t change</p>
 <script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| \to
-\left|\begin{array}{cccc}
-a& b\\
-c-la& d-lb
-\end{array}\right| \overset{3}{=} \left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| + \left|\begin{array}{cccc}
-a& b\\
--la& -lb
-\end{array}\right| \overset{3}{=} \left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| - l\left|\begin{array}{cccc}
-a& b\\
-a& b
-\end{array}\right| \overset{4}{=} \left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right|</script></li>
-<li><p>row of zeros $\to$ $det(A) = 0$</p>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-ta& tb\\
-c& d
-\end{array}\right| \overset{3}{=}
-t\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| \overset{t = 0}{=} 0 \\
-5\left|\begin{array}{cccc}
-0& 0\\
-c& d
-\end{array}\right| = \
-\left|\begin{array}{cccc}
-5 \times 0& 5 \times 0\\
-c& d
-\end{array}\right|</script></li>
-<li><p>$det(U) = d_{1}d_{2} \cdots d_{n}$ product of pivots</p>
-<script type="math/tex; mode=display">
-det(U) = 
-\left|\begin{array}{cccc}
-d_{1}& \cdots& \cdots& \cdots \\
-0& d_{2}& \cdots& \cdots\\
-0& 0& \ddots& \vdots\\
-0& 0& \cdots& d_{n}
-\end{array}\right| \overset{5}{=}
-\left|\begin{array}{cccc}
-d_{1}& \cdots& 0& 0 \\
-\vdots& d_{2}& 0& 0\\
-0& 0& \ddots& \vdots\\
-0& 0& \cdots& d_{n}
-\end{array}\right| \overset{3}{=}
-d_{1}d_{2} \cdots d_{n}det(I) = d_{1}d_{2} \cdots d_{n}</script></li>
-<li><p>$det(A) = 0$ when $A$ is singular</p>
-<p>$det(A) \neq 0$ when $A$ is invertible</p>
-<script type="math/tex; mode=display">
-A \to U \to d_{1}d_{2}\cdots d_{n}</script><script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| \to
-\left|\begin{array}{cccc}
-a& b\\
-0& d-\frac{c}{a}b
-\end{array}\right| =
-ad - bc</script></li>
-<li><p>$det(AB) = det(A) det(B)$</p>
-<p>$det(A^{-1}) = \frac{1}{det(A)}$</p>
-<script type="math/tex; mode=display">
-A^{-1}A = I \\
-det(A^{-1})det(A) = 1</script><p>$det(A^{2}) = (det(A))^{2}$</p>
-<p>$det(2A) = 2^{n}det(A)$</p>
-</li>
-<li><p>$det(A^{T}) = det(A)$</p>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| = 
-\left|\begin{array}{cccc}
-a& c\\
-b& d
-\end{array}\right|</script><script type="math/tex; mode=display">
-|A^{T}| \overset{?}{=} |A| \\
-|U^TL^T| \overset{?}{=} |LU| \Leftrightarrow |U^T||L^T| \overset{7}{=} |L||U|</script></li>
-</ul>
-<h3 id="Formula-for-det-A"><a href="#Formula-for-det-A" class="headerlink" title="Formula for $det(A)$"></a>Formula for $det(A)$</h3><ul>
-<li><script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-1& 0 \\
-0& 1
-\end{array}\right| = 1</script></li>
-<li></li>
-</ul>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
+A = \left[\begin{array}{cccc}
 0& 1 \\
 1& 0
-\end{array}\right| = -1</script><script type="math/tex; mode=display">
+\end{array}\right]</script><p>Exchange vector row</p>
+<script type="math/tex; mode=display">
+x = \left[\begin{array}{cccc}
+1 \\
+1
+\end{array}\right] \Rightarrow
+Ax = \left[\begin{array}{cccc}
+1 \\
+1
+\end{array}\right] = x \quad \lambda = 1 \\
+x = \left[\begin{array}{cccc}
+-1 \\
+1
+\end{array}\right] \Rightarrow
+Ax = \left[\begin{array}{cccc}
+1 \\
+-1
+\end{array}\right] = -x \quad \lambda = -1</script><blockquote>
+<p>Fact:</p>
+<script type="math/tex; mode=display">
+sum\ of\ \lambda's = a_{11} + a_{22} + \cdots + a_{nn}</script></blockquote>
+<h4 id="How-to-solve-Ax-lambda-x"><a href="#How-to-solve-Ax-lambda-x" class="headerlink" title="How to solve $Ax = \lambda x$"></a>How to solve $Ax = \lambda x$</h4><p>Rewrite:</p>
+<script type="math/tex; mode=display">
+(A - \lambda I)x = 0</script><p>$A - \lambda I$ is singular</p>
+<p>$|A - \lambda I| = 0$ eigenvalue equation</p>
+<p>Find $\lambda$ first</p>
+<script type="math/tex; mode=display">
+A = \left[\begin{array}{cccc}
+3& 1 \\
+1& 3
+\end{array}\right] \\
+det(A - \lambda I) = 
 \left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| \overset{3}{=} 
-\left|\begin{array}{cccc}
-a& 0\\
-c& d
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-0& b\\
-c& d
+3 - \lambda& 1 \\
+1& 3 - \lambda
 \end{array}\right| = 
-\left|\begin{array}{cccc}
-a& 0\\
-c& 0
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-a& 0\\
-0& d
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-0& b\\
-c& 0
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-0& b\\
-0& d
-\end{array}\right| = ad - bc</script><script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-a_{11}& a_{12}& a_{13} \\
-a_{21}& a_{22}& a_{23} \\
-a_{31}& a_{32}& a_{33}
-\end{array}\right| = 
-\left|\begin{array}{cccc}
-a_{11}& 0& 0 \\
-0& a_{22}& 0 \\
-0& 0& a_{33}
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-a_{11}& 0& 0 \\
-0& 0& a_{23} \\
-0& a_{32}& 0
-\end{array}\right| + \\
-\left|\begin{array}{cccc}
-0& a_{12}& 0 \\
-a_{21}& 0& 0 \\
-0& 0& a_{33}
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-0& a_{12}& 0 \\
-0& 0& a_{23} \\
-a_{31}& 0& 0
-\end{array}\right| + \\
-\left|\begin{array}{cccc}
-0& 0& a_{13} \\
-a_{21}& 0& 0 \\
-0& a_{32}& 0
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-0& 0& a_{13} \\
-0& a_{22}& 0 \\
-a_{31}& 0& 0
-\end{array}\right| = \\
-a_{11}a_{22}a_{33} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} + \\
-a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31}</script><h4 id="Big-Formula"><a href="#Big-Formula" class="headerlink" title="Big Formula"></a>Big Formula</h4><script type="math/tex; mode=display">
-det(A) = \sum{\pm a_{1\alpha}a_{2\beta}...a_{n\gamma}}</script><ul>
-<li>$n!$ terms</li>
-<li>$(\alpha, \beta, …, \gamma) = $ permutation of $1$ to $n$</li>
+(3 - \lambda)^{2} - 1 = \\
+\lambda^{2} - 6\lambda + 8 =
+\lambda^{2} - trace \lambda + det(A) = 
+(\lambda - 4)(\lambda - 2) \\
+\lambda_{1} = 4 \quad \lambda_{2} = 2 \\
+A- 4I = 
+\left[\begin{array}{cccc}
+-1& 1\\
+1& -1
+\end{array}\right] \Rightarrow
+x_{1} = \left[\begin{array}{cccc}1 \\ 1 \end{array}\right] \\
+A- 2I = 
+\left[\begin{array}{cccc}
+1& 1\\
+1& 1
+\end{array}\right] \Rightarrow
+x_{2} = \left[\begin{array}{cccc}-1 \\ 1 \end{array}\right]</script><p>$x_{1}$ and $x_{2}$ are orthogonal</p>
+<blockquote>
+<ul>
+<li><p>If $Ax = \lambda x$, then $(A + 3 I)x = \lambda x + 3 x = (\lambda + 3)x$</p>
+</li>
+<li><p>If $Ax = \lambda x$, $Bx = \alpha x$, then $(A + B)x = (\lambda + \alpha) x$</p>
+</li>
 </ul>
-<h4 id="Cofactor-Formula"><a href="#Cofactor-Formula" class="headerlink" title="Cofactor Formula"></a>Cofactor Formula</h4><h5 id="Cofactor"><a href="#Cofactor" class="headerlink" title="Cofactor"></a>Cofactor</h5><script type="math/tex; mode=display">
-det = a_{11}(a_{22}a_{33} - a_{23}a_{32}) + a_{12}(a_{23}a_{31} - a_{21}a_{32}) + a_{13}(a_{21}a_{32} - a_{22}a_{31})</script><p>$a_{22}a_{33} - a_{23}a_{32}$ is cofactor of $a_{11}$</p>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-a_{11}& 0& 0\\
-0& a_{22}& a_{23}\\
-0& a_{32}& a_{33}
-\end{array}\right| + 
-\left|\begin{array}{cccc}
-0& a_{12}& 0\\
-a_{21}& 0& a_{23}\\
-a_{31}& 0& a_{33}
-\end{array}\right| +
-\left|\begin{array}{cccc}
-0& 0& a_{13}\\
-a_{21}& a_{22}& 0\\
-a_{31}& a_{32}& 0
-\end{array}\right|</script><p>cofactor of $a_{ij}$ = $C_{ij}$</p>
-<script type="math/tex; mode=display">
-C_{ij} = \pm det(n-1\ matrix\ with\ row_{i}\ and\ col_{j}\ erasd)</script><h4 id="Cofactor-Formula-1"><a href="#Cofactor-Formula-1" class="headerlink" title="Cofactor Formula"></a>Cofactor Formula</h4><script type="math/tex; mode=display">
-det(A) = a_{11}C_{11} + a_{12}C_{12} + \cdots + a_{1n}C_{1n}</script><h4 id="Formula-for-A-1"><a href="#Formula-for-A-1" class="headerlink" title="Formula for $A^{-1}$"></a>Formula for $A^{-1}$</h4><script type="math/tex; mode=display">
-\left[\begin{array}{cccc}
-a& b \\
-c& d
-\end{array}\right] = 
-\frac{1}{ad - bc}
-\left[\begin{array}{cccc}
-d& -b \\
--c& a
-\end{array}\right]</script><script type="math/tex; mode=display">
-A^{-1} = \frac{1}{det(A)}C^{T}</script><blockquote>
-<p> $C^T$ cofactor matrix</p>
 </blockquote>
-<p>Check: $AC^{T} = det(A)I$</p>
+<p>Example: $90^{\circ}$ rotation </p>
+<script type="math/tex; mode=display">
+Q = \left[\begin{array}{cccc}
+0& -1 \\
+1& 0
+\end{array}\right] \\
+trace = 0 + 0 = \lambda_{1} + \lambda_{2} \\
+det = 1 = \lambda_{1} \lambda_{2}</script><script type="math/tex; mode=display">
+det(Q - \lambda I) = \left[\begin{array}{cccc}
+-\lambda& -1 \\
+1& -\lambda
+\end{array}\right] = \lambda^{2} + 1 = 0 \Rightarrow \\
+\lambda_{1} = i \quad \lambda_{2} = -i</script><p>rotation matrix</p>
 <script type="math/tex; mode=display">
 \left[\begin{array}{cccc}
-a_{11}& \cdots& a_{1n} \\
-\vdots& \ddots& \vdots \\
-a_{n1}& \cdots& a_{nn}
-\end{array}\right]
-\left[\begin{array}{cccc}
-C_{11}& \cdots& C_{n1} \\
-\vdots& \ddots& \vdots \\
-C_{1n}& \cdots& C_{nn}
-\end{array}\right] = 
-\left[\begin{array}{cccc}
-det(A)& 0& 0 \\
-0& \ddots& 0 \\
-0& 0& det(A)
-\end{array}\right]</script><h4 id="Cramer’s-Rule"><a href="#Cramer’s-Rule" class="headerlink" title="Cramer’s Rule"></a>Cramer’s Rule</h4><script type="math/tex; mode=display">
-Ax = b \Rightarrow x = A^{-1}b = \frac{1}{det(A)}C^{T}b</script><script type="math/tex; mode=display">
-x_{1} = \frac{det(B_{1})}{det(A)} \\
-x_{2} = \frac{det(B_{2})}{det(A)} \\
-\vdots \\
-x_{j} = \frac{det(B_{j})}{det(A)}</script><script type="math/tex; mode=display">
-B_{1} = A\ with\ col_{1}\ replaced\ by\ b \\
-\vdots \\
-B_{j} = A\ with\ col_{j}\ replaced\ by\ b</script><h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><ul>
-<li><p>$3 \times 3$</p>
-<script type="math/tex; mode=display">
-|det(A)| = volume\ of\ box</script></li>
-<li><p>$2 \times 2$</p>
-<script type="math/tex; mode=display">
-\frac{1}{2}|det(A)| = triangle\ area</script></li>
+\cos \theta& -\sin \theta \\
+\sin \theta& \cos \theta
+\end{array}\right]</script><script type="math/tex; mode=display">
+A = \left[\begin{array}{cccc}
+3& 1 \\
+0& 3
+\end{array}\right] \\
+det(A - \lambda I) = \left|\begin{array}{cccc}
+3 - \lambda& 1 \\
+0& 3 - \lambda
+\end{array}\right| = (3 - \lambda)(3 - \lambda) = 0 \Rightarrow
+\lambda_{1} = 3 \quad \lambda_{2} = 3 \\
+(A - \lambda I)x = \left[\begin{array}{cccc}
+0& 1\\
+0& 0
+\end{array}\right]x = 0 \Rightarrow \\
+x_{1} = \left[\begin{array}{cccc}1 \\ 0\end{array}\right] \quad x_{2} = no\ 2^{nd}\ independent\ x</script><ul>
+<li>symmetric matrix eigenvalues are real numbers</li>
+<li>anti-symmetric matrix $Q^{T} = -Q$ eigenvalues are pure imaginary numbers</li>
 </ul>
-
+<h4 id="Using-eigenvalues-and-eigenvectors"><a href="#Using-eigenvalues-and-eigenvectors" class="headerlink" title="Using eigenvalues and eigenvectors"></a>Using eigenvalues and eigenvectors</h4><blockquote>
+<p>Diagonalizing a matrix</p>
+<script type="math/tex; mode=display">
+S^{-1}AS = \Lambda</script><p>$\Lambda$ is a matrix of eigenvalues</p>
+<p>$S$ is a matrix that puts eigenvectors in the columns</p>
+</blockquote>
+<h5 id="Suppose-n-independent-eigenvalues-of-A"><a href="#Suppose-n-independent-eigenvalues-of-A" class="headerlink" title="Suppose $n$ independent eigenvalues of $A$"></a>Suppose $n$ independent eigenvalues of $A$</h5><p>put them in the columns of $S$</p>
+<script type="math/tex; mode=display">
+AS = A \left[\begin{array}{cccc}x_{1}& x_{2}& \cdots& x_{n}\end{array}\right] = 
+\left[\begin{array}{cccc}\lambda_{1} x_{1}& \lambda_{2} x_{2}& \cdots& \lambda_{n} x_{n}\end{array}\right] = \\
+\left[\begin{array}{cccc}x_{1}& x_{2}& \cdots& x_{n}\end{array}\right]
+\left[\begin{array}{cccc}
+\lambda_{1}& 0& \cdots& 0 \\
+0& \lambda_{2}& \cdots& 0 \\
+\vdots& \vdots& \ddots& \vdots \\
+0& 0& \cdots& \lambda_{n}
+\end{array}\right] = S \Lambda</script><p>$\Lambda$ diagonal eigenvalue matrix</p>
+<script type="math/tex; mode=display">
+AS = S\Lambda \\
+S^{-1}AS = \Lambda \\
+A = S \Lambda S^{-1}</script><blockquote>
+<p>If $Ax = \lambda x$, then $A^{2} x = \lambda Ax = \lambda^{2} x$</p>
+<p>eigenvalues are $\lambda^{2}$, eigenvectors are same</p>
+</blockquote>
+<script type="math/tex; mode=display">
+A = S\Lambda S^{-1} \\
+A^{2} = S\Lambda S^{-1}S \Lambda S^{-1} = S \Lambda^{2} S^{-1} \Rightarrow
+A^{k} = S \Lambda^{k} S^{-1}</script><blockquote>
+<p><strong>Theorem</strong></p>
+<p>$A^{k} \to 0$ as $k \to \infty$, if all $|\lambda_{i}| \lt 1$</p>
+</blockquote>
+<p>$A$ is sure to have $n$ independent eigenvectors(and be diagonalizable), if all the $\lambda$’s are different(no repeated $\lambda$’s)</p>
+<h4 id="Repeated-eigenvalues"><a href="#Repeated-eigenvalues" class="headerlink" title="Repeated eigenvalues"></a>Repeated eigenvalues</h4><p>may or may not have $n$ independent eigenvectors</p>
+<script type="math/tex; mode=display">
+A = 
+\left[\begin{array}{cccc}
+2& 1\\
+0& 2
+\end{array}\right] \\
+det(A - \lambda I) = \left|\begin{array}{cccc}
+2 - \lambda& 1 \\
+0& 2 - \lambda
+\end{array}\right| \\
+\lambda_{1} = \lambda_{2} = 2</script><p>algebra multiplicity $2$</p>
+<script type="math/tex; mode=display">
+A - 2I = \left[\begin{array}{cccc}
+0& 1\\
+0& 0
+\end{array}\right] \Rightarrow \\
+x_{1} = \left[\begin{array}{cccc}
+1 \\
+0
+\end{array}\right]</script>
       
     </div>
 
@@ -733,8 +607,8 @@ B_{j} = A\ with\ col_{j}\ replaced\ by\ b</script><h3 id="Application"><a href="
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/22/线性代数：投影/" rel="next" title="线性代数：投影">
-                <i class="fa fa-chevron-left"></i> 线性代数：投影
+              <a href="/2019/04/24/线性代数：行列式/" rel="next" title="线性代数：行列式">
+                <i class="fa fa-chevron-left"></i> 线性代数：行列式
               </a>
             
           </div>
@@ -742,10 +616,6 @@ B_{j} = A\ with\ col_{j}\ replaced\ by\ b</script><h3 id="Application"><a href="
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/线性代数：特征值与特征向量/" rel="prev" title="线性代数：特征值与特征向量">
-                线性代数：特征值与特征向量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -909,7 +779,7 @@ B_{j} = A\ with\ col_{j}\ replaced\ by\ b</script><h3 id="Application"><a href="
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Determinants"><span class="nav-number">1.</span> <span class="nav-text">Determinants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Formula-for-det-A"><span class="nav-number">2.</span> <span class="nav-text">Formula for $det(A)$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Big-Formula"><span class="nav-number">2.1.</span> <span class="nav-text">Big Formula</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cofactor-Formula"><span class="nav-number">2.2.</span> <span class="nav-text">Cofactor Formula</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Cofactor"><span class="nav-number">2.2.1.</span> <span class="nav-text">Cofactor</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cofactor-Formula-1"><span class="nav-number">2.3.</span> <span class="nav-text">Cofactor Formula</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Formula-for-A-1"><span class="nav-number">2.4.</span> <span class="nav-text">Formula for $A^{-1}$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cramer’s-Rule"><span class="nav-number">2.5.</span> <span class="nav-text">Cramer’s Rule</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Application"><span class="nav-number">3.</span> <span class="nav-text">Application</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eigenvectors"><span class="nav-number">1.</span> <span class="nav-text">Eigenvectors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-solve-Ax-lambda-x"><span class="nav-number">1.1.</span> <span class="nav-text">How to solve $Ax = \lambda x$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-eigenvalues-and-eigenvectors"><span class="nav-number">1.2.</span> <span class="nav-text">Using eigenvalues and eigenvectors</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Suppose-n-independent-eigenvalues-of-A"><span class="nav-number">1.2.1.</span> <span class="nav-text">Suppose $n$ independent eigenvalues of $A$</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Repeated-eigenvalues"><span class="nav-number">1.3.</span> <span class="nav-text">Repeated eigenvalues</span></a></li></ol></li></ol></div>
             
 
           </div>
