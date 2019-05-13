@@ -108,21 +108,21 @@
 
 
 
-  <meta name="description" content="选择排序 找到数组中最小的元素, 将它和数组第一个元素交换位置 再从剩下的元素中寻找最小元素, 将它与数组的第二个元素交换位置 如此反复, 直至将整个数组排序   排序过程可视化(来自维基百科)   代码实现 123456789101112public class SelectionSort &amp;#123;    public static void sort(Comparable[] a) &amp;#1">
+  <meta name="description" content="选择排序 找到数组中最小的元素, 将它和数组第一个元素交换位置 再从剩下的元素中寻找最小元素, 将它与数组的第二个元素交换位置 如此反复, 直至将整个数组排序   选择排序(来自维基百科)   代码实现 123456789101112public class SelectionSort &amp;#123;    public static void sort(Comparable[] a) &amp;#123;">
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法：排序">
 <meta property="og:url" content="http://yoursite.com/2019/05/13/算法：排序/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="选择排序 找到数组中最小的元素, 将它和数组第一个元素交换位置 再从剩下的元素中寻找最小元素, 将它与数组的第二个元素交换位置 如此反复, 直至将整个数组排序   排序过程可视化(来自维基百科)   代码实现 123456789101112public class SelectionSort &amp;#123;    public static void sort(Comparable[] a) &amp;#1">
+<meta property="og:description" content="选择排序 找到数组中最小的元素, 将它和数组第一个元素交换位置 再从剩下的元素中寻找最小元素, 将它与数组的第二个元素交换位置 如此反复, 直至将整个数组排序   选择排序(来自维基百科)   代码实现 123456789101112public class SelectionSort &amp;#123;    public static void sort(Comparable[] a) &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/sort/selection.gif">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/sort/insertion.gif">
 <meta property="og:image" content="https://github.com/trierbo/blog-source/raw/master/pics/sort/shellsort.gif">
-<meta property="og:updated_time" content="2019-05-13T14:16:08.080Z">
+<meta property="og:updated_time" content="2019-05-13T14:26:10.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法：排序">
-<meta name="twitter:description" content="选择排序 找到数组中最小的元素, 将它和数组第一个元素交换位置 再从剩下的元素中寻找最小元素, 将它与数组的第二个元素交换位置 如此反复, 直至将整个数组排序   排序过程可视化(来自维基百科)   代码实现 123456789101112public class SelectionSort &amp;#123;    public static void sort(Comparable[] a) &amp;#1">
+<meta name="twitter:description" content="选择排序 找到数组中最小的元素, 将它和数组第一个元素交换位置 再从剩下的元素中寻找最小元素, 将它与数组的第二个元素交换位置 如此反复, 直至将整个数组排序   选择排序(来自维基百科)   代码实现 123456789101112public class SelectionSort &amp;#123;    public static void sort(Comparable[] a) &amp;#123;">
 <meta name="twitter:image" content="https://github.com/trierbo/blog-source/raw/master/pics/sort/selection.gif">
 
 
@@ -364,7 +364,7 @@
                 
               
 
-              <time title="Created: 2019-05-13 09:09:33 / Modified: 22:16:08" itemprop="dateCreated datePublished" datetime="2019-05-13T09:09:33+08:00">2019-05-13</time>
+              <time title="Created: 2019-05-13 09:09:33 / Modified: 22:26:10" itemprop="dateCreated datePublished" datetime="2019-05-13T09:09:33+08:00">2019-05-13</time>
             
 
             
@@ -408,11 +408,12 @@
 <li>如此反复, 直至将整个数组排序</li>
 </ul>
 <blockquote>
-<p>排序过程可视化(来自维基百科)</p>
-<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/sort/selection.gif" alt="排序可视化(来自维基百科)"></p>
+<p>选择排序(来自维基百科)</p>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/sort/selection.gif" alt="选择排序"></p>
 </blockquote>
 <p><a href="https://github.com/trierbo/DA/blob/master/algorithms/src/main/java/io/github/trierbo/chapter02/SelectionSort.java" target="_blank" rel="noopener">代码实现</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SelectionSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> min = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; a.length; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (SortUtils.less(a[j], a[min]))</span><br><span class="line">                    min = j;</span><br><span class="line">            &#125;</span><br><span class="line">            SortUtils.exch(a, i, min);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>与选择排序一样, 当前索引左边的所有元素都是有序, 但是它们的最终位置还不确定, 为了给更小的元素腾出空间, 它们可能会被移动. 但是当索引到达数组的右端时, 数组排序就完成了</p>
 <ul>
 <li>适合<strong>部分有序</strong>的数组<ul>
@@ -424,8 +425,8 @@
 <li>适合<strong>小规模</strong>数组</li>
 </ul>
 <blockquote>
-<p>排序过程可视化(来自维基百科)</p>
-<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/sort/insertion.gif" alt="排序过程可视化(来自维基百科)"></p>
+<p>插入排序可视化(来自维基百科)</p>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/sort/insertion.gif" alt="插入排序"></p>
 </blockquote>
 <p><a href="https://github.com/trierbo/DA/blob/master/algorithms/src/main/java/io/github/trierbo/chapter02/InsertionSort.java" target="_blank" rel="noopener">代码实现</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertionSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span> &amp;&amp; SortUtils.less(a[j], a[j-<span class="number">1</span>]); --j) &#123;</span><br><span class="line">                SortUtils.exch(a, j, j-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -434,8 +435,8 @@
 <p>希尔排序的思想是使数组中任意间隔为$h$的元素都是有序的. 这样的数组称为$h$有序数组. 在进行排序时, 如果$h$很大, 我们能将元素移动到很远的地方, 为实现更小的$h$有序创造方便(部分有序). 对于任何以$1$结尾的$h$序列, 都能够将数组排序, 这个序列称为<strong>递增序列</strong>(步长序列)</p>
 <p>实现希尔排序的一种方法是对于每个 $h$, 用插入排序将$h$个子数组独立地排序. 但因为子数组是相互独立的, 一个更简单的方法是在$h$子数组中将每个元素交换到比它大的元素之前去(将比它大的元素向右移动). 只需要在插入排序的代码中将移动元素的距离由$1$改为$h$即可</p>
 <blockquote>
-<p>排序过程可视化(来自维基百科)</p>
-<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/sort/shellsort.gif" alt="排序过程可视化(来自维基百科)"></p>
+<p>希尔排序可视化(来自维基百科)</p>
+<p><img src="https://github.com/trierbo/blog-source/raw/master/pics/sort/shellsort.gif" alt="希尔排序"></p>
 </blockquote>
 <p>递增序列：从$\frac{N}{3}$递减至$1$</p>
 <script type="math/tex; mode=display">
