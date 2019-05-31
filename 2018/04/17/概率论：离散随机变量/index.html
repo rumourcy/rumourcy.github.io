@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="trierbo&#39;s blog">
 <meta property="og:description" content="期望 随机变量期望E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) 随机变量函数期望E[g(x)] = \sum_ig(x_i)p(x_i)E[aX+b] = aE[X] + b n阶矩E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T13:50:14.213Z">
+<meta property="og:updated_time" content="2019-05-31T14:13:46.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论：离散随机变量">
 <meta name="twitter:description" content="期望 随机变量期望E[X] = \sum_{x:p(x)&amp;gt;0}xp(x) 随机变量函数期望E[g(x)] = \sum_ig(x_i)p(x_i)E[aX+b] = aE[X] + b n阶矩E[X^n] = \sum_{x:p(x)&amp;gt;0}x^np(x)">
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-27 21:50:14" itemprop="dateModified" datetime="2019-04-27T21:50:14+08:00">2019-04-27</time>
+                <time title="Modified: 2019-05-31 22:13:46" itemprop="dateModified" datetime="2019-05-31T22:13:46+08:00">2019-05-31</time>
               
             
           </span>
@@ -416,20 +416,32 @@
 <li>n阶矩<script type="math/tex; mode=display">E[X^n] = \sum_{x:p(x)>0}x^np(x)</script></li>
 </ul>
 <a id="more"></a>
-<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><script type="math/tex; mode=display">Var(X) = E[(X-\mu)^2]</script><script type="math/tex; mode=display">Var(X) = E[X^2] - E^2[x]</script><h3 id="离散随机变量分布"><a href="#离散随机变量分布" class="headerlink" title="离散随机变量分布"></a>离散随机变量分布</h3><h4 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h4><script type="math/tex; mode=display">X = 
+<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><script type="math/tex; mode=display">Var(X) = E[(X-\mu)^2]</script><script type="math/tex; mode=display">Var(X) = E[X^2] - E^2[x]</script><h3 id="离散随机变量分布"><a href="#离散随机变量分布" class="headerlink" title="离散随机变量分布"></a>离散随机变量分布</h3><h4 id="伯努利随机变量"><a href="#伯努利随机变量" class="headerlink" title="伯努利随机变量"></a>伯努利随机变量</h4><script type="math/tex; mode=display">
+X = 
 \begin{equation}
 \begin{cases}
-1 \\
-0
+1, 成功 \\
+0, 失败
 \end{cases}
 \end{equation}</script><ul>
-<li>分布列<script type="math/tex; mode=display">p(0) = P\{X=0\} = 1 -p</script><script type="math/tex; mode=display">p(1) = P\{X=1\} = p</script></li>
+<li>分布列<script type="math/tex; mode=display">
+p(0) = P\{X=0\} = 1 -p \\
+p(1) = P\{X=1\} = p</script></li>
 </ul>
 <h4 id="二项随机变量"><a href="#二项随机变量" class="headerlink" title="二项随机变量"></a>二项随机变量</h4><blockquote>
-<p>参数为(n, p)的二项随机变量</p>
+<p>随机变量$X$是$n$重伯努利试验中成功的次数，$n$重伯努利试验：</p>
+<ul>
+<li><p>重复进行$n$次相互独立的试验</p>
+</li>
+<li><p>每次试验可能有两个结果：成功与失败</p>
+</li>
+<li><p>每次出现成功的概率相同，皆为$p$</p>
+</li>
+</ul>
+<p>随机变量$X$服从参数为$n$和$p$的二项分布，记为$X \sim b(n, p)$</p>
 </blockquote>
 <ul>
-<li>分布列<script type="math/tex; mode=display">p(i) = \binom{n}{i}p^i(1-p)^{n-i} i=0,1,...,n</script><script type="math/tex; mode=display">\sum_{i=0}^{\infty}p(i) = \sum_{i=0}^{n}\binom{n}{i}p^i(1-p)^{n-i} = [p+(1-p)]^n = 1</script></li>
+<li>分布列<script type="math/tex; mode=display">p(i) = \binom{n}{i}p^i(1-p)^{n-i} \quad i=0,1,...,n</script><script type="math/tex; mode=display">\sum_{i=0}^{\infty}p(i) = \sum_{i=0}^{n}\binom{n}{i}p^i(1-p)^{n-i} = [p+(1-p)]^n = 1</script></li>
 <li>期望<script type="math/tex; mode=display">E[X] = np</script></li>
 <li>方差<script type="math/tex; mode=display">Var(X) = np(1-p)</script></li>
 </ul>
@@ -439,9 +451,28 @@
 <li>方差<script type="math/tex; mode=display">Var(X) = \lambda</script></li>
 </ul>
 <blockquote>
-<p>独立重复进行n次试验，每次成功的概率为p，当n充分大，而p足够小，使得np保持适当的话，那么成功次数近似地服从参数为$\lambda=np$的泊松分布</p>
-</blockquote>
-<h4 id="几何随机变量"><a href="#几何随机变量" class="headerlink" title="几何随机变量"></a>几何随机变量</h4><blockquote>
+<p>泊松定理：在$n$重伯努利试验中，以$p_{n}$表示一次试验中成功发生的概率。且随着$n$增大，$p_{n}$在减小。若$n \to \infty$时有$\lambda_{n} = np_{n} \to \lambda$（正数）,则出现$x$次的成功概率</p>
+<script type="math/tex; mode=display">
+\left(\begin{array}{cccc}
+n \\
+x
+\end{array}\right)p_{n}^{x}(1 - p_{n})^{n - x} \to
+\frac{\lambda^{x}}{x!} e^{-\lambda} (n \to \infty)</script></blockquote>
+<p><strong>证：</strong></p>
+<script type="math/tex; mode=display">
+\left(\begin{array}{cccc}
+n \\
+x
+\end{array}\right)p_{n}^{x}(1-p_{n})^{n-x} \\
+= \frac{n(n-1)\cdots(n-x+1)}{x!}(\frac{\lambda_{n}}{n})^{x}(1-\frac{\lambda_{n}}{n})^{n-x} \\
+= \frac{\lambda_{n}^{x}}{x!}(1-\frac{1}{n})(1-\frac{2}{n})\cdots(1-\frac{x-1}{n})(1-\frac{\lambda_{n}}{n})^{n-x} \\
+\lim_{n \to \infty} \lambda_{n} = \lambda \\
+\lim_{n \to \infty} (1 - \frac{\lambda_{n}}{n})^{n - x} = e^{-\lambda} \\
+\lim_{n \to \infty}\left(\begin{array}{cccc}
+n \\
+x
+\end{array}\right)p_{n}^{x}(1 - p_{n})^{n - x} = 
+\frac{\lambda^{x}}{x!} e^{-\lambda}</script><h4 id="几何随机变量"><a href="#几何随机变量" class="headerlink" title="几何随机变量"></a>几何随机变量</h4><blockquote>
 <p>独立重复试验直到成功为止</p>
 </blockquote>
 <ul>
@@ -585,7 +616,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

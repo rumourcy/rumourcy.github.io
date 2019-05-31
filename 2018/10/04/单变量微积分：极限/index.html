@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="Parametric CurveExample1 $x = a \cos t \quad y = a \sin t$x^{2} + y^{2} = a^{2} \cos^{2}t + a^{2} \sin^{2} t = a^{2} speed: $a = \frac{ds}{dt}$  ARCLENGTH (ds)^{2} = (dx)^{2} + (dy)^{2}">
+  <meta name="description" content="$lim_{x \to x_{0}} f(x)$ 设函数$f(x)$在点$x_{0}$的某一去心邻域有定义。如果存在常数$A$，对于任意给定正数$\varepsilon$（不论多小），总存在正数$\delta$，使得当$x$满足不等式$0 \lt \left| x - x_{0} \right| \lt \delta$时，对应的函数$f(x)$都满足不等式  \left|f(x) - A\righ">
 <meta name="keywords" content="Calculus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单变量微积分：参数方程与极坐标">
-<meta property="og:url" content="http://yoursite.com/2019/01/30/单变量微积分：参数方程与极坐标/index.html">
+<meta property="og:title" content="单变量微积分：极限">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/单变量微积分：极限/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="Parametric CurveExample1 $x = a \cos t \quad y = a \sin t$x^{2} + y^{2} = a^{2} \cos^{2}t + a^{2} \sin^{2} t = a^{2} speed: $a = \frac{ds}{dt}$  ARCLENGTH (ds)^{2} = (dx)^{2} + (dy)^{2}">
+<meta property="og:description" content="$lim_{x \to x_{0}} f(x)$ 设函数$f(x)$在点$x_{0}$的某一去心邻域有定义。如果存在常数$A$，对于任意给定正数$\varepsilon$（不论多小），总存在正数$\delta$，使得当$x$满足不等式$0 \lt \left| x - x_{0} \right| \lt \delta$时，对应的函数$f(x)$都满足不等式  \left|f(x) - A\righ">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T13:50:11.892Z">
+<meta property="og:updated_time" content="2019-05-31T14:16:07.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单变量微积分：参数方程与极坐标">
-<meta name="twitter:description" content="Parametric CurveExample1 $x = a \cos t \quad y = a \sin t$x^{2} + y^{2} = a^{2} \cos^{2}t + a^{2} \sin^{2} t = a^{2} speed: $a = \frac{ds}{dt}$  ARCLENGTH (ds)^{2} = (dx)^{2} + (dy)^{2}">
+<meta name="twitter:title" content="单变量微积分：极限">
+<meta name="twitter:description" content="$lim_{x \to x_{0}} f(x)$ 设函数$f(x)$在点$x_{0}$的某一去心邻域有定义。如果存在常数$A$，对于任意给定正数$\varepsilon$（不论多小），总存在正数$\delta$，使得当$x$满足不等式$0 \lt \left| x - x_{0} \right| \lt \delta$时，对应的函数$f(x)$都满足不等式  \left|f(x) - A\righ">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/30/单变量微积分：参数方程与极坐标/">
+  <link rel="canonical" href="http://yoursite.com/2018/10/04/单变量微积分：极限/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>单变量微积分：参数方程与极坐标 | trierbo's blog</title>
+  <title>单变量微积分：极限 | trierbo's blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/单变量微积分：参数方程与极坐标/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/单变量微积分：极限/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">单变量微积分：参数方程与极坐标
+          <h1 class="post-title" itemprop="name headline">单变量微积分：极限
               
             
           </h1>
@@ -360,7 +360,7 @@
                 
               
 
-              <time title="Created: 2019-01-30 18:31:05" itemprop="dateCreated datePublished" datetime="2019-01-30T18:31:05+08:00">2019-01-30</time>
+              <time title="Created: 2018-10-04 23:33:33" itemprop="dateCreated datePublished" datetime="2018-10-04T23:33:33+08:00">2018-10-04</time>
             
 
             
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-27 21:50:11" itemprop="dateModified" datetime="2019-04-27T21:50:11+08:00">2019-04-27</time>
+                <time title="Modified: 2019-05-31 22:16:07" itemprop="dateModified" datetime="2019-05-31T22:16:07+08:00">2019-05-31</time>
               
             
           </span>
@@ -410,49 +410,35 @@
       
 
       
-        <h3 id="Parametric-Curve"><a href="#Parametric-Curve" class="headerlink" title="Parametric Curve"></a>Parametric Curve</h3><h4 id="Example1-x-a-cos-t-quad-y-a-sin-t"><a href="#Example1-x-a-cos-t-quad-y-a-sin-t" class="headerlink" title="Example1 $x = a \cos t \quad y = a \sin t$"></a>Example1 $x = a \cos t \quad y = a \sin t$</h4><script type="math/tex; mode=display">x^{2} + y^{2} = a^{2} \cos^{2}t + a^{2} \sin^{2} t = a^{2}</script><blockquote>
-<p>speed: $a = \frac{ds}{dt}$</p>
+        <h3 id="lim-x-to-x-0-f-x"><a href="#lim-x-to-x-0-f-x" class="headerlink" title="$lim_{x \to x_{0}} f(x)$"></a>$lim_{x \to x_{0}} f(x)$</h3><blockquote>
+<p>设函数$f(x)$在点$x_{0}$的某一去心邻域有定义。如果存在常数$A$，对于任意给定正数$\varepsilon$（不论多小），总存在正数$\delta$，使得当$x$满足不等式$0 \lt \left| x - x_{0} \right| \lt \delta$时，对应的函数$f(x)$都满足不等式</p>
+<script type="math/tex; mode=display">
+\left|f(x) - A\right| \lt \varepsilon</script><p>那么常数$A$就叫函数$f(x)$当$x \to x_{0}$时的极限，记作</p>
+<script type="math/tex; mode=display">
+\lim_{x \to x_{0}} f(x) = A \\
+f(x) \to A \ when\ x \to x_{0}</script></blockquote>
+<h3 id="lim-x-to-x-0-f-x-1"><a href="#lim-x-to-x-0-f-x-1" class="headerlink" title="$lim_{x \to x_{0}^{+}} f(x)$"></a>$lim_{x \to x_{0}^{+}} f(x)$</h3><blockquote>
+<p>$0 \lt |x - x_{0}| \lt \delta$ 改为 $x_{0} \lt x \lt x_{0} + \delta$</p>
 </blockquote>
-<p>ARCLENGTH</p>
-<script type="math/tex; mode=display">(ds)^{2} = (dx)^{2} + (dy)^{2}</script><a id="more"></a>
-<blockquote>
-<p>$(\Delta s)^{2} \approx  (\Delta x)^{2} + (\Delta y)^{2}$<br>$(\frac{\Delta s}{\Delta t})^{2} \approx (\frac{\Delta x}{\Delta t})^{2} + (\frac{\Delta y}{\Delta t})^{2}$<br>$\frac{ds}{dt} = \sqrt{(\frac{dx}{dt})^{2} + (\frac{dy}{dt})^{2}}$</p>
+<h3 id="lim-x-to-x-0-f-x-2"><a href="#lim-x-to-x-0-f-x-2" class="headerlink" title="$lim_{x \to x_{0}^{-}} f(x)$"></a>$lim_{x \to x_{0}^{-}} f(x)$</h3><blockquote>
+<p> $0 \lt |x - x_{0}| \lt \delta$ 改为 $x_{0} - \delta \lt x \lt x_{0}$</p>
 </blockquote>
-<p>$ds = \sqrt{(\frac{dx}{dt})^{2} + (\frac{dy}{dt})^{2}} dt$<br>$\frac{dx}{dt} = -a \sin t \quad \frac{dy}{dt} = a \cos t$<br>$ds = \sqrt{(-a \sin t)^{2} + (a \cos t)^{2}} dt = \sqrt{a^{2}} dt = a dt$</p>
-<blockquote>
-<p>speed: $\frac{ds}{dt} = a$</p>
-<p>new speed:<br>$x = a \cos kt \quad y = a \sin kt$<br>$\frac{ds}{dt} = ak (a \gt 0,\ k \gt 0)$</p>
-</blockquote>
-<h4 id="Example2-x-2-sin-t-quad-y-cos-t"><a href="#Example2-x-2-sin-t-quad-y-cos-t" class="headerlink" title="Example2 $x = 2 \sin t \quad y = \cos t$"></a>Example2 $x = 2 \sin t \quad y = \cos t$</h4><script type="math/tex; mode=display">\frac{1}{4} x^{2} + y^{2} = \sin^{2} t + \cos^{2}t = 1(Ellipse)</script><p>$\frac{ds}{dt} = \sqrt{(2 \cos t)^{2} + (\sin t)^{2}}$</p>
-<blockquote>
-<p>$ARCLENGTH = \int_{0}^{2 \pi} \sqrt{4 \cos^{2} t + \sin^{2} t} dt$<br>Not an elementary integral(初等积分)<br>无法积成初等函数</p>
-</blockquote>
-<h3 id="Polar-Coordinates"><a href="#Polar-Coordinates" class="headerlink" title="Polar Coordinates"></a>Polar Coordinates</h3><ul>
-<li><p>Example1 $(x, y) = (1, 1)$ in polar coord</p>
+<h3 id="lim-x-to-x-infty-f-x"><a href="#lim-x-to-x-infty-f-x" class="headerlink" title="$lim_{x \to x_{\infty}} f(x)$"></a>$lim_{x \to x_{\infty}} f(x)$</h3><blockquote>
+<p>设函数$f(x)$当$\left|x\right|$大于某一正数时有定义。如果存在常数$A$，对于任意给定正数$\varepsilon$（不论多小），总存在正数$X$，使得当$x$满足不等式$x \gt \left| X \right|$时，对应的函数$f(x)$都满足不等式</p>
+<script type="math/tex; mode=display">
+\left|f(x) - A\right| \lt \varepsilon</script><p>那么常数$A$就叫函数$f(x)$当$x \to \infty$时的极限，记作</p>
+<script type="math/tex; mode=display">
+\lim_{x \to \infty} f(x) = A \\
+f(x) \to A \ when\ x \to \infty</script></blockquote>
+<h3 id="lim-x-to-x-0-f-x-infty"><a href="#lim-x-to-x-0-f-x-infty" class="headerlink" title="$lim_{x \to x_{0}} f(x) = \infty$"></a>$lim_{x \to x_{0}} f(x) = \infty$</h3><blockquote>
+<p>设函数$f(x)$在点$x_{0}$的某一去心邻域有定义。如果存在常数$A$，对于任意给定正数$M$（不论多大），总存在正数$\delta$，使得当$x$满足不等式$0 \lt \left| x - x_{0} \right| \lt \delta$时，对应的函数$f(x)$都满足不等式</p>
+<script type="math/tex; mode=display">
+\left|f(x)\right| \gt M</script><p>那么称函数$f(x)$是当$x \to x_{0}$时的无穷大</p>
+<script type="math/tex; mode=display">
+\lim_{x \to x_{0}} f(x) = \infty</script></blockquote>
 <ul>
-<li>$r = \sqrt{2} \quad \theta = \frac{7 \pi}{4}$</li>
-<li>$r = \sqrt{2} \quad \theta = -\frac{\pi}{4}$</li>
-<li>$r = -\sqrt{2} \quad \theta = \frac{3 \pi}{4}$</li>
-</ul>
-</li>
-<li><p>Example2 $r= a$ (circle)</p>
-</li>
-<li><p>Example3 $\theta = c$ (ray)<br>implicitly assumes $0 \leq r \leq \infty$<br>$-\infty \leq r \leq \infty \to$ gives whole line</p>
-</li>
-<li><p>Example4 $y = 1$<br>$y = r \sin \theta = 1 \to r = \frac{1}{\sin \theta} \quad 0 \lt \theta \lt \pi$</p>
-</li>
-<li><p>Example5 off-center circle<br>$(x-a)^{2} + y^{2} = a^{2}$<br>$x^{2} - 2ax + a^{2} + y^{2} = a^{2}$<br>$r^{2} - 2ax = 0$<br>$r^{2} - 2ar \cos \theta = 0$<br>$r^{2} = 2ar \cos \theta$<br>$r = 2a \cos \theta (or\ r = 0)$<br>$-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}$</p>
-</li>
-</ul>
-<h4 id="AREA"><a href="#AREA" class="headerlink" title="AREA"></a>AREA</h4><p>total $A = \pi a^{2}$<br>$\Delta A = \frac{\Delta \theta}{2 \pi} \pi a^{2} = \frac{1}{2} a^{2} \Delta \theta$</p>
-<p>$r = r(\theta)$<br>$\Delta A \approx \frac{1}{2} r^{2} \Delta \theta$<br>$dA = \frac{1}{2} r^{2} d \theta$<br>$A = \int_{\theta_{1}}^{\theta_{2}} \frac{1}{2} r^{2} d \theta (r = r(\theta))$</p>
-<ul>
-<li><p>Example $r = 2a \cos \theta ((x-a)^{2} + y^{2} = a^{2})$</p>
-<blockquote>
-<p>$-\frac{\pi}{2} \lt \theta \lt \frac{\pi}{2}$</p>
-</blockquote>
-<p>$A = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{2} (2a \cos \theta)^{2} d \theta = 2a^{2} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos^{2} \theta d \theta = 2a^{2} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1+\cos 2 \theta}{2} d \theta = a^{2} (\theta + \frac{1}{2} \sin 2 \theta) \mid_{-\frac{\pi}{2}}^{\frac{\pi}{2}} = \pi a^{2}$</p>
-</li>
+<li>$\left| f(x) \right| \gt M \quad \lim_{x \to x_{0}} f(x) = + \infty$</li>
+<li>$\left| f(x) \right| \lt -M \quad \lim_{x \to x_{0}} f(x) = - \infty$</li>
 </ul>
 
       
@@ -490,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/30/单变量微积分：分部积分/" rel="next" title="单变量微积分：分部积分">
-                <i class="fa fa-chevron-left"></i> 单变量微积分：分部积分
+              <a href="/2018/09/22/Emacs基本快捷键/" rel="next" title="Emacs基本快捷键">
+                <i class="fa fa-chevron-left"></i> Emacs基本快捷键
               </a>
             
           </div>
@@ -500,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/30/单变量微积分：洛必达法则/" rel="prev" title="单变量微积分：洛必达法则">
-                单变量微积分：洛必达法则 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/05/单变量微积分：导数基本概念/" rel="prev" title="单变量微积分：导数基本概念">
+                单变量微积分：导数基本概念 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -672,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Parametric-Curve"><span class="nav-number">1.</span> <span class="nav-text">Parametric Curve</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example1-x-a-cos-t-quad-y-a-sin-t"><span class="nav-number">1.1.</span> <span class="nav-text">Example1 $x = a \cos t \quad y = a \sin t$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example2-x-2-sin-t-quad-y-cos-t"><span class="nav-number">1.2.</span> <span class="nav-text">Example2 $x = 2 \sin t \quad y = \cos t$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Polar-Coordinates"><span class="nav-number">2.</span> <span class="nav-text">Polar Coordinates</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AREA"><span class="nav-number">2.1.</span> <span class="nav-text">AREA</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#lim-x-to-x-0-f-x"><span class="nav-number">1.</span> <span class="nav-text">$lim_{x \to x_{0}} f(x)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lim-x-to-x-0-f-x-1"><span class="nav-number">2.</span> <span class="nav-text">$lim_{x \to x_{0}^{+}} f(x)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lim-x-to-x-0-f-x-2"><span class="nav-number">3.</span> <span class="nav-text">$lim_{x \to x_{0}^{-}} f(x)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lim-x-to-x-infty-f-x"><span class="nav-number">4.</span> <span class="nav-text">$lim_{x \to x_{\infty}} f(x)$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lim-x-to-x-0-f-x-infty"><span class="nav-number">5.</span> <span class="nav-text">$lim_{x \to x_{0}} f(x) = \infty$</span></a></li></ol></div>
             
 
           </div>
