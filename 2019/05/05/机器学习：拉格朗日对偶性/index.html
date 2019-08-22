@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Lagrange对偶函数优化问题 \min f_{0}(x) \\ s.t. \ f_{i}(x) \leq 0, \ i = 1, \cdots, m \\ h_{i}(x) = 0, \ i = 1, \cdots, pLagrange函数 L(x, \lambda, v) = f_{0}(x) + \sum_{i=1}^{m} \lambda_{i} f_{i}(x) + \sum_{i=1">
+<meta name="keywords" content="ZERO,Machine Learning,Support Vector Machine">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习：拉格朗日对偶性">
+<meta property="og:url" content="http://yoursite.com/2019/05/05/机器学习：拉格朗日对偶性/index.html">
+<meta property="og:site_name" content="trierbo&#39;s blog">
+<meta property="og:description" content="Lagrange对偶函数优化问题 \min f_{0}(x) \\ s.t. \ f_{i}(x) \leq 0, \ i = 1, \cdots, m \\ h_{i}(x) = 0, \ i = 1, \cdots, pLagrange函数 L(x, \lambda, v) = f_{0}(x) + \sum_{i=1}^{m} \lambda_{i} f_{i}(x) + \sum_{i=1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-22T01:53:46.275Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习：拉格朗日对偶性">
+<meta name="twitter:description" content="Lagrange对偶函数优化问题 \min f_{0}(x) \\ s.t. \ f_{i}(x) \leq 0, \ i = 1, \cdots, m \\ h_{i}(x) = 0, \ i = 1, \cdots, pLagrange函数 L(x, \lambda, v) = f_{0}(x) + \sum_{i=1}^{m} \lambda_{i} f_{i}(x) + \sum_{i=1">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/05/机器学习：拉格朗日对偶性/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>机器学习：拉格朗日对偶性 | trierbo's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">trierbo's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/机器学习：拉格朗日对偶性/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="trierbo">
+      <meta itemprop="description" content="Be evil!">
+      <meta itemprop="image" content="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="trierbo's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习：拉格朗日对偶性
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-05 19:42:26" itemprop="dateCreated datePublished" datetime="2019-05-05T19:42:26+08:00">2019-05-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-22 09:53:46" itemprop="dateModified" datetime="2019-08-22T09:53:46+08:00">2019-08-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Lagrange对偶函数"><a href="#Lagrange对偶函数" class="headerlink" title="Lagrange对偶函数"></a>Lagrange对偶函数</h4><h5 id="优化问题"><a href="#优化问题" class="headerlink" title="优化问题"></a>优化问题</h5><script type="math/tex; mode=display">
+\min f_{0}(x) \\
+s.t. \ f_{i}(x) \leq 0, \ i = 1, \cdots, m \\
+h_{i}(x) = 0, \ i = 1, \cdots, p</script><h5 id="Lagrange函数"><a href="#Lagrange函数" class="headerlink" title="Lagrange函数"></a>Lagrange函数</h5><script type="math/tex; mode=display">
+L(x, \lambda, v) = f_{0}(x) + \sum_{i=1}^{m} \lambda_{i} f_{i}(x) + \sum_{i=1}^{p} v_{i}h_{i}(x)</script><p>其中$\lambda_{i}$以及$v_{i}$称为<strong>Lagrange乘子</strong></p>
+<p>$\lambda$以及$v$称为<strong>Lagrange乘子向量</strong></p>
+<h5 id="Lagrange对偶函数-1"><a href="#Lagrange对偶函数-1" class="headerlink" title="Lagrange对偶函数"></a>Lagrange对偶函数</h5><script type="math/tex; mode=display">
+g(\lambda, v) = \min_{x}L(x, \lambda, v)</script><blockquote>
+<p>对偶函数是一族关于$(\lambda, v)$的仿射函数的逐点下确界，所以即使原问题不是凸的，对偶函数也是凹函数（p77）</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="对偶可行"><a href="#对偶可行" class="headerlink" title="对偶可行"></a>对偶可行</h4><p>对偶函数构成原问题最优值$p^{*}$的下界：即对任意$\lambda \geq 0$和$v$下式成立：</p>
+<script type="math/tex; mode=display">
+g(\lambda, v) \leq p^{*}</script><p>证：假设$x’$是原问题可行解</p>
+<script type="math/tex; mode=display">
+\lambda \geq 0 \to
+\sum_{i=1}^{m} \lambda_{i}f_{i}(x') + \sum_{i=1}^{p}v_{i}h_{i}(x') \leq 0 \to \\
+L(x', \lambda, v) = f_{0}(x') + \sum_{i=1}^{m} \lambda_{i}f_{i}(x') + \sum_{i=1}^{p}v_{i}h_{i}(x') \leq f_{0}(x') \to \\
+g(\lambda, v) = \min_{x}L(x, \lambda, v) \leq L(x', \lambda, v) \leq f_{0}(x')</script><blockquote>
+<p>当$\lambda \geq 0$时，$g(\lambda, v) \leq p^{<em>}$, <em>*对偶可行</em></em></p>
+</blockquote>
+<h4 id="Lagrange对偶问题"><a href="#Lagrange对偶问题" class="headerlink" title="Lagrange对偶问题"></a>Lagrange对偶问题</h4><script type="math/tex; mode=display">
+\max g(\lambda, v) \\
+s.t. \ \lambda \geq 0</script><blockquote>
+<p>对偶问题是一个凸优化问题，对偶问题的凸性和原问题是否是凸优化问题无关</p>
+</blockquote>
+<h4 id="强弱对偶性"><a href="#强弱对偶性" class="headerlink" title="强弱对偶性"></a>强弱对偶性</h4><p>假设对偶问题的最优值用$d^{*}$表示</p>
+<h5 id="弱对偶性"><a href="#弱对偶性" class="headerlink" title="弱对偶性"></a>弱对偶性</h5><script type="math/tex; mode=display">
+d^{*} \leq p^{*}</script><h5 id="最优对偶间隙"><a href="#最优对偶间隙" class="headerlink" title="最优对偶间隙"></a>最优对偶间隙</h5><script type="math/tex; mode=display">
+p^{*} - d^{*}</script><h5 id="强对偶性"><a href="#强对偶性" class="headerlink" title="强对偶性"></a>强对偶性</h5><script type="math/tex; mode=display">
+d^{*} = p^{*}</script><ul>
+<li>原问题是凸优化问题，强对偶性通常成立</li>
+</ul>
+<h4 id="互补松弛性"><a href="#互补松弛性" class="headerlink" title="互补松弛性"></a>互补松弛性</h4><p>假设强对偶性成立</p>
+<script type="math/tex; mode=display">
+f(x^{*}) = g(\lambda^{*}, v^{*}) \\
+= \min_{x}{(f_{0}(x) + \sum_{i=1}^{m} \lambda^{*}_{i}f_{i}(x) + \sum_{i=1}^{p}v^{*}_{i}h_{i}(x))} \\
+\leq f_{0}(x^{*}) + \sum_{i=1}^{m} \lambda^{*}_{i}f_{i}(x^{*}) + \sum_{i=1}^{p}v^{*}_{i}h_{i}(x^{*}) \\
+\leq f_{0}(x^{*})</script><script type="math/tex; mode=display">
+\sum_{i=1}^{m} \lambda^{*}_{i}f_{i}(x^{*}) = 0 \to
+\lambda^{*}_{i}f_{i}(x^{*}) = 0</script><p>上述条件称为<strong>互补松弛性</strong></p>
+<h4 id="KKT条件"><a href="#KKT条件" class="headerlink" title="KKT条件"></a>KKT条件</h4><blockquote>
+<p>如果强对偶性成立，那么原问题最优解和对偶问题最优解必须满足KKT条件</p>
+</blockquote>
+<ul>
+<li>原问题可行解</li>
+</ul>
+<script type="math/tex; mode=display">
+f_{i}(x^{*}) \leq 0 \\
+h_{i}(x^{*}) = 0</script><ul>
+<li>对偶可行</li>
+</ul>
+<script type="math/tex; mode=display">
+\lambda^{*}_{i} \geq 0</script><ul>
+<li><p>强对偶性</p>
+<ul>
+<li><p>互补松弛性</p>
+<script type="math/tex; mode=display">
+\lambda^{*}_{i}f_{i}(x^{*})</script></li>
+<li><p>$L(x, \lambda^{<em>}, v^{</em>})$在$x^{*}$取得最小值</p>
+<script type="math/tex; mode=display">
+L(x^{*}, \lambda^{*}, v^{*}) = f(x^{*}) = g(\lambda^{*}, v^{*})</script><script type="math/tex; mode=display">
+\nabla f_{0}(x^{*}) + \sum_{i=1}^{m} \lambda^{*}_{i} \nabla f_{i}(x^{*}) + \sum_{i=1}^{p}v^{*}_{i} \nabla h_{i}(x^{*}) = 0</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="http://web.stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">Convex Optimization – Boyd and Vandenberghe</a></p>
+<p><a href="https://book.douban.com/subject/21249088/" target="_blank" rel="noopener">凸优化</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ZERO/" rel="tag"># ZERO</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Support-Vector-Machine/" rel="tag"># Support Vector Machine</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/03/机器学习：最大似然估计/" rel="next" title="机器学习：最大似然估计">
+                <i class="fa fa-chevron-left"></i> 机器学习：最大似然估计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/05/机器学习：Logistic Regression/" rel="prev" title="机器学习：Logistic Regression">
+                机器学习：Logistic Regression <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg" alt="trierbo">
+            
+              <p class="site-author-name" itemprop="name">trierbo</p>
+              <p class="site-description motion-element" itemprop="description">Be evil!</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/trierbo" title="GitHub &rarr; https://github.com/trierbo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:baochuanyan@gmail.com" title="E-Mail &rarr; mailto:baochuanyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lagrange对偶函数"><span class="nav-number">1.</span> <span class="nav-text">Lagrange对偶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优化问题"><span class="nav-number">1.1.</span> <span class="nav-text">优化问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Lagrange函数"><span class="nav-number">1.2.</span> <span class="nav-text">Lagrange函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Lagrange对偶函数-1"><span class="nav-number">1.3.</span> <span class="nav-text">Lagrange对偶函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对偶可行"><span class="nav-number">2.</span> <span class="nav-text">对偶可行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lagrange对偶问题"><span class="nav-number">3.</span> <span class="nav-text">Lagrange对偶问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强弱对偶性"><span class="nav-number">4.</span> <span class="nav-text">强弱对偶性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#弱对偶性"><span class="nav-number">4.1.</span> <span class="nav-text">弱对偶性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最优对偶间隙"><span class="nav-number">4.2.</span> <span class="nav-text">最优对偶间隙</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#强对偶性"><span class="nav-number">4.3.</span> <span class="nav-text">强对偶性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互补松弛性"><span class="nav-number">5.</span> <span class="nav-text">互补松弛性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KKT条件"><span class="nav-number">6.</span> <span class="nav-text">KKT条件</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number"></span> <span class="nav-text">Reference</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">trierbo</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
