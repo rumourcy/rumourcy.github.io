@@ -108,25 +108,30 @@
 
 
 
-  <meta name="description" content="Rational Function(有理函数)$\frac{P(x)}{Q(x)}$ = Rational Function = Ratio of Two Polynomials $P(x)$ and $Q(x)$">
-<meta name="keywords" content="Calculus">
+  <meta name="description" content="目标函数$f_{i}(x)$表示第$i$个样本的损失函数，则目标函数可表示为：  f(x) = \frac{1}{n} \sum_{1}^{n} f_{i}(x)梯度下降(Gradient Descent)梯度下降原理 f(x + \epsilon) \approx f(x) + \langle\nabla f(x), \epsilon\rangle \quad \epsilon \in \mat">
+<meta name="keywords" content="ZERO,Deep Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单变量微积分：有理函数积分">
-<meta property="og:url" content="http://yoursite.com/2019/01/28/单变量微积分：有理函数积分/index.html">
+<meta property="og:title" content="深度学习：优化算法">
+<meta property="og:url" content="http://yoursite.com/2019/06/10/深度学习：优化算法/index.html">
 <meta property="og:site_name" content="trierbo&#39;s blog">
-<meta property="og:description" content="Rational Function(有理函数)$\frac{P(x)}{Q(x)}$ = Rational Function = Ratio of Two Polynomials $P(x)$ and $Q(x)$">
+<meta property="og:description" content="目标函数$f_{i}(x)$表示第$i$个样本的损失函数，则目标函数可表示为：  f(x) = \frac{1}{n} \sum_{1}^{n} f_{i}(x)梯度下降(Gradient Descent)梯度下降原理 f(x + \epsilon) \approx f(x) + \langle\nabla f(x), \epsilon\rangle \quad \epsilon \in \mat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T13:50:13.224Z">
+<meta property="og:image" content="http://zh.d2l.ai/_images/chapter_optimization_momentum_1_1.svg">
+<meta property="og:image" content="http://zh.d2l.ai/_images/chapter_optimization_momentum_5_1.svg">
+<meta property="og:image" content="http://zh.d2l.ai/_images/chapter_optimization_adagrad_1_1.svg">
+<meta property="og:image" content="http://zh.d2l.ai/_images/chapter_optimization_rmsprop_1_1.svg">
+<meta property="og:updated_time" content="2019-08-26T08:29:35.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单变量微积分：有理函数积分">
-<meta name="twitter:description" content="Rational Function(有理函数)$\frac{P(x)}{Q(x)}$ = Rational Function = Ratio of Two Polynomials $P(x)$ and $Q(x)$">
+<meta name="twitter:title" content="深度学习：优化算法">
+<meta name="twitter:description" content="目标函数$f_{i}(x)$表示第$i$个样本的损失函数，则目标函数可表示为：  f(x) = \frac{1}{n} \sum_{1}^{n} f_{i}(x)梯度下降(Gradient Descent)梯度下降原理 f(x + \epsilon) \approx f(x) + \langle\nabla f(x), \epsilon\rangle \quad \epsilon \in \mat">
+<meta name="twitter:image" content="http://zh.d2l.ai/_images/chapter_optimization_momentum_1_1.svg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/28/单变量微积分：有理函数积分/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/10/深度学习：优化算法/">
 
 
 
@@ -136,7 +141,7 @@
   };
 </script>
 
-  <title>单变量微积分：有理函数积分 | trierbo's blog</title>
+  <title>深度学习：优化算法 | trierbo's blog</title>
   
 
 
@@ -318,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/单变量微积分：有理函数积分/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/深度学习：优化算法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="trierbo">
@@ -335,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">单变量微积分：有理函数积分
+          <h1 class="post-title" itemprop="name headline">深度学习：优化算法
               
             
           </h1>
@@ -360,7 +365,7 @@
                 
               
 
-              <time title="Created: 2019-01-28 15:37:19" itemprop="dateCreated datePublished" datetime="2019-01-28T15:37:19+08:00">2019-01-28</time>
+              <time title="Created: 2019-06-10 20:42:20" itemprop="dateCreated datePublished" datetime="2019-06-10T20:42:20+08:00">2019-06-10</time>
             
 
             
@@ -377,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-27 21:50:13" itemprop="dateModified" datetime="2019-04-27T21:50:13+08:00">2019-04-27</time>
+                <time title="Modified: 2019-08-26 16:29:35" itemprop="dateModified" datetime="2019-08-26T16:29:35+08:00">2019-08-26</time>
               
             
           </span>
@@ -410,71 +415,102 @@
       
 
       
-        <h3 id="Rational-Function-有理函数"><a href="#Rational-Function-有理函数" class="headerlink" title="Rational Function(有理函数)"></a>Rational Function(有理函数)</h3><p>$\frac{P(x)}{Q(x)}$ = Rational Function = Ratio of Two Polynomials $P(x)$ and $Q(x)$</p>
+        <h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><p>$f_{i}(x)$表示第$i$个样本的损失函数，则目标函数可表示为：</p>
+<script type="math/tex; mode=display">
+f(x) = \frac{1}{n} \sum_{1}^{n} f_{i}(x)</script><h3 id="梯度下降-Gradient-Descent"><a href="#梯度下降-Gradient-Descent" class="headerlink" title="梯度下降(Gradient Descent)"></a>梯度下降(Gradient Descent)</h3><h4 id="梯度下降原理"><a href="#梯度下降原理" class="headerlink" title="梯度下降原理"></a>梯度下降原理</h4><script type="math/tex; mode=display">
+f(x + \epsilon) \approx f(x) + \langle\nabla f(x), \epsilon\rangle \quad \epsilon \in \mathring{U}(x) \\
+\epsilon = -\eta \nabla f(x) \\
+f(x + \epsilon) \approx f(x) + \langle\nabla f(x), -\eta \nabla f(x)\rangle \to \\
+f(x + \epsilon) \lt f(x)</script><h4 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h4><script type="math/tex; mode=display">
+x^{k+1} \gets x^{k} - \eta \nabla f(x^{k})</script><h4 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h4><script type="math/tex; mode=display">
+x^{k+1} \gets x^{k} - \eta \nabla f_{i}(x)</script><h4 id="小批量随机梯度下降"><a href="#小批量随机梯度下降" class="headerlink" title="小批量随机梯度下降"></a>小批量随机梯度下降</h4><script type="math/tex; mode=display">
+g^{k+1} \gets \nabla f_{B^{k+1}}(x^{k}) = \frac{1}{\lvert B^{k+1} \rvert} \sum_{i \in B^{k+1}} \nabla f_{i}(x^{k}) \\
+x^{k+1} \gets x^{k} - \eta g^{k+1}</script><blockquote>
+<p>容易陷入局部最优或者鞍点</p>
+</blockquote>
 <a id="more"></a>
-<h3 id="Partial-Fraction-部分分式"><a href="#Partial-Fraction-部分分式" class="headerlink" title="Partial Fraction(部分分式)"></a>Partial Fraction(部分分式)</h3><blockquote>
-<p>split $\frac{P}{Q}$ into easier pieces</p>
+<h3 id="动量法-Momentum"><a href="#动量法-Momentum" class="headerlink" title="动量法(Momentum)"></a>动量法(Momentum)</h3><blockquote>
+<p>梯度下降在遇到沟壑时容易发生震荡，故可以引入动量，加速在正确的方向下降并抑制震荡</p>
+<p><img src="http://zh.d2l.ai/_images/chapter_optimization_momentum_1_1.svg" alt="Gradient Descent"></p>
+</blockquote>
+<p>动量法引入速度变量$v^{k}$，初始化时$v^{0} = 0$</p>
+<script type="math/tex; mode=display">
+v^{k+1} \gets \gamma v^{k} + \eta g^{k+1} \\
+x^{k+1} \gets x^{k} - v^{k+1}</script><p><img src="http://zh.d2l.ai/_images/chapter_optimization_momentum_5_1.svg" alt="Momentum"></p>
+<h4 id="指数加权移动平均"><a href="#指数加权移动平均" class="headerlink" title="指数加权移动平均"></a>指数加权移动平均</h4><p>给定超参数$0 \leq \gamma \lt 1$，当前时间步$t$的变量$y_{t}$是上一时间步$t-1$的变量$y_{t-1}$和当前时间步另一变量$x_{t}$的线性组合：</p>
+<script type="math/tex; mode=display">
+y_{t} = \gamma y_{t-1} + (1-\gamma) x_{t}</script><p>对$y_{t}$展开：</p>
+<script type="math/tex; mode=display">
+y_{t} = (1-\gamma) x_{t} + \gamma y_{t-1} \\
+= (1-\gamma)x_{t} + (1-\gamma)\gamma x_{t-1} + \gamma^{2} y_{t-2} \\
+= (1-\gamma)x_{t} + (1-\gamma)\gamma x_{t-1} + (1-\gamma)\gamma^{2}x_{t-2} + \gamma^{3}y_{t-3} \\
+\cdots</script><script type="math/tex; mode=display">
+y_{t} = (1 - \gamma) \sum_{i=0}^{t-1}\gamma^{i} x_{t-i}</script><p>离时间$t$越近的$x_{t}$权值越大，较远的项可被忽略</p>
+<h4 id="指数加权移动平均与动量法"><a href="#指数加权移动平均与动量法" class="headerlink" title="指数加权移动平均与动量法"></a>指数加权移动平均与动量法</h4><script type="math/tex; mode=display">
+v^{k+1} \to \gamma v^{k} + (1 - \gamma)(\frac{\eta}{1 - \gamma}g^{k+1})</script><h3 id="Nesterov-Accelerated-Gradient"><a href="#Nesterov-Accelerated-Gradient" class="headerlink" title="Nesterov Accelerated Gradient"></a>Nesterov Accelerated Gradient</h3><script type="math/tex; mode=display">
+v^{k+1} \gets \gamma v^{k} + \eta \nabla_{x}f_{B^{k+1}}(x^{k} - \gamma v^{k}) \\
+x^{k+1} \gets x^{k} - v^{k+1}</script><h3 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h3><blockquote>
+<p>根据自变量在每个维度的梯度值的大小来调整各个维度上的学习率</p>
 </blockquote>
 <ul>
-<li><p>$\int (\frac{1}{x - 1} + \frac{3}{x + 2}) dx$ <code>easy</code><br>$= \ln |x - 1| + 3 \ln |x + 2| + c$</p>
-<blockquote>
-<p>$\frac{1}{x - 1} + \frac{3}{x + 2} = \frac{x + 2 + 3(x - 1)}{(x - 1)(x + 2)} = \frac{4x - 1}{x^{2} + x - 2}$ <code>disguised</code></p>
-</blockquote>
-</li>
+<li>梯度$g^{k}$按元素平方的累加变量$s^{k}$</li>
 </ul>
-<h4 id="Algebra-Problem"><a href="#Algebra-Problem" class="headerlink" title="Algebra Problem"></a>Algebra Problem</h4><blockquote>
-<p>Detect easy pieces</p>
-</blockquote>
-<h5 id="Cover-up-Method-掩盖法"><a href="#Cover-up-Method-掩盖法" class="headerlink" title="Cover up Method(掩盖法)"></a>Cover up Method(掩盖法)</h5><ul>
-<li>$\frac{4x-1}{x^{2}+x-2} = \frac{4x-1}{(x-1)(x+2)}$</li>
-<li>$\frac{4x-1}{(x-1)(x+2)} = \frac{A}{x-1} + \frac{B}{x+2}$</li>
-<li><p>solve for $A$ and $B$</p>
-<ul>
-<li><p>solve for $A$ by multiply $(x-1)$<br>$\frac{4x-1}{x+2} = A + \frac{B}{x+2}(x-1)$<br>$\frac{4-1}{1+2} = A \to A = 1$ when $x \to 1$</p>
-</li>
-<li><p>solve for $B$ by multiply $(x+2)$<br>$\frac{4x-1}{x-1} = \frac{A}{x-1}(x+2) + B$<br>$\frac{-8-1}{-2-1} = B \to B = 3$ when $x \to -2$</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li>Factor $Q$</li>
-<li>Set up</li>
-<li>Cover up</li>
-</ul>
-<blockquote>
-<p>Cover up works if $Q(x)$ has <strong>distinct linear</strong> factors and $degree P \lt degree Q$</p>
-</blockquote>
-<h5 id="Q-has-repeat-linear-factors"><a href="#Q-has-repeat-linear-factors" class="headerlink" title="$Q$ has repeat linear factors"></a>$Q$ has repeat linear factors</h5><p>$\frac{x^{2}+2}{(x-1)^{2}(x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^{2}} + \frac{C}{x+2}$</p>
-<p>Cover up works for $B$ and $C$ not $A$</p>
-<ul>
-<li>$C$: $x \to -2$<br>$\frac{(-2)^{2}+2}{(-2-1)^{2}} = C \to C = \frac{2}{3}$</li>
-<li>$B$: $x \to 1$<br>$\frac{x^{2}+2}{x+2} = \frac{A}{x-1}(x-1)^{2} + B + \frac{C}{x+2}(x-1)^{2}$<br>$\frac{1^{2}+2}{1+2} = B \to B = 1$</li>
-</ul>
-<p>For $A$, plugin any #(# $!= -2$ and # $!= 1$)<br>for example # $= 0$<br>$\frac{0^{2}+2}{(-1)^{2}*2} = \frac{A}{-1} + \frac{1}{1} + \frac{2/3}{0+2}$<br>$1 = -A + 1 + \frac{1}{3} \to A = \frac{1}{3}$</p>
-<h5 id="Q-has-a-quadratic-factor-and-deg-P-lt-deg-Q"><a href="#Q-has-a-quadratic-factor-and-deg-P-lt-deg-Q" class="headerlink" title="$Q$ has a quadratic factor and $deg P &lt; deg Q$"></a>$Q$ has a quadratic factor and $deg P &lt; deg Q$</h5><p>$\frac{x^{2}}{(x-1)(x^{2}+1)} = \frac{A}{x-1} + \frac{Bx+C}{x^{2}+1}$<br>cover up for $A$<br>$\frac{1^{2}}{1^{2}+1} = A \to A = \frac{1}{2}$<br>for $B$ &amp; $C$, clear denominator<br>$x^{2} = A(x+1) + (Bx+C)(x-1)$</p>
-<ul>
-<li>$x^{2}$ term: $1 = \frac{1}{2} + B \to B = \frac{1}{2}$</li>
-<li>$x^{0}$ term: $0 = \frac{1}{2} - C \to C = \frac{1}{2}$</li>
-</ul>
-<p>$\int \frac{x^{2}}{(x-1)(x^{2}+1)} dx = \int \frac{\frac{1}{2}}{x-1} dx + \int \frac{\frac{1}{2} x}{x^{2}+1} dx + \int \frac{\frac{1}{2}}{x^{2}+1} dx = \frac{1}{2} \ln |x-1| + \frac{1}{4} \ln (x^{2}+1) + \frac{1}{2} \arctan x + C$</p>
-<h5 id="What-if-deg-P-geq-deg-Q-Improper-Fraction-假分数"><a href="#What-if-deg-P-geq-deg-Q-Improper-Fraction-假分数" class="headerlink" title="What if $deg P \geq deg Q$? Improper Fraction(假分数)"></a>What if $deg P \geq deg Q$? Improper Fraction(假分数)</h5><ul>
-<li>$\frac{x^{3}}{(x-1)(x+2)} = \frac{x^{3}}{x^{2}+x-2}$ <code>reverse</code></li>
-<li>$\frac{x^{3}}{x^{2}+x-2} = x-1+\frac{3x-2}{x^{2}+x-2}$ <code>long division</code></li>
-<li>use cover up</li>
-</ul>
-<h4 id="Always-works-but-maybe-slowly"><a href="#Always-works-but-maybe-slowly" class="headerlink" title="Always works, but maybe slowly"></a>Always works, but maybe slowly</h4><ul>
-<li>LONG DIVISION<script type="math/tex; mode=display">\frac{P(x)}{Q(x)} = quotient + \frac{R(x)}{Q(x)} \quad deg R \lt deg Q</script></li>
-<li>FACTOR $Q$<br>$Q(x) = (x+2)^{4}(x^{2}+2x+3)(x^{2}+4)^{3}$</li>
-<li>SET UP<br>$\frac{R(x)}{(x+2)^{4}(x^{2}+2x+3)(x^{2}+4)^{3}}$<br>$= \frac{A_{1}}{x+2} + \frac{A_{2}}{(x+2)^{2}} + \frac{A_{3}}{(x+2)^{3}} + \frac{A_{4}}{(x+4)^{4}}$<br>$+ \frac{B_{0}x+C_{0}}{x^{2}+2x+3} + \frac{B_{1}x+C_{1}}{x^{2}+4} + \frac{B_{2}x+C_{2}}{(x^{2}+4)^{2}} + \frac{B_{3}x+C_{3}}{(x^{2}+4)^{3}}$</li>
+<script type="math/tex; mode=display">
+s^{k + 1} \gets s^{k} + g^{k + 1} \odot g^{k + 1}</script><ul>
+<li>将自变量每个元素的学习率通过按元素运算重新调整一下<script type="math/tex; mode=display">
+x^{k + 1} \gets x^{k} - \frac{\eta}{\sqrt{s^{k+1} + \epsilon}} \odot g^{k+1}</script></li>
 </ul>
 <blockquote>
-<p>12 equations, 12 unknowns</p>
+<p>由于$s^{k}$一直在累加按元素平方的梯度，自变量中每个元素的学习率在迭代过程中一直在降低（或不变）；当学习率在迭代早期降得较快且当前解依然不佳时，AdaGrad算法在迭代后期由于学习率过小，可能较难找到一个有用的解</p>
+</blockquote>
+<h3 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h3><ul>
+<li><p>梯度按元素平方做指数加权移动平均变量$s^{k}$</p>
+<script type="math/tex; mode=display">
+s^{k + 1} \gets \gamma s^{k} + (1 - \gamma) g^{k + 1} \odot g^{k + 1}</script></li>
+<li><p>将自变量每个元素的学习率通过按元素运算重新调整一下</p>
+<script type="math/tex; mode=display">
+x^{k + 1} \gets x^{k} - \frac{\eta}{\sqrt{s^{k+1} + \epsilon}} \odot g^{k+1}</script></li>
+</ul>
+<h4 id="AdaGrad与RMSProp对比"><a href="#AdaGrad与RMSProp对比" class="headerlink" title="AdaGrad与RMSProp对比"></a>AdaGrad与RMSProp对比</h4><p><img src="http://zh.d2l.ai/_images/chapter_optimization_adagrad_1_1.svg" alt="AdaGrad"></p>
+<p><center>AdaGrad</center><br><img src="http://zh.d2l.ai/_images/chapter_optimization_rmsprop_1_1.svg" alt="RMSProp"></p>
+<p><center>RMSProp</center></p>
+<h3 id="AdaDelta"><a href="#AdaDelta" class="headerlink" title="AdaDelta"></a>AdaDelta</h3><ul>
+<li><p>梯度$g^{k}$按元素平方的指数加权移动平均变量$s^{k}$，初始时被初始化为$0$</p>
+<script type="math/tex; mode=display">
+s^{k + 1} \gets \gamma s^{k} + (1 - \gamma) g^{k + 1} \odot g^{k + 1}</script></li>
+<li><p>AdaDelta算法维护一个额外的状态变量$\Delta x^{k}$，初始化时被初始化为$0$</p>
+<script type="math/tex; mode=display">
+g^{'}_{k + 1} \gets \sqrt{\frac{\Delta x^{k+1} + \epsilon}{s^{k + 1} + \epsilon}} \odot g^{k + 1}</script></li>
+<li><p>更新自变量</p>
+<script type="math/tex; mode=display">
+x^{k+1} \gets x^{k} - g^{'}_{k+1}</script></li>
+<li><p>$\Delta x^{k + 1}$记录自变量$g^{‘}_{k+1}$按元素平方的指数加权移动平均</p>
+<script type="math/tex; mode=display">
+\Delta x^{k+1} \gets \rho \Delta x^{k} + (1 - \rho)g^{'}_{k+1} \odot g^{'}_{k+1}</script></li>
+</ul>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><blockquote>
+<p>Adam算法使用了动量变量$v^{k}$和RMSProp算法中梯度按元素平方的指数加权移动平均变量$s^{k}$</p>
 </blockquote>
 <ul>
-<li>PIECES STILL NEED TO BE INTEGRATED</li>
+<li><p>动量变量$v^{k}$</p>
+<script type="math/tex; mode=display">
+v^{k + 1} \gets \beta_{1} v^{k} + (1 - \beta_{1})g^{k+1}</script></li>
+<li><p>梯度按元素平方的指数加权移动平均变量$s^{k}$</p>
+<script type="math/tex; mode=display">
+s^{k+1} \gets \beta_{2} s^{k} + (1 - \beta_{2}) g^{k + 1} \odot g^{k + 1}</script></li>
+<li><p>偏差修正</p>
+<script type="math/tex; mode=display">
+v^{k} = (1 - \beta_{1})\sum_{i = 1}^{k} \beta_{1}^{k-i}g^{i} \\
+(1 - \beta_{1}) \sum_{i = 1}^{k} \beta_{1}^{k - i} = 1 - \beta_{1} + \beta_{1} - \beta_{1}^{2} + \beta_{1}^{2} - \beta_{1}^{3} + \cdots - \beta_{1}^{k} = 1 - \beta_{1}^{k}</script><p>当$k$较小时，过去各时间步随机梯度权值之和会较小</p>
+<script type="math/tex; mode=display">
+\hat{v}^{k+1} \gets \frac{v^{k+1}}{1 - \beta_{1}^{k+1}} \\
+\hat{s}^{k+1} \gets \frac{s^{k+1}}{1 - \beta_{2}^{k+1}}</script></li>
+<li><p>迭代自变量</p>
+<script type="math/tex; mode=display">
+x^{k + 1} \gets x^{k} - \frac{\eta}{\sqrt{\hat{s}^{k+1}} + \epsilon} v^{k + 1}</script></li>
 </ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="http://zh.d2l.ai/chapter_optimization/index.html" target="_blank" rel="noopener">优化算法</a></p>
+<p><a href="https://www.cnblogs.com/neopenx/p/4768388.html" target="_blank" rel="noopener">自适应学习率调整：AdaDelta</a></p>
 
       
     </div>
@@ -498,7 +534,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Calculus/" rel="tag"># Calculus</a>
+            <a href="/tags/ZERO/" rel="tag"># ZERO</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
           
         </div>
       
@@ -511,8 +549,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/17/单变量微积分：三角积分/" rel="next" title="单变量微积分：三角积分">
-                <i class="fa fa-chevron-left"></i> 单变量微积分：三角积分
+              <a href="/2019/06/07/机器学习：K近邻/" rel="next" title="机器学习：K近邻">
+                <i class="fa fa-chevron-left"></i> 机器学习：K近邻
               </a>
             
           </div>
@@ -521,8 +559,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/30/单变量微积分：分部积分/" rel="prev" title="单变量微积分：分部积分">
-                单变量微积分：分部积分 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/10/机器学习：L1与L2正则化/" rel="prev" title="机器学习：L1与L2正则化">
+                机器学习：L1与L2正则化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -699,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rational-Function-有理函数"><span class="nav-number">1.</span> <span class="nav-text">Rational Function(有理函数)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Partial-Fraction-部分分式"><span class="nav-number">2.</span> <span class="nav-text">Partial Fraction(部分分式)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Algebra-Problem"><span class="nav-number">2.1.</span> <span class="nav-text">Algebra Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Cover-up-Method-掩盖法"><span class="nav-number">2.1.1.</span> <span class="nav-text">Cover up Method(掩盖法)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q-has-repeat-linear-factors"><span class="nav-number">2.1.2.</span> <span class="nav-text">$Q$ has repeat linear factors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q-has-a-quadratic-factor-and-deg-P-lt-deg-Q"><span class="nav-number">2.1.3.</span> <span class="nav-text">$Q$ has a quadratic factor and $deg P &lt; deg Q$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#What-if-deg-P-geq-deg-Q-Improper-Fraction-假分数"><span class="nav-number">2.1.4.</span> <span class="nav-text">What if $deg P \geq deg Q$? Improper Fraction(假分数)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Always-works-but-maybe-slowly"><span class="nav-number">2.2.</span> <span class="nav-text">Always works, but maybe slowly</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目标函数"><span class="nav-number">1.</span> <span class="nav-text">目标函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降-Gradient-Descent"><span class="nav-number">2.</span> <span class="nav-text">梯度下降(Gradient Descent)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降原理"><span class="nav-number">2.1.</span> <span class="nav-text">梯度下降原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机梯度下降"><span class="nav-number">2.3.</span> <span class="nav-text">随机梯度下降</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小批量随机梯度下降"><span class="nav-number">2.4.</span> <span class="nav-text">小批量随机梯度下降</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动量法-Momentum"><span class="nav-number">3.</span> <span class="nav-text">动量法(Momentum)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#指数加权移动平均"><span class="nav-number">3.1.</span> <span class="nav-text">指数加权移动平均</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指数加权移动平均与动量法"><span class="nav-number">3.2.</span> <span class="nav-text">指数加权移动平均与动量法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nesterov-Accelerated-Gradient"><span class="nav-number">4.</span> <span class="nav-text">Nesterov Accelerated Gradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AdaGrad"><span class="nav-number">5.</span> <span class="nav-text">AdaGrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSProp"><span class="nav-number">6.</span> <span class="nav-text">RMSProp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AdaGrad与RMSProp对比"><span class="nav-number">6.1.</span> <span class="nav-text">AdaGrad与RMSProp对比</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AdaDelta"><span class="nav-number">7.</span> <span class="nav-text">AdaDelta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">8.</span> <span class="nav-text">Adam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">9.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

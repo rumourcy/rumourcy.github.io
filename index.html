@@ -646,6 +646,178 @@ obj = \sum_{i}{l(y_{i}, f(x_{i};w))} + \lambda\left\lVert w \right\rVert_{2}^{2}
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/深度学习：优化算法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="trierbo">
+      <meta itemprop="description" content="Be evil!">
+      <meta itemprop="image" content="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="trierbo's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/10/深度学习：优化算法/" class="post-title-link" itemprop="http://yoursite.com/index.html">深度学习：优化算法</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-10 20:42:20" itemprop="dateCreated datePublished" datetime="2019-06-10T20:42:20+08:00">2019-06-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-26 16:29:35" itemprop="dateModified" datetime="2019-08-26T16:29:35+08:00">2019-08-26</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><p>$f_{i}(x)$表示第$i$个样本的损失函数，则目标函数可表示为：</p>
+<script type="math/tex; mode=display">
+f(x) = \frac{1}{n} \sum_{1}^{n} f_{i}(x)</script><h3 id="梯度下降-Gradient-Descent"><a href="#梯度下降-Gradient-Descent" class="headerlink" title="梯度下降(Gradient Descent)"></a>梯度下降(Gradient Descent)</h3><h4 id="梯度下降原理"><a href="#梯度下降原理" class="headerlink" title="梯度下降原理"></a>梯度下降原理</h4><script type="math/tex; mode=display">
+f(x + \epsilon) \approx f(x) + \langle\nabla f(x), \epsilon\rangle \quad \epsilon \in \mathring{U}(x) \\
+\epsilon = -\eta \nabla f(x) \\
+f(x + \epsilon) \approx f(x) + \langle\nabla f(x), -\eta \nabla f(x)\rangle \to \\
+f(x + \epsilon) \lt f(x)</script><h4 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h4><script type="math/tex; mode=display">
+x^{k+1} \gets x^{k} - \eta \nabla f(x^{k})</script><h4 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h4><script type="math/tex; mode=display">
+x^{k+1} \gets x^{k} - \eta \nabla f_{i}(x)</script><h4 id="小批量随机梯度下降"><a href="#小批量随机梯度下降" class="headerlink" title="小批量随机梯度下降"></a>小批量随机梯度下降</h4><script type="math/tex; mode=display">
+g^{k+1} \gets \nabla f_{B^{k+1}}(x^{k}) = \frac{1}{\lvert B^{k+1} \rvert} \sum_{i \in B^{k+1}} \nabla f_{i}(x^{k}) \\
+x^{k+1} \gets x^{k} - \eta g^{k+1}</script><blockquote>
+<p>容易陷入局部最优或者鞍点</p>
+</blockquote>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/10/深度学习：优化算法/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/机器学习：K近邻/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1825,207 +1997,6 @@ Ax = \lambda x</script><p>If $A$ is singular, $\lambda = 0$ is an eigenvalue</p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/线性代数：行列式/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="trierbo">
-      <meta itemprop="description" content="Be evil!">
-      <meta itemprop="image" content="https://github.com/trierbo/blog-source/raw/master/pics/theme/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="trierbo's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/24/线性代数：行列式/" class="post-title-link" itemprop="http://yoursite.com/index.html">线性代数：行列式</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-24 21:00:08" itemprop="dateCreated datePublished" datetime="2019-04-24T21:00:08+08:00">2019-04-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-27 21:50:14" itemprop="dateModified" datetime="2019-04-27T21:50:14+08:00">2019-04-27</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="Determinants"><a href="#Determinants" class="headerlink" title="Determinants"></a>Determinants</h3><blockquote>
-<p>$det(A) = |A|$</p>
-</blockquote>
-<hr>
-<ul>
-<li><p>$det(I) = 1$</p>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-1& 0\\
-0& 1
-\end{array}\right| = 1</script></li>
-<li><p>exchange rows: reverse sign of  $det$</p>
-<p>$det(P) = 1 or -1$</p>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-0& 1 \\
-1& 0
-\end{array}\right| = -1</script></li>
-<li><p>linear for each row</p>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\left|\begin{array}{cccc}
-ta& tb\\
-c& d
-\end{array}\right| = 
-t\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| \\
-\left|\begin{array}{cccc}
-a + a'& b + b'\\
-c& d
-\end{array}\right| = 
-\left|\begin{array}{cccc}
-a& b\\
-c& d
-\end{array}\right| +
-\left|\begin{array}{cccc}
-a'& b'\\
-c& d
-\end{array}\right|</script><hr>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/24/线性代数：行列式/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2075,7 +2046,7 @@ c& d
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2118,7 +2089,7 @@ c& d
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
